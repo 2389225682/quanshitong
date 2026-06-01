@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明朝历史 - 全史通 | 中国历史深度学习网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1010 50%, #1a1a1a 100%);
+        }
+        
+        .hero::before {
+            background: linear-gradient(90deg, #8B0000, #D4AF37, #8B0000);
+            background-size: 200% 100%;
+        }
+        
+        .hero h1 { color: #D4AF37; }
+        .hero .subtitle { color: #DC143C; }
+        .hero .description { color: #b0b0b0; }
+        .hero .number { color: #D4AF37; }
+        
+        .timeline-section {
+            background: rgba(220, 20, 60, 0.1);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+        
+        .timeline-section h3 { color: #D4AF37; }
+        .timeline-item .year { color: #D4AF37; }
+        .timeline-item { border-color: rgba(220, 20, 60, 0.3); }
+        .timeline-item::before { background: #DC143C; }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav class="nav">
+        <a href="../index.html" class="logo">◆ 全史通</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">网站首页</a>
+            <a href="index.html" class="active">明朝</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">切换朝代 ▼</button>
+                <div class="dynasty-dropdown">
+                    <a href="../qin/index.html">秦朝</a>
+                    <a href="../han/index.html">汉朝</a>
+                    <a href="../sanguo/index.html">三国</a>
+                    <a href="../jin/index.html">晋朝</a>
+                    <a href="../nanbeichao/index.html">南北朝</a>
+                    <a href="../sui/index.html">隋朝</a>
+                    <a href="../tang/index.html">唐朝</a>
+                    <a href="../wudai/index.html">五代十国</a>
+                    <a href="../song/index.html">宋朝</a>
+                    <a href="../yuan/index.html">元朝</a>
+                    <a href="../ming/index.html">明朝</a>
+                    <a href="../qing/index.html">清朝</a>
+                    <a href="../minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>🔴 明朝</h1>
+                <div class="subtitle">汉人重建的辉煌王朝</div>
+                <p class="description">
+                    明朝（1368年-1644年）是中国历史上最后一个由汉族建立的大一统王朝，历经276年、16位皇帝。
+                    朱元璋从乞丐到皇帝，创造了历史上的传奇。开国之初废除丞相、设锦衣卫，奠定了君主专制的极盛；
+                    郑和七下西洋，展示了大明国威；中后期资本主义萌芽，白银流入，市井繁华。
+                    然而党争激烈、宦官干政，最终在农民起义和满清入关的双重冲击下走向覆灭。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="number">276年</span>
+                        <span class="label">国祚</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">16位</span>
+                        <span class="label">皇帝</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">2亿+</span>
+                        <span class="label">鼎盛人口</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">7次</span>
+                        <span class="label">郑和下西洋</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-section">
+                    <h3>📅 明朝历史时间轴</h3>
+                    <div class="timeline-item">
+                        <span class="year">1351年</span> - 红巾军起义，天下大乱
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1368年</span> - 朱元璋建立明朝，定都南京
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1399年</span> - 靖难之役爆发
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1402年</span> - 朱棣攻入南京，永乐盛世开始
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1405-1433年</span> - 郑和七下西洋
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1421年</span> - 朱棣迁都北京
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1449年</span> - 土木堡之变，英宗被俘
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1570年代</span> - 张居正改革，一条鞭法
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1620年代</span> - 魏忠贤专权，东林党祸
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1644年</span> - 李自成攻入北京，崇祯自缢，明朝灭亡
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-section">
+            <h2>🎯 明朝的核心特征</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">👑</div>
+                    <h4>洪武开国</h4>
+                    <p>朱元璋从乞丐到皇帝，逆天改命的传奇人生</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🕵️</div>
+                    <h4>厂卫制度</h4>
+                    <p>锦衣卫、东厂、西厂，特务政治达到顶峰</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🚢</div>
+                    <h4>郑和下西洋</h4>
+                    <p>世界航海史上的壮举，展示大国威仪</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📚</div>
+                    <h4>文化繁荣</h4>
+                    <p>四大名著诞生，小说戏曲空前发展</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="color: var(--ming-gold); font-family: 'Noto Serif SC', serif; margin: 40px 0 20px; text-align: center;">📖 学习模块</h2>
+        <div class="topics">
+            <a href="institution.html" class="topic-card">
+                <h3>🏛️ 国家机构</h3>
+                <p>废丞相、设内阁、厂卫制度——明朝独特的政治体制</p>
+                <div class="meta"><span>8大主题</span><span>约10000+字</span></div>
+            </a>
+            <a href="military.html" class="topic-card">
+                <h3>⚔️ 军政制度</h3>
+                <p>卫所制度、戚家军、火器发展——明朝军事力量</p>
+                <div class="meta"><span>5大章节</span><span>约12000+字</span></div>
+            </a>
+            <a href="tax.html" class="topic-card">
+                <h3>💰 税收政策</h3>
+                <p>一条鞭法、鱼鳞图册——赋税制度的重大改革</p>
+                <div class="meta"><span>4大税种</span><span>约6000字</span></div>
+            </a>
+            <a href="law.html" class="topic-card">
+                <h3>📜 法律制度</h3>
+                <p>《大明律》详解——明朝法律体系</p>
+                <div class="meta"><span>5大模块</span><span>约7000字</span></div>
+            </a>
+            <a href="life.html" class="topic-card">
+                <h3>🏘️ 百姓生活</h3>
+                <p>衣食住行、小说戏曲——市井百态</p>
+                <div class="meta"><span>6大方面</span><span>约8000字</span></div>
+            </a>
+            <a href="class.html" class="topic-card">
+                <h3>👥 社会阶级</h3>
+                <p>士绅阶层、匠户、军户——等级森严的社会</p>
+                <div class="meta"><span>4大阶层</span><span>约7000字</span></div>
+            </a>
+            <a href="foreign.html" class="topic-card">
+                <h3>🌐 对外关系</h3>
+                <p>郑和下西洋、倭寇、朝贡体系</p>
+                <div class="meta"><span>3大方向</span><span>约6000字</span></div>
+            </a>
+            <a href="price.html" class="topic-card">
+                <h3>🪙 物价参考</h3>
+                <p>白银货币化、明代经济生活</p>
+                <div class="meta"><span>6大类别</span><span>约5000字</span></div>
+            </a>
+        </div>
+        
+        <div class="figures-section">
+            <h2>👤 关键人物</h2>
+            <div class="figures-grid">
+                <a href="figures.html#zhuYuanzhang" class="figure-card">
+                    <div class="name">朱元璋</div>
+                    <div class="role">开国皇帝，从乞丐到帝王</div>
+                </a>
+                <a href="figures.html#zhuDi" class="figure-card">
+                    <div class="name">朱棣</div>
+                    <div class="role">永乐帝，迁都北京</div>
+                </a>
+                <a href="figures.html#zhangJuzheng" class="figure-card">
+                    <div class="name">张居正</div>
+                    <div class="role">改革家，万历首辅</div>
+                </a>
+                <a href="figures.html#haiRui" class="figure-card">
+                    <div class="name">海瑞</div>
+                    <div class="role">清官，冒死上疏</div>
+                </a>
+                <a href="figures.html#zhengHe" class="figure-card">
+                    <div class="name">郑和</div>
+                    <div class="role">航海家，七下西洋</div>
+                </a>
+                <a href="figures.html#wangYangming" class="figure-card">
+                    <div class="name">王阳明</div>
+                    <div class="role">心学大师，知行合一</div>
+                </a>
+                <a href="figures.html#qiJiguang" class="figure-card">
+                    <div class="name">戚继光</div>
+                    <div class="role">抗倭名将，民族英雄</div>
+                </a>
+                <a href="figures.html#yuanChonghuan" class="figure-card">
+                    <div class="name">袁崇焕</div>
+                    <div class="role">辽东名将，千古冤案</div>
+                </a>
+            </div>
+        </div>
+        
+            <a href="events.html" class="special-card">
+                <h3>📅 历史大事记</h3>
+                <p>从洪武开国到崇祯自缢，详细解读明朝每一个重大历史事件。每个事件都有完整的故事（背景→人物→经过→结果→影响），带你身临其境感受历史。</p>
+            </a>
+        
+        <a href="diary.html" class="special-card">
+            <h3>📔 穿越体验：我在明朝当平民</h3>
+            <p>第一人称视角，体验明朝普通人的生活。穿越到万历年间，感受市井繁华与帝国余晖。</p>
+        </a>
+        
+        <div class="section" style="margin-top: 50px;">
+            <h2>🔍 明朝深度解读</h2>
+            
+            <div class="quote-block">
+                <p>"开局一只碗，结局一棵歪脖子树。"</p>
+                <span class="source">—— 网友评价朱元璋的一生</span>
+            </div>
+            
+            <h3>明朝为何能重建汉族王朝？</h3>
+            <p>元朝末年，民族矛盾与阶级矛盾交织，最终引发了红巾军大起义。朱元璋从濠州起兵，先后击败陈友谅、张士诚等割据势力，于1368年建立明朝，定都南京。他的成功绝非偶然：</p>
+            
+            <div class="knowledge-card">
+                <h4>🎯 朱元璋的成功之道</h4>
+                <p>朱元璋能够从乞丐成为皇帝，有以下几个关键因素：</p>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>出身底层，深知民间疾苦</strong>：从小给地主放牛、当过和尚乞丐，亲眼见证了元朝的残暴统治，这让他对贪官污吏深恶痛绝</li>
+                    <li><strong>知人善任</strong>：麾下人才济济，徐达、常遇春是绝世名将，刘伯温是谋略大师，李善长是后勤保障</li>
+                    <li><strong>高筑墙、广积粮、缓称王</strong>：采纳朱升的建议，低调发展实力，避免过早成为元朝攻击目标</li>
+                    <li><strong>严明军纪</strong>：所到之处秋毫无犯，深得民心</li>
+                    <li><strong>重视农业生产</strong>：鼓励垦荒、兴修水利、解放奴婢，恢复社会经济</li>
+                </ul>
+            </div>
+            
+            <div class="knowledge-card">
+                <h4>🌾 明朝的经济奇迹</h4>
+                <p>明朝中后期，商品经济高度发达，出现了资本主义萌芽：</p>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>苏杭丝织业</strong>：出现"机户出资，机工出力"的雇佣关系</li>
+                    <li><strong>景德镇瓷业</strong>：大规模专业化生产，产品远销海外</li>
+                    <li><strong>白银流入</strong>：美洲白银大量涌入，成为主要货币</li>
+                    <li><strong>城市繁荣</strong>：南京、北京、苏杭、广州等城市人口激增</li>
+                </ul>
+            </div>
+            
+            <h3>明朝的"三宗罪"</h3>
+            <p>明朝灭亡的原因一直是历史学家争论的话题，但以下三点是公认的重要因素：</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>问题</th>
+                        <th>表现</th>
+                        <th>后果</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>党争激烈</td>
+                        <td>东林党与阉党、齐党、楚党相互攻伐</td>
+                        <td>政治内耗，国家机器效率低下</td>
+                    </tr>
+                    <tr>
+                        <td>宦官干政</td>
+                        <td>王振、刘瑾、魏忠贤等权宦把持朝政</td>
+                        <td>忠良被诛，民不聊生</td>
+                    </tr>
+                    <tr>
+                        <td>财政崩溃</td>
+                        <td>宗室膨胀、军费浩大、贪墨成风</td>
+                        <td>国库空虚，无力应对天灾人祸</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>明朝的历史遗产</h3>
+            <p>尽管明朝最终覆灭，但它留下的文化遗产至今影响深远：</p>
+            
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">故宫</div>
+                    <div class="label">世界最大宫殿建筑群</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">长城</div>
+                    <div class="label">明长城奠定今日格局</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">百科</div>
+                    <div class="label">《永乐大典》文化瑰宝</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">航海</div>
+                    <div class="label">郑和航海技术领先世界</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>💡 思考</h4>
+                <p>如果明朝没有陷入党争和宦官干政，能否避免灭亡的命运？这个问题可以帮助我们理解制度建设的的重要性。</p>
+            </div>
+        </div>
+        
+        <div class="section" style="margin-top: 40px;">
+            <h2>📚 推荐学习路径</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">了解背景</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">制度学习</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">人物传记</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">穿越体验</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 20px;">建议按此顺序学习，循序渐进，效果更佳</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <p style="font-size: 0.85em; color: rgba(255,255,255,0.5);">本网站内容严格遵循史实，参考资料包括《明史》《明实录》《明史纪事本末》等</p>
+        <div class="footer-links">
+            <a href="../index.html">网站首页</a>
+            <a href="../yuan/index.html">← 上一朝代：元朝</a>
+            <a href="../qing/index.html">下一朝代：清朝 →</a>
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../common.js"></script>
+</body>
+</html>
