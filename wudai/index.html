@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五代十国历史 - 全史通 | 中国历史深度学习网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 五代十国专属配色 */
+        :root {
+            --primary: #b8860b;
+            --secondary: #4a3728;
+            --accent: #daa520;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 50%, #2d2d2d 100%);
+        }
+        
+        .hero::before {
+            background: linear-gradient(90deg, #b8860b, #4a3728, #b8860b);
+            background-size: 200% 100%;
+        }
+        
+        .hero h1 { color: #b8860b; }
+        .hero .subtitle { color: #b0b0b0; }
+        .hero .description { color: #b0b0b0; }
+        .hero .number { color: #b8860b; }
+        
+        .timeline-section {
+            background: rgba(184, 134, 11, 0.1);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+        
+        .timeline-section h3 { color: #b8860b; }
+        .timeline-item .year { color: #b8860b; }
+        .timeline-item { border-color: rgba(184, 134, 11, 0.3); }
+        .timeline-item::before { background: #b8860b; }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav class="nav">
+        <a href="../index.html" class="logo">◆ 全史通</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">网站首页</a>
+            <a href="index.html" class="active">五代十国</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">切换朝代 ▼</button>
+                <div class="dynasty-dropdown">
+                    <a href="../qin/index.html">秦朝</a>
+                    <a href="../han/index.html">汉朝</a>
+                    <a href="../sanguo/index.html">三国</a>
+                    <a href="../jin/index.html">晋朝</a>
+                    <a href="../nanbeichao/index.html">南北朝</a>
+                    <a href="../sui/index.html">隋朝</a>
+                    <a href="../tang/index.html">唐朝</a>
+                    <a href="../wudai/index.html">五代十国</a>
+                    <a href="../song/index.html">宋朝</a>
+                    <a href="../yuan/index.html">元朝</a>
+                    <a href="../ming/index.html">明朝</a>
+                    <a href="../qing/index.html">清朝</a>
+                    <a href="../minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>⚔️ 五代十国</h1>
+                <div class="subtitle">唐亡后的分裂动荡（907-979）</div>
+                <p class="description">
+                    五代十国是中国历史上又一个分裂动荡的时代。唐朝灭亡后，中原相继出现后梁、后唐、后晋、后汉、后周五个朝代，
+                    史称"五代"；同时南方和北方各地先后存在十个割据政权，史称"十国"。这是一个武将专权、政权更迭频繁的时代，
+                    也是中华文明在战乱中继续发展的时代。五代十国虽然混乱，却为日后宋朝的统一和经济繁荣奠定了基础。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="number">72年</span>
+                        <span class="label">分裂时期</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">5代</span>
+                        <span class="label">中原朝代</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">10国</span>
+                        <span class="label">割据政权</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">53位</span>
+                        <span class="label">帝王</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-section">
+                    <h3>📅 五代十国历史时间轴</h3>
+                    <div class="timeline-item">
+                        <span class="year">907年</span> - 朱温篡唐建后梁，唐朝正式灭亡，五代十国开始
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">923年</span> - 李存勖灭后梁建后唐
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">936年</span> - 石敬瑭建后晋，割让燕云十六州给契丹
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">947年</span> - 契丹灭后晋，中原短暂被异族统治
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">951年</span> - 郭威建后周，后汉隐帝被杀
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">954年</span> - 柴荣即位，进行改革
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">959年</span> - 周世宗柴荣病逝
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">960年</span> - 赵匡胤陈桥兵变建北宋
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">979年</span> - 北宋灭北汉，五代十国结束
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-section">
+            <h2>🎯 五代十国的核心特征</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">⚔️</div>
+                    <h4>武将专权</h4>
+                    <p>藩镇割据的延续，武将频繁篡位</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">👑</div>
+                    <h4>儿皇帝</h4>
+                    <p>石敬瑭割让燕云十六州，遗害数百年</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📜</div>
+                    <h4>词曲兴起</h4>
+                    <p>花间派词人奠定宋词基础</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🌟</div>
+                    <h4>周世宗改革</h4>
+                    <p>后周明君，为宋朝统一奠基</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="color: var(--primary); font-family: 'Noto Serif SC', serif; margin: 40px 0 20px; text-align: center;">📖 学习模块</h2>
+        <div class="topics">
+            <a href="institution.html" class="topic-card">
+                <h3>🏛️ 国家机构</h3>
+                <p>五代官制、枢密院、三司使——了解五代如何沿袭和创新唐朝制度</p>
+                <div class="meta">
+                    <span>8大主题</span>
+                    <span>约5000字</span>
+                </div>
+            </a>
+            <a href="military.html" class="topic-card">
+                <h3>⚔️ 军政制度</h3>
+                <p>禁军制度、武将专权、藩镇割据——揭秘五代武人的权力游戏</p>
+                <div class="meta">
+                    <span>5大章节</span>
+                    <span>约8000字</span>
+                </div>
+            </a>
+            <a href="tax.html" class="topic-card">
+                <h3>💰 税收政策</h3>
+                <p>五代税制、两税法、杂税——战乱中的财政挣扎</p>
+                <div class="meta">
+                    <span>4大税种</span>
+                    <span>约5000字</span>
+                </div>
+            </a>
+            <a href="law.html" class="topic-card">
+                <h3>📜 法律制度</h3>
+                <p>五代法律、《刑统》、司法制度——乱世中的秩序</p>
+                <div class="meta">
+                    <span>5大刑罚</span>
+                    <span>约5000字</span>
+                </div>
+            </a>
+            <a href="life.html" class="topic-card">
+                <h3>🏘️ 百姓生活</h3>
+                <p>衣食住行、婚丧嫁娶、文化娱乐——战乱中的民间百态</p>
+                <div class="meta">
+                    <span>6大方面</span>
+                    <span>约6000字</span>
+                </div>
+            </a>
+            <a href="class.html" class="topic-card">
+                <h3>👥 社会阶级</h3>
+                <p>军阀、士人、平民——乱世中的阶层分化</p>
+                <div class="meta">
+                    <span>4大阶层</span>
+                    <span>约5000字</span>
+                </div>
+            </a>
+            <a href="foreign.html" class="topic-card">
+                <h3>🌐 对外关系</h3>
+                <p>与契丹关系、燕云十六州——外部威胁与外交博弈</p>
+                <div class="meta">
+                    <span>3大方向</span>
+                    <span>约5000字</span>
+                </div>
+            </a>
+            <a href="price.html" class="topic-card">
+                <h3>🪙 物价参考</h3>
+                <p>货币制度、物价水平——五代的经济生态</p>
+                <div class="meta">
+                    <span>6大类别</span>
+                    <span>约4000字</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="figures-section">
+            <h2>👤 关键人物</h2>
+            <div class="figures-grid">
+                <a href="figures.html#zhuwen" class="figure-card">
+                    <div class="name">朱温</div>
+                    <div class="role">后梁太祖，篡唐建梁</div>
+                </a>
+                <a href="figures.html#licunxu" class="figure-card">
+                    <div class="name">李存勖</div>
+                    <div class="role">后唐庄宗，灭梁复唐</div>
+                </a>
+                <a href="figures.html#shijingtang" class="figure-card">
+                    <div class="name">石敬瑭</div>
+                    <div class="role">后晋高祖，儿皇帝</div>
+                </a>
+                <a href="figures.html#chai" class="figure-card">
+                    <div class="name">柴荣</div>
+                    <div class="role">后周世宗，一代明君</div>
+                </a>
+                <a href="figures.html#guowei" class="figure-card">
+                    <div class="name">郭威</div>
+                    <div class="role">后周太祖，改革奠基</div>
+                </a>
+                <a href="figures.html" class="figure-card">
+                    <div class="name">刘旻</div>
+                    <div class="role">北汉世祖，据河东</div>
+                </a>
+                <a href="figures.html#qianliang" class="figure-card">
+                    <div class="name">钱镠</div>
+                    <div class="role">吴越国王，保境安民</div>
+                </a>
+                <a href="figures.html" class="figure-card">
+                    <div class="name">孟知祥</div>
+                    <div class="role">后蜀高祖，据蜀地</div>
+                </a>
+            </div>
+        </div>
+        
+        <a href="events.html" class="special-card">
+            <h3>📅 历史大事记</h3>
+            <p>从朱温篡唐到宋朝统一，详细解读五代十国每一个重大历史事件的背景、经过和影响。</p>
+        </a>
+        
+        <a href="diary.html" class="special-card">
+            <h3>📔 穿越体验：我在五代当士兵</h3>
+            <p>第一人称视角，体验五代十国时期普通士兵或百姓的生活。跟随军队南征北战，感受乱世的动荡与艰辛。</p>
+        </a>
+        
+        <!-- 五代十国深度解读 -->
+        <div class="section" style="margin-top: 50px;">
+            <h2>🔍 五代十国深度解读</h2>
+            
+            <div class="quote-block">
+                <p>"兴，百姓苦；亡，百姓苦。"</p>
+                <span class="source">—— 张养浩《山坡羊·潼关怀古》</span>
+            </div>
+            
+            <h3>为什么唐朝会走向五代十国？</h3>
+            <p>五代十国的根源在于唐朝中后期的<span class="term">藩镇割据</span>。安史之乱后，唐朝中央政府无力控制地方节度使，藩镇逐渐成为半独立王国。这种局面持续了一百多年，最终在黄巢起义的冲击下彻底崩溃。</p>
+            
+            <div class="knowledge-card">
+                <h4>🎯 藩镇割据的形成（前因后果）</h4>
+                <p>唐朝藩镇的形成是一个渐进过程：</p>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>安史之乱（755-763）</strong>：安禄山、史思明发动叛乱，虽然被平定，但唐朝无力彻底消灭叛军势力，只能招抚</li>
+                    <li><strong>藩镇制度化</strong>：为了安抚叛将，唐朝设置更多节度使，给予他们军政财大权，形成"藩镇"</li>
+                    <li><strong>河朔三镇</strong>：范阳、成德、魏博三镇节度使父死子继，不受中央控制，成为割据势力</li>
+                    <li><strong>黄巢起义（875-884）</strong>：打破唐朝最后的权威，各镇趁机扩大地盘</li>
+                    <li><strong>朱温崛起</strong>：朱温（原黄巢部将）控制唐昭宗，907年篡位称帝</li>
+                </ul>
+            </div>
+            
+            <div class="knowledge-card">
+                <h4>🗺️ 五代十国的地理格局</h4>
+                <p>五代十国的政权分布大致如下：</p>
+                <table>
+                    <tr><th>区域</th><th>五代（中原）</th><th>十国（割据）</th></tr>
+                    <tr><td>北方</td><td>后梁→后唐→后晋→后汉→后周</td><td>北汉（山西）</td></tr>
+                    <tr><td>南方</td><td>—</td><td>吴（江苏）、南唐（江苏-江西）、吴越（浙江）、闽（福建）、南汉（广东-广西）、前蜀/后蜀（四川）、楚（湖南）、南平/荆南（湖北）、南楚</td></tr>
+                </table>
+                <p>南方相对安定，经济继续发展；北方战乱频繁，但也是民族融合的关键时期。</p>
+            </div>
+            
+            <h3>五代的"短命王朝"现象</h3>
+            <p>五代五个朝代加起来只有72年，平均每个朝代只有14年左右。这在世界历史上都非常罕见。为什么这些王朝如此短命？</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>朝代</th>
+                        <th>存在时间</th>
+                        <th>亡于</th>
+                        <th>主要原因</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>后梁</td>
+                        <td>907-923（16年）</td>
+                        <td>后唐</td>
+                        <td>内乱不止，朱温被子所杀</td>
+                    </tr>
+                    <tr>
+                        <td>后唐</td>
+                        <td>923-936（13年）</td>
+                        <td>后晋</td>
+                        <td>内部叛变，石敬瑭引契丹灭之</td>
+                    </tr>
+                    <tr>
+                        <td>后晋</td>
+                        <td>936-947（11年）</td>
+                        <td>契丹</td>
+                        <td>儿皇帝失去人心，契丹入侵</td>
+                    </tr>
+                    <tr>
+                        <td>后汉</td>
+                        <td>947-951（4年）</td>
+                        <td>后周</td>
+                        <td>最短命的朝代，内部政变</td>
+                    </tr>
+                    <tr>
+                        <td>后周</td>
+                        <td>951-960（9年）</td>
+                        <td>北宋</td>
+                        <td>唯一被称赞的朝代，被宋太祖篡夺</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="impact-box">
+                <h4>✅ 共同特点</h4>
+                <ul>
+                    <li><strong>都是武将建立</strong>：开国皇帝都是手握重兵的节度使</li>
+                    <li><strong>内部不稳</strong>：继承问题处理不好，经常发生政变</li>
+                    <li><strong>依赖武力</strong>：文官地位低，国家靠军队维持</li>
+                    <li><strong>外部威胁</strong>：契丹始终是北方大患</li>
+                </ul>
+            </div>
+            
+            <h3>十国的生存之道</h3>
+            <p>与五代相比，十国虽然地盘小，却往往存在更久。吴越国存在了72年（907-978），南唐也存在了53年（937-975）。它们的生存策略是什么？</p>
+            
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">72年</div>
+                    <div class="label">吴越国存在时间</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">53年</div>
+                    <div class="label">南唐存在时间</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">60年</div>
+                    <div class="label">闽国存在时间</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">55年</div>
+                    <div class="label">后蜀存在时间</div>
+                </div>
+            </div>
+            
+            <div class="knowledge-card">
+                <h4>💡 十国的生存策略</h4>
+                <ul>
+                    <li><strong>保境安民</strong>：不参与中原混战，专心发展经济（典型：吴越国钱镠）</li>
+                    <li><strong>向强者称臣</strong>：对中原王朝或契丹称臣纳贡，换取庇护</li>
+                    <li><strong>发展经济</strong>：南方相对和平，有利于经济发展（海上贸易、手工业）</li>
+                    <li><strong>文化繁荣</strong>：南唐、西蜀成为文化中心，诗词绘画艺术达到高峰</li>
+                </ul>
+            </div>
+            
+            <h3>五代十国的历史遗产</h3>
+            <p>虽然五代十国是一个混乱的时代，但它留下了重要的历史遗产：</p>
+            
+            <div class="impact-box">
+                <h4>✅ 正面贡献</h4>
+                <ul>
+                    <li><strong>经济重心南移</strong>：南方经济在这一时期快速发展，为宋代经济繁荣奠定基础</li>
+                    <li><strong>文化传承</strong>：战乱中文人南迁，促进了南方文化发展</li>
+                    <li><strong>制度创新</strong>：枢密院、三司等制度被宋代继承</li>
+                    <li><strong>民族融合</strong>：契丹崛起，与中原交流频繁</li>
+                    <li><strong>文学艺术</strong>：花间派词人开创词的新局面</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ 负面影响</h4>
+                <ul>
+                    <li><strong>燕云十六州丢失</strong>：石敬瑭割让北方屏障给契丹，中原失去天然防御</li>
+                    <li><strong>武将专权</strong>：武人干政传统被强化，影响后世政治</li>
+                    <li><strong>百姓苦难</strong>：长期战乱导致生灵涂炭</li>
+                    <li><strong>政治传统破坏</strong>：忠君观念被削弱，篡位成为常态</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>💡 思考</h4>
+                <p>如果唐朝没有藩镇割据，中国历史会怎样发展？五代十国的混乱是必然的还是可以避免的？这些问题可以帮助我们理解制度设计的重要性。</p>
+            </div>
+        </div>
+        
+        <!-- 学习路径推荐 -->
+        <div class="section" style="margin-top: 40px;">
+            <h2>📚 推荐学习路径</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">了解背景</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">制度学习</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">人物传记</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">穿越体验</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 20px;">建议按此顺序学习，循序渐进，效果更佳</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <p style="font-size: 0.85em; color: rgba(255,255,255,0.5);">本网站内容严格遵循史实，参考资料包括《旧五代史》《新五代史》《资治通鉴》等</p>
+        <div class="footer-links">
+            <a href="../tang/index.html">← 上一朝代：唐朝</a>
+            <a href="../index.html">网站首页</a>
+            <a href="../song/index.html">下一朝代：宋朝 →</a>
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../common.js"></script>
+</body>
+</html>
