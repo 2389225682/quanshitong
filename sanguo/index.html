@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三国历史 - 全史通 | 从零开始，读懂中国千年</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 三国专属配色：墨绿+褐色 */
+        :root {
+            --primary: #2d4a1e;
+            --secondary: #8B4513;
+            --accent: #c9a227;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a2e12 0%, #2d4a1e 30%, #3d2e1e 70%, #1a2e12 100%);
+        }
+
+        .hero::before {
+            background: linear-gradient(90deg, #c9a227, #8B4513, #c9a227);
+            background-size: 200% 100%;
+        }
+
+        .hero h1 { color: #c9a227; }
+        .hero .subtitle { color: #d4c5a0; }
+        .hero .description { color: #b0b0a0; }
+        .hero .number { color: #c9a227; }
+
+        .timeline-section {
+            background: rgba(201, 162, 39, 0.1);
+            border-color: rgba(201, 162, 39, 0.3);
+        }
+
+        .timeline-section h3 { color: #c9a227; }
+        .timeline-item .year { color: #c9a227; }
+        .timeline-item { border-color: rgba(201, 162, 39, 0.3); }
+        .timeline-item::before { background: #c9a227; }
+
+        .feature-section {
+            background: linear-gradient(135deg, rgba(45, 74, 30, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
+            border-color: rgba(45, 74, 30, 0.2);
+        }
+
+        .topic-card:hover {
+            border-color: rgba(201, 162, 39, 0.4);
+            box-shadow: 0 20px 50px rgba(45, 74, 30, 0.15);
+        }
+
+        /* 滚动入场动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <nav class="nav">
+        <a href="../index.html" class="logo">◆ 全史通</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">网站首页</a>
+            <a href="index.html" class="active">三国</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">切换朝代 ▼</button>
+                <div class="dynasty-dropdown">
+                    <a href="../qin/index.html">秦朝</a>
+                    <a href="../han/index.html">汉朝</a>
+                    <a href="../sanguo/index.html">三国</a>
+                    <a href="../jin/index.html">晋朝</a>
+                    <a href="../nanbeichao/index.html">南北朝</a>
+                    <a href="../sui/index.html">隋朝</a>
+                    <a href="../tang/index.html">唐朝</a>
+                    <a href="../wudai/index.html">五代十国</a>
+                    <a href="../song/index.html">宋朝</a>
+                    <a href="../yuan/index.html">元朝</a>
+                    <a href="../ming/index.html">明朝</a>
+                    <a href="../qing/index.html">清朝</a>
+                    <a href="../minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>⚔️ 三国</h1>
+                <div class="subtitle">魏蜀吴三分天下，英雄辈出的乱世</div>
+                <p class="description">
+                    三国时期（220年-280年）是中国历史上最富戏剧性的时代之一。东汉末年，群雄逐鹿，最终形成魏、蜀、吴三国鼎立的局面。
+                    曹操挟天子以令诸侯，一统北方；刘备颠沛流离终建蜀汉，以仁义为旗帜；孙权据守江东三代基业，纵横捭阖。
+                    这既是血与火的乱世，也是智与谋的盛世——诸葛亮、周瑜、司马懿等谋臣的智慧至今为人称道。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="number">60年</span>
+                        <span class="label">鼎立时期</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">3国</span>
+                        <span class="label">分立天下</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">12位</span>
+                        <span class="label">帝王</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">~800万</span>
+                        <span class="label">战乱后人口</span>
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <h3>📅 三国历史时间轴</h3>
+                    <div class="timeline-item">
+                        <span class="year">184年</span> - 黄巾起义爆发，天下大乱，群雄割据的序幕拉开
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">196年</span> - 曹操迎汉献帝至许昌，"挟天子以令诸侯"
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">200年</span> - 官渡之战，曹操以少胜多击败袁绍，统一北方
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">208年</span> - 赤壁之战，孙刘联军大败曹操，三分天下格局奠定
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">219年</span> - 刘备取汉中，关羽水淹七军威震华夏，旋即失荆州
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">220年</span> - 曹丕废汉献帝称帝，国号魏，三国时代正式开始
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">221年</span> - 刘备在成都称帝，国号汉（史称蜀汉）
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">222年</span> - 孙权称吴王，夷陵之战大败刘备
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">229年</span> - 孙权正式称帝，国号吴，三国鼎立正式形成
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">263年</span> - 魏灭蜀，刘禅投降
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">265年</span> - 司马炎代魏建晋
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">280年</span> - 西晋灭吴，三国归晋，天下重新统一
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-section fade-in">
+            <h2>🎯 三国的核心特征</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">⚔️</div>
+                    <h4>群雄逐鹿</h4>
+                    <p>从黄巾起义到三国鼎立，大小战役数百场，官渡、赤壁、夷陵三大战役尤为关键</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🧠</div>
+                    <h4>谋略时代</h4>
+                    <p>诸葛亮、周瑜、司马懿等谋臣纵横捭阖，以智取胜成为这个时代的标志</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🏛️</div>
+                    <h4>制度创新</h4>
+                    <p>九品中正制、屯田制、户调制等新制度应运而生，影响深远</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">👨‍🌾</div>
+                    <h4>士族崛起</h4>
+                    <p>门阀士族开始形成，寒门难出贵子，社会结构发生深刻变化</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📚</div>
+                    <h4>文化传承</h4>
+                    <p>建安文学、魏晋玄学萌芽，曹操父子推动文学革新</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🔧</div>
+                    <h4>技术进步</h4>
+                    <p>诸葛亮发明木牛流马、连弩，马钧改进织布机、指南车</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="slide-left" style="color: var(--primary); font-family: 'Noto Serif SC', serif; margin: 50px 0 25px; text-align: center; font-size: 1.8em;">📖 深度学习模块</h2>
+        <p class="slide-right" style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">八大主题全面解读三国时期的国家制度、社会面貌与百姓生活</p>
+
+        <div class="topics">
+            <a href="institution.html" class="topic-card fade-in">
+                <h3>🏛️ 国家机构</h3>
+                <p>魏蜀吴三国官制对比、九品中正制的创立与影响——乱世中如何管理国家？</p>
+                <div class="meta">
+                    <span>魏蜀吴对比</span>
+                    <span>约8000字</span>
+                </div>
+            </a>
+            <a href="military.html" class="topic-card fade-in">
+                <h3>⚔️ 军政制度</h3>
+                <p>三大战役深度解析、三国兵力对比、名将用兵之道——战争年代的军事密码</p>
+                <div class="meta">
+                    <span>战役深度解析</span>
+                    <span>约10000字</span>
+                </div>
+            </a>
+            <a href="tax.html" class="topic-card fade-in">
+                <h3>💰 税收政策</h3>
+                <p>屯田制与户调制详解、三国赋税对比、百姓的实际负担——乱世中如何养活千军万马？</p>
+                <div class="meta">
+                    <span>屯田·户调</span>
+                    <span>约6000字</span>
+                </div>
+            </a>
+            <a href="law.html" class="topic-card fade-in">
+                <h3>📜 法律制度</h3>
+                <p>魏律、蜀科、吴律对比，法律原文与白话翻译，乱世中的法治探索</p>
+                <div class="meta">
+                    <span>原文+译文</span>
+                    <span>约7000字</span>
+                </div>
+            </a>
+            <a href="life.html" class="topic-card fade-in">
+                <h3>🏘️ 百姓生活</h3>
+                <p>衣食住行、婚丧嫁娶、逃难与流民——乱世中普通人的真实生活图景</p>
+                <div class="meta">
+                    <span>真实生活</span>
+                    <span>约8000字</span>
+                </div>
+            </a>
+            <a href="class.html" class="topic-card fade-in">
+                <h3>👥 社会阶级</h3>
+                <p>士族崛起、门阀形成、寒门难贵——影响中国数百年的社会结构大变局</p>
+                <div class="meta">
+                    <span>士族·门阀</span>
+                    <span>约7000字</span>
+                </div>
+            </a>
+            <a href="foreign.html" class="topic-card fade-in">
+                <h3>🌐 对外关系</h3>
+                <p>魏与乌桓鲜卑、蜀与南中诸族、吴与山越——三国的民族政策与边疆经营</p>
+                <div class="meta">
+                    <span>民族融合</span>
+                    <span>约6000字</span>
+                </div>
+            </a>
+            <a href="price.html" class="topic-card fade-in">
+                <h3>🪙 物价参考</h3>
+                <p>三国货币制度、物价波动、工资与购买力——乱世中的经济账本</p>
+                <div class="meta">
+                    <span>经济账本</span>
+                    <span>约5000字</span>
+                </div>
+            </a>
+        </div>
+
+        <a href="events.html" class="special-card scale-in">
+            <h3>📅 历史大事记</h3>
+            <p>黄巾起义、官渡之战、赤壁之战、夷陵之战、北伐中原……详细解读三国时期的每一个关键转折。</p>
+        </a>
+
+        <a href="figures.html" class="special-card scale-in">
+            <h3>👤 关键人物传</h3>
+            <p>曹操、刘备、孙权、诸葛亮、关羽、周瑜、司马懿……三国风云人物的完整生平，既有英雄也有枭雄。</p>
+        </a>
+
+        <a href="diary.html" class="special-card scale-in">
+            <h3>📔 穿越体验</h3>
+            <p>以士兵、谋士、商人第一人称视角，穿越回三国时代，亲历那个英雄辈出的乱世。</p>
+        </a>
+
+        <div class="figures-section fade-in">
+            <h2>👑 三国风云人物</h2>
+            <div class="figures-grid">
+                <a href="figures.html#fig_1"
+                    <div class="name">曹操</div>
+                    <div class="role">魏国奠基者</div>
+                </a>
+                <a href="figures.html#fig_2"
+                    <div class="name">刘备</div>
+                    <div class="role">蜀汉开国皇帝</div>
+                </a>
+                <a href="figures.html#fig_3"
+                    <div class="name">孙权</div>
+                    <div class="role">东吴开国皇帝</div>
+                </a>
+                <a href="figures.html#fig_4"
+                    <div class="name">诸葛亮</div>
+                    <div class="role">蜀汉丞相</div>
+                </a>
+                <a href="figures.html#fig_5"
+                    <div class="name">关羽</div>
+                    <div class="role">武圣</div>
+                </a>
+                <a href="figures.html#fig_6"
+                    <div class="name">周瑜</div>
+                    <div class="role">东吴大都督</div>
+                </a>
+                <a href="figures.html#fig_7"
+                    <div class="name">司马懿</div>
+                    <div class="role">西晋奠基者</div>
+                </a>
+                <a href="figures.html#fig_8"
+                    <div class="name">吕布</div>
+                    <div class="role">天下第一猛将</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <div class="footer-links">
+            <a href="../han/index.html">← 上一朝代：汉朝</a>
+            <a href="../index.html">网站首页</a>
+            <a href="../jin/index.html">下一朝代：晋朝 →</a>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../common.js"></script>
+</body>
+</html>
