@@ -1,234 +1,253 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<title>飞飞的知识库</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.container {
-  max-width: 520px;
-  width: 100%;
-}
-.header {
-  text-align: center;
-  margin-bottom: 36px;
-}
-.header h1 {
-  font-size: 28px;
-  color: #fff;
-  margin-bottom: 8px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-.header .subtitle {
-  font-size: 14px;
-  color: rgba(255,255,255,0.5);
-  font-weight: 300;
-}
-.header .motto {
-  margin-top: 12px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.35);
-  font-style: italic;
-}
-
-.card {
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  padding: 28px 24px;
-  margin-bottom: 16px;
-  text-decoration: none;
-  display: block;
-  transition: transform 0.2s, background 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-.card:active {
-  transform: scale(0.98);
-  background: rgba(255,255,255,0.1);
-}
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  border-radius: 20px 20px 0 0;
-}
-.card.history::before { background: linear-gradient(90deg, #c0392b, #e74c3c, #f39c12); }
-.card.book::before { background: linear-gradient(90deg, #2980b9, #3498db, #1abc9c); }
-.card.channel::before { background: linear-gradient(90deg, #8e44ad, #9b59b6, #e91e63); }
-
-.card .icon {
-  font-size: 40px;
-  margin-bottom: 14px;
-}
-.card h2 {
-  font-size: 20px;
-  color: #fff;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-.card p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.7;
-}
-.card .tags {
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.card .tag {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 14px;
-  font-size: 12px;
-  font-weight: 500;
-}
-.card.history .tag {
-  background: rgba(231, 76, 60, 0.2);
-  color: #e74c3c;
-  border: 1px solid rgba(231, 76, 60, 0.3);
-}
-.card.book .tag {
-  background: rgba(52, 152, 219, 0.2);
-  color: #3498db;
-  border: 1px solid rgba(52, 152, 219, 0.3);
-}
-.card.channel .tag {
-  background: rgba(155, 89, 182, 0.2);
-  color: #9b59b6;
-  border: 1px solid rgba(155, 89, 182, 0.3);
-}
-.card .stats {
-  margin-top: 16px;
-  display: flex;
-  gap: 20px;
-}
-.card .stat {
-  text-align: center;
-}
-.card .stat-num {
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-}
-.card .stat-label {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 2px;
-}
-.card .arrow {
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: rgba(255,255,255,0.2);
-  transition: transform 0.2s, color 0.2s;
-}
-.card:active .arrow {
-  transform: translateY(-50%) translateX(4px);
-  color: rgba(255,255,255,0.5);
-}
-
-.footer {
-  text-align: center;
-  margin-top: 36px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.25);
-}
-.footer a {
-  color: rgba(255,255,255,0.35);
-  text-decoration: none;
-}
-
-/* 响应式 */
-@media (max-width: 380px) {
-  .header h1 { font-size: 24px; }
-  .card { padding: 22px 18px; }
-  .card h2 { font-size: 18px; }
-}
-@media (min-width: 768px) {
-  .container { max-width: 600px; }
-  .card .arrow { display: none; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0a0b1a">
+    <title>飞飞的知识库</title>
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="kb-core.css">
+    <script src="kb-registry.js"></script>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <h1>🧠 飞飞的知识库</h1>
-    <p class="subtitle">理解客观世界 · 洞察主观人心</p>
-    <p class="motto">不骗 · 不捧 · 不装 · 不瞒</p>
-  </div>
+<div class="kb-app" id="app">
 
-  <a class="card history" href="quanshitong.html">
-    <div class="icon">🏛️</div>
-    <h2>全史通</h2>
-    <p>从零开始，读懂中国千年。13个朝代 × 8大维度，用大白话讲述历史制度的来龙去脉，第一人称穿越体验古人的生活。</p>
-    <div class="tags">
-      <span class="tag">13朝代</span>
-      <span class="tag">168主题</span>
-      <span class="tag">穿越体验</span>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-num">2200+</div><div class="stat-label">年跨度</div></div>
-      <div class="stat"><div class="stat-num">168</div><div class="stat-label">主题页</div></div>
-    </div>
-    <span class="arrow">→</span>
-  </a>
+    <!-- Header -->
+    <header class="kb-header">
+        <h1 class="kb-header-title">🧠 飞飞的知识库</h1>
+        <p class="kb-header-subtitle">理解客观世界 · 洞察主观人心</p>
+        <p class="kb-header-motto">不骗 · 不捧 · 不装 · 不瞒</p>
+    </header>
 
-  <a class="card book" href="guns.html">
-    <div class="icon">🌍</div>
-    <h2>枪炮、病菌与钢铁</h2>
-    <p>为什么是欧亚大陆的人征服了其他大陆，而不是反过来？戴蒙德用环境差异解释了人类社会的命运分化。1997年普利策奖。</p>
-    <div class="tags">
-      <span class="tag">普利策奖</span>
-      <span class="tag">环境决定论</span>
-      <span class="tag">整合精读</span>
+    <!-- 搜索 -->
+    <div class="kb-search">
+        <span class="kb-search-icon">🔍</span>
+        <input type="search" id="searchInput" placeholder="搜索模块..." autocomplete="off">
+        <button class="kb-search-clear" id="searchClear">✕</button>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-num">33万</div><div class="stat-label">字原文</div></div>
-      <div class="stat"><div class="stat-num">3版</div><div class="stat-label">学习产物</div></div>
-    </div>
-    <span class="arrow">→</span>
-  </a>
 
-  <a class="card channel" href="xixi.html">
-    <div class="icon">💬</div>
-    <h2>全嘻嘻频道 · 12篇文稿</h2>
-    <p>B站每月回信栏目。从相亲市场到婚姻博弈，从嫉妒心理到自律困境，用真实来信拆解当代人的情感与选择。</p>
-    <div class="tags">
-      <span class="tag">12篇整合</span>
-      <span class="tag">情感观察</span>
-      <span class="tag">读后感</span>
+    <!-- 分类 Tab -->
+    <div class="kb-tabs" id="categoryTabs">
+        <button class="kb-tab active" data-cat="all">
+            <span class="tab-icon">✦</span>全部
+        </button>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-num">312KB</div><div class="stat-label">内容量</div></div>
-      <div class="stat"><div class="stat-num">15月</div><div class="stat-label">跨度</div></div>
-    </div>
-    <span class="arrow">→</span>
-  </a>
 
-  <div class="footer">
-    队长为飞飞整理 · 2026年6月<br>
-    <a href="quanshitong.html">全史通</a> · <a href="guns.html">枪炮与钢铁</a> · <a href="xixi.html">全嘻嘻</a>
-  </div>
+    <!-- 内容区 -->
+    <main id="moduleList"></main>
+
+    <!-- Footer -->
+    <footer class="kb-footer">
+        队长为飞飞整理 · 2026年6月
+    </footer>
 </div>
+
+<script>
+(function() {
+    'use strict';
+
+    // ---- 状态 ----
+    let currentCat = 'all';
+    let searchQuery = '';
+
+    // ---- DOM ----
+    const listEl = document.getElementById('moduleList');
+    const tabsEl = document.getElementById('categoryTabs');
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+
+    // ---- 初始化分类 Tab ----
+    function initTabs() {
+        KB_CATEGORIES.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = 'kb-tab';
+            btn.dataset.cat = cat.id;
+            btn.innerHTML = `<span class="tab-icon">${cat.icon}</span>${cat.name}`;
+            tabsEl.appendChild(btn);
+        });
+
+        tabsEl.addEventListener('click', e => {
+            const tab = e.target.closest('.kb-tab');
+            if (!tab) return;
+            tabsEl.querySelectorAll('.kb-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            currentCat = tab.dataset.cat;
+            render();
+        });
+    }
+
+    // ---- 颜色映射 ----
+    function colorKey(mod) {
+        const map = {
+            '#c9a227': 'gold',
+            '#3498db': 'blue',
+            '#9b59b6': 'purple',
+            '#e74c3c': 'red',
+            '#1abc9c': 'teal',
+            '#f39c12': 'orange'
+        };
+        return map[mod.color] || 'gold';
+    }
+
+    // ---- 渲染封面占位 ----
+    function renderCover(mod) {
+        const ck = colorKey(mod);
+        if (mod.cover) {
+            return `<img class="kb-card-cover" src="${mod.cover}" alt="${mod.name}" loading="lazy" onerror="this.outerHTML='<div class=\\'kb-card-cover-placeholder\\' data-color=\\'${ck}\\' style=\\'background:linear-gradient(135deg,rgba(${mod.colorRgb},0.15),rgba(${mod.colorRgb},0.05))\\'>${mod.icon}</div>'">`;
+        }
+        return `<div class="kb-card-cover-placeholder" style="background:linear-gradient(135deg,rgba(${mod.colorRgb},0.15),rgba(${mod.colorRgb},0.05))">${mod.icon}</div>`;
+    }
+
+    // ---- 渲染大卡片（全宽，有封面） ----
+    function renderLargeCard(mod) {
+        const ck = colorKey(mod);
+        const tagsHtml = mod.tags.map(t => `<span class="kb-card-tag">${t}</span>`).join('');
+        const statsHtml = mod.stats.map(s => 
+            `<div class="kb-card-stat"><div class="kb-card-stat-value">${s.value}</div><div class="kb-card-stat-label">${s.label}</div></div>`
+        ).join('');
+
+        return `
+        <a class="kb-card kb-animate" href="${mod.path}" data-color="${ck}" data-id="${mod.id}">
+            ${renderCover(mod)}
+            <div class="kb-card-body">
+                <div class="kb-card-name">${mod.name}</div>
+                <div class="kb-card-subtitle">${mod.subtitle}</div>
+                <div class="kb-card-desc">${mod.description}</div>
+                <div class="kb-card-tags">${tagsHtml}</div>
+                ${mod.stats.length ? `<div class="kb-card-stats">${statsHtml}</div>` : ''}
+                <span class="kb-card-arrow">→</span>
+            </div>
+        </a>`;
+    }
+
+    // ---- 渲染小卡片（双列） ----
+    function renderSmallCard(mod) {
+        const ck = colorKey(mod);
+        const tagsHtml = mod.tags.slice(0, 2).map(t => `<span class="card-tag">${t}</span>`).join('');
+
+        return `
+        <a class="kb-card-small kb-animate ${mod.status === 'coming' ? 'kb-card-coming' : ''}" 
+           href="${mod.path}" data-color="${ck}" data-id="${mod.id}">
+            <div class="card-icon">${mod.icon}</div>
+            <div class="card-name">${mod.name}</div>
+            <div class="card-subtitle">${mod.subtitle}</div>
+            <div class="card-tags">${tagsHtml}</div>
+            ${mod.status === 'coming' ? '<div class="coming-badge">即将上线</div>' : ''}
+        </a>`;
+    }
+
+    // ---- 主渲染 ----
+    function render() {
+        let modules = KB_MODULES;
+
+        // 搜索过滤
+        if (searchQuery) {
+            modules = searchModules(searchQuery);
+        }
+
+        // 分类过滤
+        if (currentCat !== 'all') {
+            modules = modules.filter(m => m.category === currentCat);
+        }
+
+        if (modules.length === 0) {
+            listEl.innerHTML = `
+                <div class="kb-empty">
+                    <div class="kb-empty-icon">🔍</div>
+                    <div class="kb-empty-text">没有找到匹配的模块</div>
+                </div>`;
+            return;
+        }
+
+        let html = '';
+
+        if (searchQuery) {
+            // 搜索模式：全部大卡片
+            html += '<div class="kb-section">';
+            modules.forEach(mod => { html += renderLargeCard(mod); });
+            html += '</div>';
+        } else if (currentCat !== 'all') {
+            // 单分类模式
+            const cat = KB_CATEGORIES.find(c => c.id === currentCat);
+            const active = modules.filter(m => m.status === 'active');
+            const coming = modules.filter(m => m.status === 'coming');
+
+            html += '<div class="kb-section">';
+            active.forEach(mod => { html += renderLargeCard(mod); });
+            html += '</div>';
+
+            if (coming.length) {
+                html += '<div class="kb-section">';
+                html += '<div class="kb-section-title">即将上线</div>';
+                html += '<div class="kb-grid">';
+                coming.forEach(mod => { html += renderSmallCard(mod); });
+                html += '</div></div>';
+            }
+        } else {
+            // 全部模式：按分类分组
+            KB_CATEGORIES.forEach(cat => {
+                const catModules = modules.filter(m => m.category === cat.id);
+                if (catModules.length === 0) return;
+
+                const active = catModules.filter(m => m.status === 'active');
+                const coming = catModules.filter(m => m.status === 'coming');
+
+                html += '<div class="kb-section">';
+                html += `<div class="kb-section-title">${cat.icon} ${cat.name}</div>`;
+
+                if (active.length === 1) {
+                    // 单模块用大卡片
+                    html += renderLargeCard(active[0]);
+                } else if (active.length >= 2) {
+                    // 多模块用大卡片 + 小卡片混合
+                    html += renderLargeCard(active[0]);
+                    if (active.length > 1) {
+                        html += '<div class="kb-grid">';
+                        for (let i = 1; i < active.length; i++) {
+                            html += renderSmallCard(active[i]);
+                        }
+                        html += '</div>';
+                    }
+                }
+
+                if (coming.length) {
+                    html += '<div class="kb-grid" style="margin-top:var(--sp-3)">';
+                    coming.forEach(mod => { html += renderSmallCard(mod); });
+                    html += '</div>';
+                }
+
+                html += '</div>';
+            });
+        }
+
+        listEl.innerHTML = html;
+    }
+
+    // ---- 搜索 ----
+    let searchTimer = null;
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimer);
+        searchQuery = this.value.trim();
+        searchClear.classList.toggle('visible', searchQuery.length > 0);
+        searchTimer = setTimeout(render, 200);
+    });
+
+    searchClear.addEventListener('click', function() {
+        searchInput.value = '';
+        searchQuery = '';
+        this.classList.remove('visible');
+        render();
+        searchInput.focus();
+    });
+
+    // ---- 启动 ----
+    initTabs();
+    render();
+
+})();
+</script>
 </body>
 </html>
