@@ -26,8 +26,269 @@
             font-size: 13px;
             color: var(--kb-text-sec);
         }
-        
-        /* 市场概览卡片 */
+
+        /* ---- Tab 导航 ---- */
+        .tab-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 11, 26, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--kb-border);
+            margin: 0 calc(-1 * var(--sp-4));
+            padding: 0 var(--sp-4);
+        }
+        .tab-bar {
+            display: flex;
+            gap: var(--sp-1);
+            padding: var(--sp-3) 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .tab-bar::-webkit-scrollbar { display: none; }
+        .tab-btn {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            border-radius: 22px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--kb-text-sec);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            min-height: 44px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .tab-btn:active { transform: scale(0.96); }
+        .tab-btn.active {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.15);
+        }
+        .tab-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 22px;
+            height: 20px;
+            padding: 0 6px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            background: rgba(255,255,255,0.08);
+            color: var(--kb-text-muted);
+        }
+        .tab-btn.active .tab-count {
+            background: rgba(52,152,219,0.25);
+            color: #3498db;
+        }
+
+        /* ---- 筛选栏 ---- */
+        .filter-bar {
+            display: flex;
+            gap: var(--sp-3);
+            padding: var(--sp-3) 0 var(--sp-2);
+            align-items: center;
+        }
+        .search-box {
+            flex: 1;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            border-radius: 12px;
+            border: 1px solid var(--kb-border);
+            background: rgba(255,255,255,0.04);
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+            min-height: 44px;
+            box-sizing: border-box;
+        }
+        .search-input::placeholder { color: var(--kb-text-muted); }
+        .search-input:focus {
+            border-color: rgba(52,152,219,0.5);
+            background: rgba(255,255,255,0.06);
+            box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+        }
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--kb-text-muted);
+            font-size: 14px;
+            pointer-events: none;
+        }
+        .search-clear {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: var(--kb-text-muted);
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            line-height: 1;
+        }
+        .search-clear.visible { display: flex; }
+
+        .year-filters {
+            display: flex;
+            gap: var(--sp-1);
+            flex-shrink: 0;
+        }
+        .year-btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--kb-text-sec);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            min-height: 44px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .year-btn:active { transform: scale(0.96); }
+        .year-btn.active {
+            color: #fff;
+            background: rgba(243,156,18,0.15);
+            border-color: rgba(243,156,18,0.3);
+        }
+
+        /* ---- 结果统计 ---- */
+        .result-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--sp-2) 0;
+            font-size: 12px;
+            color: var(--kb-text-muted);
+        }
+        .result-count span { color: var(--kb-text-sec); font-weight: 600; }
+        .sort-btn {
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.04);
+            color: var(--kb-text-sec);
+            border: none;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .sort-btn:active { transform: scale(0.96); }
+
+        /* ---- 报告列表 ---- */
+        .report-list {
+            padding-bottom: var(--sp-4);
+        }
+        .report-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: var(--kb-bg-card);
+            border: 1px solid var(--kb-border);
+            border-radius: var(--kb-radius-sm);
+            padding: var(--sp-4);
+            margin-bottom: var(--sp-2);
+            transition: all 0.2s ease;
+        }
+        .report-card:active { transform: scale(0.98); }
+        .report-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--sp-2);
+            gap: var(--sp-2);
+        }
+        .report-card-left { flex: 1; min-width: 0; }
+        .report-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .report-date {
+            font-size: 12px;
+            color: var(--kb-text-muted);
+            margin-top: 4px;
+        }
+        .report-badge {
+            flex-shrink: 0;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .report-badge.daily { background: rgba(231,76,60,0.15); color: #e74c3c; }
+        .report-badge.weekly { background: rgba(52,152,219,0.15); color: #3498db; }
+        .report-badge.monthly { background: rgba(155,89,182,0.15); color: #9b59b6; }
+        .report-summary {
+            font-size: 13px;
+            color: var(--kb-text-muted);
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .report-arrow {
+            position: absolute;
+            right: var(--sp-4);
+            bottom: var(--sp-4);
+            color: var(--kb-text-muted);
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        /* ---- 分组标题 ---- */
+        .group-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--kb-text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: var(--sp-4) 0 var(--sp-2);
+            border-bottom: 1px solid var(--kb-border);
+            margin-bottom: var(--sp-2);
+        }
+        .group-title:first-child { padding-top: 0; }
+
+        /* ---- 空状态 ---- */
+        .empty-state {
+            text-align: center;
+            padding: var(--sp-12) var(--sp-4);
+            color: var(--kb-text-muted);
+        }
+        .empty-state-icon { font-size: 48px; margin-bottom: var(--sp-3); opacity: 0.3; }
+        .empty-state-text { font-size: 14px; line-height: 1.6; }
+        .empty-state-hint { font-size: 12px; margin-top: var(--sp-2); opacity: 0.6; }
+
+        /* ---- 市场概览 ---- */
         .market-overview {
             background: var(--kb-bg-card);
             border: 1px solid var(--kb-border);
@@ -39,7 +300,6 @@
             font-size: 13px;
             font-weight: 600;
             color: var(--kb-text-muted);
-            text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: var(--sp-3);
         }
@@ -54,101 +314,47 @@
             border-radius: var(--kb-radius-xs);
             border: 1px solid rgba(255,255,255,0.04);
         }
-        .index-name {
-            font-size: 12px;
-            color: var(--kb-text-sec);
-            margin-bottom: 2px;
-        }
-        .index-value {
-            font-size: 18px;
-            font-weight: 700;
-            color: #fff;
-        }
-        .index-change {
-            font-size: 12px;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-        .index-change.up { color: #e74c3c; } /* 红涨 */
-        .index-change.down { color: #16a085; } /* 绿跌 */
+        .index-name { font-size: 12px; color: var(--kb-text-sec); margin-bottom: 2px; }
+        .index-value { font-size: 18px; font-weight: 700; color: #fff; }
+        .index-change { font-size: 12px; font-weight: 600; margin-top: 2px; }
+        .index-change.up { color: #e74c3c; }
+        .index-change.down { color: #16a085; }
         .index-change.flat { color: var(--kb-text-muted); }
-        
-        /* 报告列表 */
-        .report-section {
+
+        /* ---- 主题聚焦 ---- */
+        .theme-section {
+            background: var(--kb-bg-card);
+            border: 1px solid var(--kb-border);
+            border-radius: var(--kb-radius);
+            padding: var(--sp-4);
             margin: var(--sp-6) 0;
         }
-        .report-section-title {
+        .theme-title {
             font-size: 13px;
             font-weight: 700;
             color: var(--kb-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin-bottom: var(--sp-3);
-            padding-left: var(--sp-1);
         }
-        .report-card {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            background: var(--kb-bg-card);
-            border: 1px solid var(--kb-border);
-            border-radius: var(--kb-radius-sm);
-            padding: var(--sp-4);
-            margin-bottom: var(--sp-2);
-            transition: var(--kb-transition);
+        .theme-desc {
+            font-size: 13px;
+            color: var(--kb-text-sec);
+            line-height: 1.7;
         }
-        .report-card:active { transform: scale(0.98); }
-        .report-card-header {
+        .theme-tags {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--sp-2);
+            flex-wrap: wrap;
+            gap: var(--sp-2);
+            margin-top: var(--sp-3);
         }
-        .report-date {
-            font-size: 14px;
-            font-weight: 600;
-            color: #fff;
-        }
-        .report-badge {
-            padding: 2px 10px;
+        .theme-tag {
+            padding: 3px 10px;
             border-radius: 8px;
             font-size: 11px;
             font-weight: 600;
         }
-        .report-badge.daily { background: rgba(231,76,60,0.15); color: #e74c3c; }
-        .report-badge.weekly { background: rgba(52,152,219,0.15); color: #3498db; }
-        .report-badge.monthly { background: rgba(155,89,182,0.15); color: #9b59b6; }
-        .report-summary {
-            font-size: 13px;
-            color: var(--kb-text-muted);
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .report-highlights {
-            display: flex;
-            gap: var(--sp-3);
-            margin-top: var(--sp-2);
-            flex-wrap: wrap;
-        }
-        .report-highlight {
-            font-size: 12px;
-            color: var(--kb-text-sec);
-        }
-        .report-highlight strong { color: #fff; }
 
-        /* 空状态 */
-        .empty-reports {
-            text-align: center;
-            padding: var(--sp-10) var(--sp-4);
-            color: var(--kb-text-muted);
-        }
-        .empty-reports-icon { font-size: 48px; margin-bottom: var(--sp-3); opacity: 0.4; }
-        .empty-reports-text { font-size: 14px; line-height: 1.6; }
-        
-        /* 返回按钮 */
+        /* ---- 返回 ---- */
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -160,38 +366,36 @@
             transition: var(--kb-transition);
         }
         .back-link:active { color: #fff; }
-        
-        /* 动画 */
+
+        /* ---- 动画 ---- */
         @keyframes fade-up {
-            from { opacity: 0; transform: translateY(12px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate { opacity: 0; animation: fade-up 0.4s ease forwards; }
-        .animate:nth-child(1) { animation-delay: 0.05s; }
-        .animate:nth-child(2) { animation-delay: 0.1s; }
-        .animate:nth-child(3) { animation-delay: 0.15s; }
-        .animate:nth-child(4) { animation-delay: 0.2s; }
-        .animate:nth-child(5) { animation-delay: 0.25s; }
-        .animate:nth-child(6) { animation-delay: 0.3s; }
+        .animate { opacity: 0; animation: fade-up 0.3s ease forwards; }
+
+        /* ---- 响应式 ---- */
+        @media (min-width: 640px) {
+            .index-grid { grid-template-columns: repeat(4, 1fr); }
+        }
     </style>
 </head>
 <body>
 <div class="kb-app" id="app">
 
-    <a href="../index.html" class="back-link">← 返回知识库</a>
+    <a href="../index.html" class="back-link">&larr; 返回知识库</a>
 
     <!-- 模块头部 -->
     <header class="finance-header animate">
-        <div class="finance-icon">📈</div>
+        <div class="finance-icon">&#128200;</div>
         <h1 class="finance-title">财经观察</h1>
-        <p class="finance-subtitle">每周/每月，追踪市场脉搏</p>
+        <p class="finance-subtitle">每周 / 每月，追踪市场脉搏</p>
     </header>
 
     <!-- 市场概览 -->
     <div class="market-overview animate" id="marketOverview">
-        <div class="market-overview-title">📊 核心指数</div>
+        <div class="market-overview-title">&#128202; 核心指数</div>
         <div class="index-grid" id="indexGrid">
-            <!-- JS 动态渲染 -->
             <div class="index-item">
                 <div class="index-name">上证指数</div>
                 <div class="index-value">--</div>
@@ -215,45 +419,51 @@
         </div>
     </div>
 
-    <!-- 月报区域 -->
-    <div class="report-section" id="monthlySection">
-        <div class="report-section-title">📋 月度趋势分析</div>
-        <div id="monthlyList"></div>
+    <!-- Tab 导航（sticky） -->
+    <nav class="tab-nav" id="tabNav">
+        <div class="tab-bar" id="tabBar">
+            <!-- JS 渲染 -->
+        </div>
+        <div class="filter-bar">
+            <div class="search-box">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索报告..." autocomplete="off">
+                <button class="search-clear" id="searchClear">&times;</button>
+            </div>
+            <div class="year-filters" id="yearFilters">
+                <!-- JS 渲染 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 结果信息 -->
+    <div class="result-info" id="resultInfo">
+        <span class="result-count">共 <span id="countNum">0</span> 篇报告</span>
+        <button class="sort-btn" id="sortBtn">&#8595; 最新优先</button>
     </div>
 
-    <!-- 周报区域 -->
-    <div class="report-section" id="weeklySection">
-        <div class="report-section-title">📰 每周市场总结</div>
-        <div id="weeklyList"></div>
-    </div>
-
-    <!-- 日报区域 -->
-    <div class="report-section" id="dailySection">
-        <div class="report-section-title">🔥 每日信息简报</div>
-        <div id="dailyList"></div>
-    </div>
+    <!-- 报告列表 -->
+    <div class="report-list" id="reportList"></div>
 
     <!-- 主题聚焦 -->
-    <div class="report-section">
-        <div class="report-section-title">🎯 主题聚焦 · 半导体国产替代</div>
-        <div class="market-overview animate" style="margin-top:0">
-            <p style="font-size:13px;color:var(--kb-text-sec);line-height:1.7">
-                聚焦半导体产业链国产化进程：从设计（EDA/IP）、制造（晶圆代工）、封测到设备材料，
-                追踪关键技术突破与政策动向。核心标的覆盖科创板与主板半导体板块。
-            </p>
-            <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-top:var(--sp-3)">
-                <span style="padding:3px 10px;border-radius:8px;font-size:11px;background:rgba(231,76,60,0.12);color:#e74c3c">EDA/IP</span>
-                <span style="padding:3px 10px;border-radius:8px;font-size:11px;background:rgba(52,152,219,0.12);color:#3498db">晶圆代工</span>
-                <span style="padding:3px 10px;border-radius:8px;font-size:11px;background:rgba(155,89,182,0.12);color:#9b59b6">封装测试</span>
-                <span style="padding:3px 10px;border-radius:8px;font-size:11px;background:rgba(26,188,156,0.12);color:#1abc9c">设备材料</span>
-                <span style="padding:3px 10px;border-radius:8px;font-size:11px;background:rgba(243,156,18,0.12);color:#f39c12">功率半导体</span>
-            </div>
+    <div class="theme-section">
+        <div class="theme-title">&#127919; 主题聚焦 &middot; 半导体国产替代</div>
+        <p class="theme-desc">
+            聚焦半导体产业链国产化进程：从设计（EDA/IP）、制造（晶圆代工）、封测到设备材料，
+            追踪关键技术突破与政策动向。核心标的覆盖科创板与主板半导体板块。
+        </p>
+        <div class="theme-tags">
+            <span class="theme-tag" style="background:rgba(231,76,60,0.12);color:#e74c3c">EDA/IP</span>
+            <span class="theme-tag" style="background:rgba(52,152,219,0.12);color:#3498db">晶圆代工</span>
+            <span class="theme-tag" style="background:rgba(155,89,182,0.12);color:#9b59b6">封装测试</span>
+            <span class="theme-tag" style="background:rgba(26,188,156,0.12);color:#1abc9c">设备材料</span>
+            <span class="theme-tag" style="background:rgba(243,156,18,0.12);color:#f39c12">功率半导体</span>
         </div>
     </div>
 
     <footer class="kb-footer" style="margin-top:var(--sp-8)">
-        飞飞的知识库 · 财经观察<br>
-        <a href="../index.html">← 返回知识库</a>
+        飞飞的知识库 &middot; 财经观察<br>
+        <a href="../index.html">&larr; 返回知识库</a>
     </footer>
 </div>
 
@@ -261,75 +471,264 @@
 (function() {
     'use strict';
 
-    // 报告数据（由自动化脚本维护，新报告追加到数组头部）
+    // ============ 报告数据 ============
     const REPORTS = [
         // ---- 月报 ----
-        { date: '2026年05月', type: 'monthly', title: '2026年5月 月度投资报告', summary: '科创50月涨+11.47%领涨全球，DeepSeek 500亿估值创纪录，月末科技股巨震', path: 'monthly/2026-05.html' },
-        { date: '2026年04月', type: 'monthly', title: '2026年4月投资参考报告', summary: 'A股四月强势反弹，沪指站上4100点，科创50单月涨超10%', path: 'monthly/2026-04.html' },
-        { date: '2026年03月', type: 'monthly', title: '2026年3月投资参考报告', summary: '两会行情引领反弹，政策预期升温', path: 'monthly/2026-03.html' },
-        { date: '2026年02月', type: 'monthly', title: '2026年2月投资月报', summary: '春节后市场回暖，AI概念持续活跃', path: 'monthly/2026-02.html' },
-        { date: '2026年01月', type: 'monthly', title: '2026年1月月度投资参考报告', summary: '年初调整，DeepSeek引爆AI主题', path: 'monthly/2026-01.html' },
-        { date: '2025年12月', type: 'monthly', title: '2025年12月月度投资参考报告', summary: '年末收官，创业板全年涨近50%领涨全球', path: 'monthly/2025-12.html' },
-        { date: '2025年11月', type: 'monthly', title: '2025年11月月度投资报告', summary: '', path: 'monthly/2025-11.html' },
-        { date: '2025年10月', type: 'monthly', title: '2025年10月月度投资参考报告', summary: '', path: 'monthly/2025-10.html' },
-        { date: '2025年09月', type: 'monthly', title: '2025年9月月度投资参考报告', summary: '数据截至2025年9月30日', path: 'monthly/2025-09.html' },
-        { date: '2025年08月', type: 'monthly', title: '2025年8月月度投资参考报告', summary: '报告期间：2025年8月1日 - 8月31日', path: 'monthly/2025-08.html' },
-        { date: '2025年07月', type: 'monthly', title: '2025年7月月度投资参考报告', summary: '东方财富、新浪财经数据', path: 'monthly/2025-07.html' },
-        { date: '2025年06月', type: 'monthly', title: '2025年6月月度投资参考报告', summary: '', path: 'monthly/2025-06.html' },
-        { date: '2025年05月', type: 'monthly', title: '2025年5月月度投资参考报告', summary: '', path: 'monthly/2025-05.html' },
-        { date: '2025年04月', type: 'monthly', title: '2025年4月月度投资参考报告', summary: '报告期间：2025年4月1日 - 4月30日', path: 'monthly/2025-04.html' },
-        { date: '2025年03月', type: 'monthly', title: '2025年3月月度投资参考报告', summary: '报告日期：2025年3月31日', path: 'monthly/2025-03.html' },
-        { date: '2025年02月', type: 'monthly', title: '2025年2月月度投资参考报告', summary: '', path: 'monthly/2025-02.html' },
-        { date: '2025年01月', type: 'monthly', title: '2025年1月月度投资参考报告', summary: '', path: 'monthly/2025-01.html' },
+        { date: '2026-05', year: 2026, type: 'monthly', title: '2026年5月 月度投资报告', summary: '科创50月涨+11.47%领涨全球，DeepSeek 500亿估值创纪录，月末科技股巨震', path: 'monthly/2026-05.html' },
+        { date: '2026-04', year: 2026, type: 'monthly', title: '2026年4月投资参考报告', summary: 'A股四月强势反弹，沪指站上4100点，科创50单月涨超10%', path: 'monthly/2026-04.html' },
+        { date: '2026-03', year: 2026, type: 'monthly', title: '2026年3月投资参考报告', summary: '两会行情引领反弹，政策预期升温', path: 'monthly/2026-03.html' },
+        { date: '2026-02', year: 2026, type: 'monthly', title: '2026年2月投资月报', summary: '春节后市场回暖，AI概念持续活跃', path: 'monthly/2026-02.html' },
+        { date: '2026-01', year: 2026, type: 'monthly', title: '2026年1月月度投资参考报告', summary: '年初调整，DeepSeek引爆AI主题', path: 'monthly/2026-01.html' },
+        { date: '2025-12', year: 2025, type: 'monthly', title: '2025年12月月度投资参考报告', summary: '年末收官，创业板全年涨近50%领涨全球', path: 'monthly/2025-12.html' },
+        { date: '2025-11', year: 2025, type: 'monthly', title: '2025年11月月度投资报告', summary: '', path: 'monthly/2025-11.html' },
+        { date: '2025-10', year: 2025, type: 'monthly', title: '2025年10月月度投资参考报告', summary: '', path: 'monthly/2025-10.html' },
+        { date: '2025-09', year: 2025, type: 'monthly', title: '2025年9月月度投资参考报告', summary: '数据截至2025年9月30日', path: 'monthly/2025-09.html' },
+        { date: '2025-08', year: 2025, type: 'monthly', title: '2025年8月月度投资参考报告', summary: '报告期间：2025年8月1日 - 8月31日', path: 'monthly/2025-08.html' },
+        { date: '2025-07', year: 2025, type: 'monthly', title: '2025年7月月度投资参考报告', summary: '东方财富、新浪财经数据', path: 'monthly/2025-07.html' },
+        { date: '2025-06', year: 2025, type: 'monthly', title: '2025年6月月度投资参考报告', summary: '', path: 'monthly/2025-06.html' },
+        { date: '2025-05', year: 2025, type: 'monthly', title: '2025年5月月度投资参考报告', summary: '', path: 'monthly/2025-05.html' },
+        { date: '2025-04', year: 2025, type: 'monthly', title: '2025年4月月度投资参考报告', summary: '报告期间：2025年4月1日 - 4月30日', path: 'monthly/2025-04.html' },
+        { date: '2025-03', year: 2025, type: 'monthly', title: '2025年3月月度投资参考报告', summary: '报告日期：2025年3月31日', path: 'monthly/2025-03.html' },
+        { date: '2025-02', year: 2025, type: 'monthly', title: '2025年2月月度投资参考报告', summary: '', path: 'monthly/2025-02.html' },
+        { date: '2025-01', year: 2025, type: 'monthly', title: '2025年1月月度投资参考报告', summary: '', path: 'monthly/2025-01.html' },
         // ---- 周报 ----
-        { date: '2026-W22', type: 'weekly', title: '每周信息总结与投资参考（2026-W22）', summary: '5/26-5/29：A股冲高回落，科创50从高位回落-2.20%，创业板逆势+2.53%', path: 'weekly/2026-W22.html' },
-        { date: '2026-W21', type: 'weekly', title: '每周信息总结与投资参考（2026-W21）', summary: '5/19-5/22：英伟达财报+SpaceX IPO，美股续创新高', path: 'weekly/2026-W21.html' },
-        { date: '2026-W20', type: 'weekly', title: '投资信息周报｜2026-W20', summary: '5/11-5/15：节后首周调整，美伊局势缓和', path: 'weekly/2026-W20.html' },
+        { date: '2026-W22', year: 2026, type: 'weekly', title: '每周信息总结与投资参考（2026-W22）', summary: '5/26-5/29：A股冲高回落，科创50从高位回落-2.20%，创业板逆势+2.53%', path: 'weekly/2026-W22.html' },
+        { date: '2026-W21', year: 2026, type: 'weekly', title: '每周信息总结与投资参考（2026-W21）', summary: '5/19-5/22：英伟达财报+SpaceX IPO，美股续创新高', path: 'weekly/2026-W21.html' },
+        { date: '2026-W20', year: 2026, type: 'weekly', title: '投资信息周报 | 2026-W20', summary: '5/11-5/15：节后首周调整，美伊局势缓和', path: 'weekly/2026-W20.html' },
         // ---- 日报 ----
-        { date: '2026-05-24', type: 'daily', title: '每日信息总结（晚）', summary: '科创50月涨11.47%，SpaceX IPO创纪录', path: 'daily/2026-05-24-evening.html' },
-        { date: '2026-05-24', type: 'daily', title: '每日信息总结', summary: '科创50创历史新高1901点后急转直下', path: 'daily/2026-05-24.html' },
-        { date: '2026-05-23', type: 'daily', title: '每日信息总结', summary: '全球AI技术大会召开，半导体板块走强', path: 'daily/2026-05-23.html' },
-        { date: '2026-05-16', type: 'daily', title: '每日信息总结', summary: '华为提出"τ定律"，预测2031年芯片1.4nm', path: 'daily/2026-05-16.html' },
-        { date: '2026-05-07', type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-05-07.html' },
-        { date: '2026-05-04', type: 'daily', title: '每日信息总结', summary: '五一假期：苹果财报超预期，巴菲特股东大会', path: 'daily/2026-05-04.html' },
-        { date: '2026-05-02', type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-05-02.html' },
-        { date: '2026-04-13', type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-04-13.html' }
+        { date: '2026-05-24晚', year: 2026, type: 'daily', title: '每日信息总结（晚）', summary: '科创50月涨11.47%，SpaceX IPO创纪录', path: 'daily/2026-05-24-evening.html' },
+        { date: '2026-05-24', year: 2026, type: 'daily', title: '每日信息总结', summary: '科创50创历史新高1901点后急转直下', path: 'daily/2026-05-24.html' },
+        { date: '2026-05-23', year: 2026, type: 'daily', title: '每日信息总结', summary: '全球AI技术大会召开，半导体板块走强', path: 'daily/2026-05-23.html' },
+        { date: '2026-05-16', year: 2026, type: 'daily', title: '每日信息总结', summary: '华为提出\u201c\u03c4定律\u201d，预测2031年芯片1.4nm', path: 'daily/2026-05-16.html' },
+        { date: '2026-05-07', year: 2026, type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-05-07.html' },
+        { date: '2026-05-04', year: 2026, type: 'daily', title: '每日信息总结', summary: '五一假期：苹果财报超预期，巴菲特股东大会', path: 'daily/2026-05-04.html' },
+        { date: '2026-05-02', year: 2026, type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-05-02.html' },
+        { date: '2026-04-13', year: 2026, type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-04-13.html' }
     ];
 
-    // ---- 渲染指数概览 ----
-    // 实际数据通过 neodata-financial-search / westock-data 获取
-    // 这里预留接口，后续自动化任务注入实时数据
+    // ============ 状态 ============
+    let currentTab = 'all';
+    let currentYear = 0;   // 0 = 全部年份
+    let searchQuery = '';
+    let sortAsc = false;   // false = 最新优先（默认）
 
-    // ---- 渲染报告列表 ----
-    function renderReports(type, containerId) {
-        const container = document.getElementById(containerId);
-        const filtered = REPORTS.filter(r => r.type === type);
-        
-        if (filtered.length === 0) return; // 保留空状态占位
+    // ============ Tab 定义 ============
+    const TABS = [
+        { key: 'all',     label: '全部' },
+        { key: 'monthly', label: '月报' },
+        { key: 'weekly',  label: '周报' },
+        { key: 'daily',   label: '日报' }
+    ];
 
-        container.innerHTML = filtered.map(r => `
-            <a class="report-card animate" href="${r.path || '#'}">
-                <div class="report-card-header">
-                    <span class="report-date">${r.date}</span>
-                    <span class="report-badge ${r.type}">${
-                        r.type === 'daily' ? '日报' : 
-                        r.type === 'weekly' ? '周报' : '月报'
-                    }</span>
-                </div>
-                <div class="report-summary">${r.summary}</div>
-                ${r.highlights ? `
-                <div class="report-highlights">
-                    ${r.highlights.map(h => `<span class="report-highlight">${h}</span>`).join('')}
-                </div>` : ''}
-            </a>
-        `).join('');
+    const TYPE_LABELS = { monthly: '月报', weekly: '周报', daily: '日报' };
+
+    // ============ 初始化 ============
+    function init() {
+        renderTabs();
+        renderYearFilters();
+        bindEvents();
+        update();
     }
 
-    // ---- 初始化 ----
-    renderReports('monthly', 'monthlyList');
-    renderReports('weekly', 'weeklyList');
-    renderReports('daily', 'dailyList');
+    // ============ 渲染 Tab ============
+    function renderTabs() {
+        const bar = document.getElementById('tabBar');
+        bar.innerHTML = TABS.map(t => {
+            const count = t.key === 'all'
+                ? REPORTS.length
+                : REPORTS.filter(r => r.type === t.key).length;
+            const active = currentTab === t.key ? ' active' : '';
+            return '<button class="tab-btn' + active + '" data-tab="' + t.key + '">'
+                + t.label
+                + '<span class="tab-count">' + count + '</span>'
+                + '</button>';
+        }).join('');
+    }
 
+    // ============ 渲染年份 ============
+    function renderYearFilters() {
+        const container = document.getElementById('yearFilters');
+        const years = [...new Set(REPORTS.map(r => r.year))].sort((a, b) => b - a);
+        let html = '<button class="year-btn' + (currentYear === 0 ? ' active' : '') + '" data-year="0">全部</button>';
+        years.forEach(y => {
+            html += '<button class="year-btn' + (currentYear === y ? ' active' : '') + '" data-year="' + y + '">' + y + '</button>';
+        });
+        container.innerHTML = html;
+    }
+
+    // ============ 绑定事件 ============
+    function bindEvents() {
+        // Tab 点击
+        document.getElementById('tabBar').addEventListener('click', function(e) {
+            const btn = e.target.closest('.tab-btn');
+            if (!btn) return;
+            currentTab = btn.dataset.tab;
+            renderTabs();
+            update();
+        });
+
+        // 年份点击
+        document.getElementById('yearFilters').addEventListener('click', function(e) {
+            const btn = e.target.closest('.year-btn');
+            if (!btn) return;
+            currentYear = parseInt(btn.dataset.year);
+            renderYearFilters();
+            update();
+        });
+
+        // 搜索
+        const input = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('searchClear');
+        let debounceTimer;
+
+        input.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            const val = this.value;
+            clearBtn.classList.toggle('visible', val.length > 0);
+            debounceTimer = setTimeout(function() {
+                searchQuery = val.trim().toLowerCase();
+                update();
+            }, 200);
+        });
+
+        clearBtn.addEventListener('click', function() {
+            input.value = '';
+            searchQuery = '';
+            clearBtn.classList.remove('visible');
+            input.focus();
+            update();
+        });
+
+        // 排序切换
+        document.getElementById('sortBtn').addEventListener('click', function() {
+            sortAsc = !sortAsc;
+            this.innerHTML = sortAsc ? '&#8593; 最早优先' : '&#8595; 最新优先';
+            update();
+        });
+
+        // 键盘快捷键
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + K 聚焦搜索
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                input.focus();
+                input.select();
+            }
+            // Esc 清空搜索
+            if (e.key === 'Escape' && document.activeElement === input) {
+                input.value = '';
+                searchQuery = '';
+                clearBtn.classList.remove('visible');
+                input.blur();
+                update();
+            }
+        });
+    }
+
+    // ============ 筛选 + 排序 ============
+    function getFiltered() {
+        let list = REPORTS.slice();
+
+        // Tab 筛选
+        if (currentTab !== 'all') {
+            list = list.filter(r => r.type === currentTab);
+        }
+
+        // 年份筛选
+        if (currentYear !== 0) {
+            list = list.filter(r => r.year === currentYear);
+        }
+
+        // 搜索
+        if (searchQuery) {
+            list = list.filter(r =>
+                r.title.toLowerCase().includes(searchQuery) ||
+                r.summary.toLowerCase().includes(searchQuery) ||
+                r.date.toLowerCase().includes(searchQuery)
+            );
+        }
+
+        // 排序（按 date 字段自然排序）
+        list.sort((a, b) => {
+            const cmp = a.date > b.date ? 1 : a.date < b.date ? -1 : 0;
+            return sortAsc ? cmp : -cmp;
+        });
+
+        return list;
+    }
+
+    // ============ 渲染报告列表 ============
+    function update() {
+        const filtered = getFiltered();
+        const container = document.getElementById('reportList');
+        const countEl = document.getElementById('countNum');
+
+        countEl.textContent = filtered.length;
+
+        if (filtered.length === 0) {
+            container.innerHTML = '<div class="empty-state">'
+                + '<div class="empty-state-icon">&#128221;</div>'
+                + '<div class="empty-state-text">没有找到匹配的报告</div>'
+                + '<div class="empty-state-hint">试试切换 Tab 或更换关键词</div>'
+                + '</div>';
+            return;
+        }
+
+        // 按类型分组显示（仅在"全部"Tab下分组）
+        if (currentTab === 'all') {
+            container.innerHTML = renderGrouped(filtered);
+        } else {
+            container.innerHTML = renderCards(filtered);
+        }
+    }
+
+    function renderGrouped(list) {
+        const groups = [
+            { type: 'monthly', label: '月度趋势分析' },
+            { type: 'weekly',  label: '每周市场总结' },
+            { type: 'daily',   label: '每日信息简报' }
+        ];
+        let html = '';
+        groups.forEach(g => {
+            const items = list.filter(r => r.type === g.type);
+            if (items.length === 0) return;
+            html += '<div class="group-title">' + g.label + ' (' + items.length + ')</div>';
+            html += renderCards(items);
+        });
+        return html;
+    }
+
+    function renderCards(items) {
+        return items.map(function(r, i) {
+            const delay = Math.min(i * 0.03, 0.3);
+            return '<a class="report-card animate" href="' + r.path + '" style="animation-delay:' + delay + 's">'
+                + '<div class="report-card-header">'
+                + '<div class="report-card-left">'
+                + '<div class="report-title">' + r.title + '</div>'
+                + '<div class="report-date">' + formatDate(r) + '</div>'
+                + '</div>'
+                + '<span class="report-badge ' + r.type + '">' + TYPE_LABELS[r.type] + '</span>'
+                + '</div>'
+                + (r.summary ? '<div class="report-summary">' + r.summary + '</div>' : '')
+                + '</a>';
+        }).join('');
+    }
+
+    function formatDate(r) {
+        if (r.type === 'monthly') {
+            // 2026-05 → 2026年05月
+            return r.date.replace('-', '年') + '月';
+        }
+        if (r.type === 'weekly') {
+            // 2026-W22 → 2026年第22周
+            return r.date.replace('W', '年第') + '周';
+        }
+        // daily: 直接显示
+        return r.date;
+    }
+
+    // 启动
+    init();
 })();
 </script>
 </body>
