@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="520" height="140">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1505"/>
+      <stop offset="50%" style="stop-color:#2d2010"/>
+      <stop offset="100%" style="stop-color:#1a0f05"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c9a227;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#d4af37;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#f0c040;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="140" fill="url(#bg)"/>
+  <!-- 山脉剪影 -->
+  <path d="M0,140 L0,95 L40,80 L80,90 L120,70 L160,85 L200,55 L240,75 L280,60 L320,80 L360,50 L400,70 L440,55 L480,75 L520,65 L520,140 Z" fill="rgba(201,162,39,0.06)"/>
+  <path d="M0,140 L0,105 L60,95 L120,100 L180,85 L240,95 L300,80 L360,90 L420,75 L480,90 L520,85 L520,140 Z" fill="rgba(201,162,39,0.04)"/>
+  <!-- 月亮 -->
+  <circle cx="420" cy="40" r="22" fill="rgba(201,162,39,0.15)"/>
+  <circle cx="428" cy="36" r="20" fill="url(#bg)"/>
+  <!-- 云纹 -->
+  <path d="M80,45 Q95,30 110,45 Q125,30 140,45" stroke="rgba(201,162,39,0.1)" stroke-width="1.5" fill="none"/>
+  <path d="M300,55 Q315,40 330,55 Q345,40 360,55" stroke="rgba(201,162,39,0.08)" stroke-width="1.5" fill="none"/>
+  <!-- 城墙剪影 -->
+  <rect x="180" y="95" width="16" height="45" fill="rgba(201,162,39,0.08)" rx="1"/>
+  <rect x="210" y="85" width="16" height="55" fill="rgba(201,162,39,0.1)" rx="1"/>
+  <rect x="240" y="90" width="20" height="50" fill="rgba(201,162,39,0.12)" rx="1"/>
+  <rect x="270" y="85" width="16" height="55" fill="rgba(201,162,39,0.1)" rx="1"/>
+  <rect x="300" y="95" width="16" height="45" fill="rgba(201,162,39,0.08)" rx="1"/>
+  <!-- 城门 -->
+  <path d="M248,140 L248,110 Q250,100 252,110 L252,140" fill="rgba(201,162,39,0.15)"/>
+  <!-- 装饰线条 -->
+  <line x1="0" y1="137" x2="520" y2="137" stroke="rgba(201,162,39,0.1)" stroke-width="0.5"/>
+  <!-- 星星 -->
+  <circle cx="60" cy="30" r="1.2" fill="rgba(201,162,39,0.3)"/>
+  <circle cx="150" cy="20" r="1" fill="rgba(201,162,39,0.25)"/>
+  <circle cx="350" cy="25" r="1.5" fill="rgba(201,162,39,0.2)"/>
+  <circle cx="480" cy="55" r="1" fill="rgba(201,162,39,0.2)"/>
+  <circle cx="450" cy="25" r="0.8" fill="rgba(201,162,39,0.15)"/>
+</svg>
