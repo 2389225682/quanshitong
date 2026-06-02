@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="520" height="140">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="50%" style="stop-color:#0d1f3c"/>
+      <stop offset="100%" style="stop-color:#0a1225"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="140" fill="url(#bg)"/>
+  <!-- 世界地图轮廓简化 -->
+  <ellipse cx="260" cy="70" rx="180" ry="50" fill="none" stroke="rgba(52,152,219,0.08)" stroke-width="1"/>
+  <ellipse cx="260" cy="70" rx="140" ry="40" fill="none" stroke="rgba(52,152,219,0.06)" stroke-width="0.5"/>
+  <!-- 大陆块 - 简化 -->
+  <path d="M120,55 Q140,45 165,50 Q180,42 200,48 Q220,40 240,52 Q260,45 280,50 Q300,42 320,48 Q340,52 360,55 L360,80 Q340,72 320,78 Q300,70 280,75 Q260,68 240,78 Q220,72 200,80 Q180,72 165,78 Q140,72 120,75 Z" fill="rgba(52,152,219,0.06)" stroke="rgba(52,152,219,0.12)" stroke-width="0.5"/>
+  <!-- 东西轴线 -->
+  <line x1="80" y1="70" x2="440" y2="70" stroke="rgba(52,152,219,0.15)" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="445" y="74" font-size="8" fill="rgba(52,152,219,0.3)" font-family="sans-serif">E-W</text>
+  <!-- 南北轴线 -->
+  <line x1="260" y1="20" x2="260" y2="120" stroke="rgba(26,188,156,0.12)" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="264" y="18" font-size="8" fill="rgba(26,188,156,0.3)" font-family="sans-serif">N-S</text>
+  <!-- 箭头标记 -->
+  <path d="M160,95 L190,88" stroke="rgba(231,76,60,0.3)" stroke-width="1.5" marker-end="none"/>
+  <polygon points="190,88 185,86 188,92" fill="rgba(231,76,60,0.3)"/>
+  <text x="148" y="105" font-size="8" fill="rgba(231,76,60,0.4)" font-family="sans-serif">征服</text>
+  <!-- 钻石标记 -->
+  <circle cx="180" cy="60" r="3" fill="rgba(52,152,219,0.3)"/>
+  <circle cx="220" cy="55" r="2" fill="rgba(52,152,219,0.2)"/>
+  <circle cx="300" cy="58" r="2.5" fill="rgba(52,152,219,0.25)"/>
+  <circle cx="340" cy="62" r="2" fill="rgba(52,152,219,0.2)"/>
+  <!-- 麦穗 -->
+  <path d="M80,110 Q85,100 90,110" stroke="rgba(243,156,18,0.2)" stroke-width="1" fill="none"/>
+  <path d="M85,108 Q90,98 95,108" stroke="rgba(243,156,18,0.15)" stroke-width="1" fill="none"/>
+  <path d="M430,112 Q435,102 440,112" stroke="rgba(243,156,18,0.2)" stroke-width="1" fill="none"/>
+  <path d="M435,110 Q440,100 445,110" stroke="rgba(243,156,18,0.15)" stroke-width="1" fill="none"/>
+  <!-- 底部装饰线 -->
+  <line x1="0" y1="137" x2="520" y2="137" stroke="rgba(52,152,219,0.08)" stroke-width="0.5"/>
+</svg>
