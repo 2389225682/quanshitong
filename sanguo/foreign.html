@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>三国对外关系 - 全史通 | 从零开始，读懂中国千年</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root { --primary: #2d4a1e; --secondary: #8B4513; --accent: #c9a227; }
+        .nav { background: linear-gradient(135deg, #2d4a1e 0%, #8B4513 100%); }
+        .section::before { background: linear-gradient(180deg, #c9a227, #2d4a1e); }
+        .section h3 { border-left-color: #c9a227; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .story-card {
+            background: rgba(45, 74, 30, 0.06);
+            border: 1px solid rgba(201, 162, 39, 0.15);
+            border-radius: 14px;
+            padding: 28px;
+            margin: 25px 0;
+        }
+        .story-card h4 {
+            color: var(--accent);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1em;
+            margin: 18px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+        }
+        .story-card p { color: var(--text-gray); line-height: 1.9; margin-bottom: 12px; text-align: justify; }
+        .story-card ul { margin: 10px 0 10px 20px; }
+        .story-card ul li { color: var(--text-gray); margin-bottom: 8px; line-height: 1.7; }
+        .person-tag {
+            display: inline-block;
+            background: rgba(139, 69, 19, 0.2);
+            color: #d4a76a;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            border: 1px solid rgba(139, 69, 19, 0.3);
+        }
+        .highlight-box {
+            background: rgba(201, 162, 39, 0.06);
+            border-left: 3px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p { font-style: italic; margin: 0; color: var(--text-gray); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="nav">
+        <a href="index.html" class="logo">⚔️ 三国</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div>
+            <a href="index.html">三国首页</a>
+            <a href="institution.html">国家机构</a>
+            <a href="military.html">军政制度</a>
+            <a href="tax.html">税收政策</a>
+            <a href="law.html">法律制度</a>
+            <a href="life.html">百姓生活</a>
+            <a href="foreign.html" class="active">对外关系</a>
+            <a href="events.html">历史大事</a>
+            <a href="figures.html">关键人物</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header fade-in">
+            <div class="breadcrumb">
+                <a href="../index.html">网站首页</a> > <a href="index.html">三国</a> > 对外关系
+            </div>
+            <h1>🌐 三国对外关系</h1>
+            <p style="color: var(--text-muted); font-style: italic;">魏与乌桓鲜卑、蜀与南中、吴与山越——三国不只是三个国家之间的故事，北方的游牧民族、西南的少数民族、海外的岛屿也在改写历史</p>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📌 核心概念：三国不只是三个国家的事</h2>
+            <div class="definition-box">
+                <h4>📝 一句话解释</h4>
+                <p>三国时期，除了魏蜀吴三国之间的博弈，各国还面临着复杂的<span class="term">民族关系</span>。北方的<span class="term">乌桓</span>、<span class="term">鲜卑</span>，西南的<span class="term">南中诸族</span>，南方的<span class="term">山越</span>，都是三国必须面对的重要力量。三国的对外关系，在很大程度上决定了它们各自的命运。</p>
+            </div>
+
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">乌桓</div>
+                    <div class="label">被曹操一举消灭</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">鲜卑</div>
+                    <div class="label">分而治之</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">南中</div>
+                    <div class="label">攻心为上</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">山越</div>
+                    <div class="label">武力征服+同化</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🐎 一、曹魏与北方民族</h2>
+
+            <h3>1.1 曹操征乌桓（207年）</h3>
+            <p><span class="term">乌桓</span>是生活在今辽宁、河北一带的游牧民族，属于东胡系统。东汉末年，乌桓趁机南下，骚扰边境，还收留了袁绍的儿子袁尚、袁熙。曹操如果不解决乌桓，向北无法安定，向南远征又会腹背受敌。</p>
+
+            <div class="example-box">
+                <h4>💡 白狼山之战——一场"赌命"的远征</h4>
+                <p><strong>时间</strong>：207年（建安十二年）</p>
+                <p><strong>起因</strong>：袁尚、袁熙逃到乌桓，曹操决定彻底解决北方威胁。</p>
+                <p><strong>经过</strong>：曹操采纳郭嘉的"轻装奇袭"策略，留下辎重，率精锐骑兵昼夜兼程。在白狼山（今辽宁喀左）与乌桓主力遭遇。当时曹军人数不占优势，而且远道而来，将士疲惫。大部分将领主张暂缓进攻、扎营固守。但张辽认为乌桓军阵形不整，主动请战。曹操被张辽的勇气感染，将自己的指挥旗交给了张辽，由他发起冲锋。张辽率骑兵一马当先，直接冲入乌桓军中，斩杀了乌桓单于蹋顿。</p>
+                <p><strong>结果</strong>：乌桓军群龙无首，瞬间崩溃。曹操俘虏了二十余万乌桓人，将其中精锐骑兵编入自己的军队——这就是曹魏"虎豹骑"的重要兵源之一。乌桓从此一蹶不振。</p>
+            </div>
+
+            <div class="quote-block">
+                <p>东临碣石，以观沧海。水何澹澹，山岛竦峙。树木丛生，百草丰茂。秋风萧瑟，洪波涌起。</p>
+                <span class="source">——曹操《观沧海》，写于征乌桓凯旋途中</span>
+            </div>
+
+            <div class="story-card">
+                <h4>📋 "从敌人到战友"——乌桓骑兵的转化</h4>
+                <p>白狼山之战后，曹操做了一件很有远见的事：他没有屠杀乌桓人，而是将投降的乌桓骑兵整编为曹魏的"乌桓突骑"。这些乌桓骑兵成了曹魏精锐部队的重要组成部分。曹丕登基时，乌桓骑兵身穿鲜亮的铠甲、手擎绘有猛兽的旗帜，排列在洛阳城外，各国使者看到后惊叹不已。</p>
+                <p>但这也埋下了一个隐患：大量的乌桓人、匈奴人内迁到中原，与汉族杂居。到了西晋时期，这些内迁的少数民族人口已经相当庞大，最终成为了"五胡乱华"的主要力量。</p>
+            </div>
+
+            <h3>1.2 曹魏与鲜卑</h3>
+            <p><span class="term">鲜卑</span>是比乌桓更强大的北方游牧民族，也源于东胡。乌桓被灭后，鲜卑逐渐壮大，占据了广阔的北方草原。曹魏采取了<span class="term">"分而治之"</span>的策略：承认鲜卑各部首领称号，让他们互相牵制；同时设置<span class="term">护鲜卑校尉</span>进行监管。</p>
+
+            <div class="example-box">
+                <h4>💡 鲜卑的三大部落</h4>
+                <p>三国时期，鲜卑主要分为三大部落：</p>
+                <ul>
+                    <li><strong>轲比能集团</strong>：分布在云中、代郡一带（今内蒙古中部），是鲜卑中最强大的一支。轲比能骁勇善战，多次侵扰曹魏边境。</li>
+                    <li><strong>步度根集团</strong>：分布在雁门、太原以北（今山西北部），势力稍弱，倾向与曹魏和好。</li>
+                    <li><strong>素利、弥加集团</strong>：分布在辽东和辽西（今辽宁一带），相对独立。</li>
+                </ul>
+                <p>曹魏的策略是拉拢步度根对抗轲比能，让他们自相残杀。235年，曹魏甚至派刺客刺杀了轲比能。这种"以胡制胡"的策略在短期内有效，但无法从根本上解决游牧民族的威胁。</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ 远期隐患——"五胡乱华"的伏笔</h4>
+                <p>曹魏虽然暂时稳住了北方，但做了一件后来被证明是"引狼入室"的事：他们将大量归附的匈奴、鲜卑等族人口内迁到中原地区居住。到西晋时，关中地区的人口中有将近一半是少数民族。一旦中原内乱，这些"内应"就会成为颠覆性的力量。果然，八王之乱后，匈奴人刘渊一声号召，北方就陷入了"五胡乱华"的深渊。</p>
+            </div>
+
+            <h3>1.3 曹魏与西域</h3>
+            <p>东汉后期，中原对西域的控制力大大减弱。曹魏建立后，重新恢复了与西域的联系。曹丕任命了<span class="term">戊己校尉</span>管理西域事务，西域的焉耆、于阗、龟兹等国又纷纷来朝贡。不过，曹魏对西域的控制远比汉朝弱——一个更强大的力量正在草原上崛起，那就是鲜卑。</p>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🏔️ 二、蜀汉与南中</h2>
+
+            <h3>2.1 南中在哪里？</h3>
+            <p><span class="term">南中</span>是蜀汉南方的广大地区，大致包括今天的云南、贵州和四川西南部。这里生活着许多少数民族——叟人、昆明人、僰人、濮人等，统称为"西南夷"。南中是蜀汉的战略后方，提供兵源、物资和战略纵深。</p>
+
+            <div class="story-card">
+                <h4>🗺️ 南中的价值有多大？</h4>
+                <p>蜀汉只有益州一州之地，面积其实是三个国家中最大的（约100万平方公里），但人口最少（约100万人），而且大部分是山区。南中有三项战略价值：</p>
+                <ul>
+                    <li><strong>金银矿产</strong>：南中出产金、银、铜、铁，是蜀汉铸造"直百五铢"的主要金属来源。</li>
+                    <li><strong>战马</strong>：南中的滇池马虽然不如北方的蒙古马高大，但耐力极好，适合山区作战。诸葛亮北伐时，蜀汉骑兵大量装备南中战马。</li>
+                    <li><strong>精锐兵源</strong>：南中少数民族彪悍善战，被编为"飞军"后成为蜀汉精锐部队。</li>
+                </ul>
+            </div>
+
+            <h3>2.2 诸葛亮南征（225年）</h3>
+            <div class="example-box">
+                <h4>💡 "七擒七纵"的故事</h4>
+                <p>刘备死后，南中各族趁机叛乱。225年，诸葛亮亲率大军南征。他采纳了马谡"攻心为上，攻城为下"的建议，没有大开杀戒。</p>
+                <p>传说诸葛亮七次擒获<span class="term">孟获</span>（南中少数民族首领），七次放走他，直到孟获心服口服。正史中"七擒七纵"的记载比较简略，具体细节主要在《汉晋春秋》等史料中。但"攻心为上"的核心思想无疑是正确的。学术界对"七擒七纵"的真实性有争议——但故事本身传达的"以德服人"的理念，正是诸葛亮高明的地方。</p>
+                <p>孟获被第七次释放后说："公，天威也，南人不复反矣！"此后南中果然没有再发生大规模叛乱。</p>
+            </div>
+
+            <h3>2.3 诸葛亮的南中政策</h3>
+            <div class="knowledge-card">
+                <h4>📋 "以夷制夷"——五项具体政策</h4>
+                <ul>
+                    <li><strong>不设郡县、不派军队</strong>：保留当地首领的管理权，不搞"空降干部"。诸葛亮说："若留外人，则当留兵，兵留则无所食。"——如果留下外来的官吏，就要留军队；留军队就要吃饭，那谁来供应？</li>
+                    <li><strong>任用本地人</strong>：任命南中各族首领为朝廷官员，如孟获后来在蜀汉朝廷中担任了御史中丞（相当于监察部长）。</li>
+                    <li><strong>征调兵源</strong>：从南中征调精锐士兵，组成"飞军"——这支军队在诸葛亮的北伐中发挥了重要作用。</li>
+                    <li><strong>发展经济</strong>：推广先进的农业技术（牛耕、铁犁），发展盐铁产业和茶叶种植。</li>
+                    <li><strong>尊重文化</strong>：不强推汉文化，允许保持自己的风俗习惯和部落组织。</li>
+                </ul>
+            </div>
+
+            <div class="impact-box">
+                <h4>✅ 南征的效果与历史评价</h4>
+                <p>此后南中再也没有发生大规模叛乱。蜀汉从南中获得了稳定的兵源和物资供应——据记载，南中每年向蜀汉进贡金、银、丹砂、战马等物资，"军资所出，国以富饶"。</p>
+                <p>诸葛亮这种"以夷制夷"的民族政策，在中国历史上产生了深远影响。后来的各朝在处理边疆民族问题时，都不自觉地沿用了诸葛亮的原则：尊重、怀柔、以夷制夷。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>⛰️ 三、东吴与山越</h2>
+
+            <h3>3.1 山越是什么人？</h3>
+            <p><span class="term">山越</span>是生活在今天浙江、福建、江西、安徽南部山区的越族后裔，人口众多（估计数十万），作战勇敢。他们平时在山中耕种，战时可以迅速组织起来。</p>
+
+            <div class="story-card">
+                <h4>⛰️ 为什么东吴"打不完"山越？</h4>
+                <p>东吴对山越的征讨持续了数十年——从孙策时期到孙权晚年，几乎每年都在打。为什么打了这么久？有四个原因：</p>
+                <ul>
+                    <li><strong>地形复杂</strong>：山越生活在深山密林中，东吴军队进山作战非常困难。</li>
+                    <li><strong>分散不易剿灭</strong>：山越人没有统一的领导核心，而是分散在无数个山谷和山寨中，打掉一批另一批又冒出来了。</li>
+                    <li><strong>内部抵抗坚决</strong>：山越人不愿接受东吴的统治，更不愿意缴税和服兵役。</li>
+                    <li><strong>东吴的战略需要</strong>：山越虽然"难打"，但也是东吴重要的兵源和劳动力来源——每征讨一批山越，就能获得数万人编入军队或户籍。</li>
+                </ul>
+            </div>
+
+            <h3>3.2 东吴的山越政策</h3>
+            <p>东吴对山越采取了<span class="term">"武力征服+同化利用"</span>的策略：军事征讨→强制迁出→编入军队→编为民户。这套"流水线"操作非常高效。</p>
+
+            <div class="knowledge-card">
+                <h4>⚔️ 东吴征讨山越的主要将领</h4>
+                <ul>
+                    <li><strong>贺齐</strong>：最早征讨山越的东吴名将，手段残忍——他每次攻破山越的寨子，都将全部俘虏带回，强壮者编军，老弱者……下场堪忧。他一个人就平定了福建和浙江的大部分山越部落。</li>
+                    <li><strong>陆逊</strong>：年轻时就负责征讨丹阳（今安徽南部）山越，俘虏数万人，其中有精壮者编入军队，其余的编为农户，为东吴增加了大量纳税人口。</li>
+                    <li><strong>诸葛恪</strong>：诸葛亮的侄子。他负责山越事务三年，采取"围而不打"的策略——让军队在山越居住区周围筑城，切断他们的盐铁供应。山越被困在山中，没有盐吃、没有铁器用，最终不得不出来投降。诸葛恪一共征讨了十余万人。</li>
+                </ul>
+            </div>
+
+            <div class="impact-box">
+                <h4>✅ 山越政策的效果</h4>
+                <p>通过数十年的征讨和同化，东吴获得了大量兵员和劳动力。据记载，东吴的军队中，有将近一半的士兵来自山越。同时，大量山越人被迁到平原地区定居，增加了农业人口和赋税收入。这种"化敌为用"的政策，是东吴能够与魏蜀抗衡的重要原因之一。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🤝 四、三国之间的外交关系</h2>
+
+            <h3>4.1 孙刘联盟——从蜜月到决裂</h3>
+            <table>
+                <tr><th>时间</th><th>事件</th><th>联盟状态</th><th>原因</th></tr>
+                <tr><td>208年</td><td>赤壁之战</td><td>结盟抗曹，大获全胜</td><td>共同敌人曹操太强</td></tr>
+                <tr><td>210年</td><td>孙权"借"荆州给刘备</td><td>盟友互助</td><td>孙权想拉拢刘备抗曹</td></tr>
+                <tr><td>214年</td><td>刘备取益州</td><td>联盟松动</td><td>孙权讨要荆州未果</td></tr>
+                <tr><td>219年</td><td>吕蒙偷袭荆州</td><td>联盟破裂</td><td>孙权决心夺回荆州</td></tr>
+                <tr><td>222年</td><td>夷陵之战</td><td>孙刘开战</td><td>刘备为关羽报仇</td></tr>
+                <tr><td>229年</td><td>孙权称帝后恢复联盟</td><td>重新结盟</td><td>诸葛亮主动修复关系</td></tr>
+            </table>
+
+            <div class="story-card">
+                <h4>📜 诸葛亮的最后一次外交胜利</h4>
+                <p>夷陵之战后，吴蜀关系降到冰点。但诸葛亮非常清醒：蜀汉最弱，不可能同时对抗魏和吴。于是他派<span class="person-tag">邓芝</span>出使东吴，修复两国关系。</p>
+                <p>邓芝见到孙权后说了一番非常坦率的话："吴蜀联合，天下是你们的对手；吴蜀分裂，三国都不安全。大王（孙权）如果和魏国联合，魏国早晚会让你入朝（把你抓起来当俘虏）。蜀汉占据险要，东吴占据长江，两国联手，还怕打不过魏国吗？"</p>
+                <p>孙权被说服了，与蜀汉恢复了同盟。邓芝临别时，孙权说："以后天下统一了，两国和平相处，难道不好吗？"邓芝回答："天无二日，土无二王。到时候必然是各为其主，打完仗再说。"孙权大笑，说邓芝是个实诚人。</p>
+                <p>这个故事说明：在外交中，坦诚往往比诡计更有效。</p>
+            </div>
+
+            <h3>4.2 诸葛亮的外交遗产</h3>
+            <p>诸葛亮制定了<span class="term">"东和孙权，北拒曹操"</span>的基本国策。这个政策在诸葛亮生前一直得到很好的执行。吴蜀两国虽然不能完全信任对方，但至少在面对共同的敌人曹魏时，它们是稳定的盟友。</p>
+
+            <h3>4.3 东吴的外交手腕——三国中最灵活</h3>
+            <p>孙权的策略非常务实：<span class="term">谁弱就联合谁，谁强就联合另外两方</span>。赤壁之战联合刘备抗强曹，关羽北伐时联合曹操偷荆州，夷陵之战后重新联合蜀汉抗魏——每一次选择都精准地服务于东吴的利益。陈寿评价孙权"屈身忍辱，任才尚计，有勾践之奇"，说的就是他这种务实的外交能力。</p>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🛳️ 五、三国的海上交通与海外探索</h2>
+
+            <div class="story-card">
+                <h4>🌊 东吴的航海壮举——卫温远航夷洲（230年）</h4>
+                <p>这是三国时期最了不起的航海成就。230年，孙权派将军<span class="person-tag">卫温</span>和诸葛直率领一万人的舰队出海寻找夷洲（今台湾）和亶洲（传说中的海上仙山）。</p>
+                <p>万人舰队从章安（今浙江台州）出发，沿着海岸线向南航行。海上的风暴、缺乏淡水、疾病……让这次航行极为艰险。最终舰队到达了夷洲（台湾），与当地居民有了接触。但由于水土不服和疾病流行，一万人的舰队最终只剩下了几千人返回——大部分人都在航行中病死了。</p>
+                <p>卫温和诸葛直回到东吴后，因为没有找到传说中"长生不老"的亶洲，被孙权以"违命无功"的罪名处死了。这是孙权晚年昏聩的一个典型案例——明明是一次重大的航海成就，却因为没找到"仙药"就被杀了。</p>
+                <p>尽管如此，卫温远航夷洲的意义非常重大：这是中国历史上第一次有明确记载的官方赴台行动，比郑和下西洋早了一千多年。</p>
+            </div>
+
+            <div class="knowledge-card">
+                <h4>🌍 东吴的其他海外联系</h4>
+                <ul>
+                    <li><strong>与林邑（越南中部）的交往</strong>：东吴与林邑之间有贸易往来，东吴的丝绸、铜镜换取林邑的珍珠、玳瑁和象牙。</li>
+                    <li><strong>与扶南（柬埔寨）的联系</strong>：扶南是当时东南亚最强大的王国之一。东吴的商船到达过扶南沿海，进行贸易。</li>
+                    <li><strong>通过海路与辽东的交往</strong>：东吴和辽东的公孙渊（盘踞今辽宁一带的军阀）之间有密切的海上联系。孙权甚至想联合公孙渊从南北夹击曹魏。233年，孙权派使者带着大量金银财宝去辽东，结果公孙渊收了礼物后把东吴使者杀了，把首级送到了洛阳（讨好曹叡）。孙权气得要亲自去征讨辽东——被大臣们拦住了。</li>
+                    <li><strong>倭国（日本）来使</strong>：三国志中记载，倭国女王卑弥呼曾派遣使者到曹魏朝贡，被封为"亲魏倭王"。东吴和日本之间可能也有海上往来，但史料不够充分。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🔮 六、总结：三国的"民族遗产"</h2>
+
+            <div class="story-card">
+                <h4>📋 三国对外关系的历史遗产</h4>
+                <ul>
+                    <li><strong>曹魏</strong>：灭乌桓、制鲜卑，短期内稳定了北方，但大规模内迁少数民族为"五胡乱华"埋下了伏笔。</li>
+                    <li><strong>蜀汉</strong>：诸葛亮"攻心为上"的民族政策，是中国历史上最成功的民族政策之一，被后世反复借鉴。</li>
+                    <li><strong>东吴</strong>：征服和同化山越，将数十万少数民族转化为兵员和劳动力。东吴的航海活动是中古中国海上探索的先驱。</li>
+                    <li><strong>孙刘联盟的外交智慧</strong>：在弱国对抗强国的格局中，孙权、诸葛亮展示的外交手腕，至今仍有参考价值。</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p>💡 <strong>大白话总结</strong>：三国的对外关系告诉我们一个道理——在处理与周边民族的关系时，武力征服是必要的，但更重要的是"攻心"。诸葛亮的南中政策为什么成功？因为他尊重当地人、信任当地人、帮助当地人，最终让南中人心归附。而曹魏虽然打败了乌桓，但大量胡人内迁的政策，实际上是把一个定时炸弹埋在了自己家里。等到西晋垮台时，这个炸弹炸了——那就是"五胡乱华"。</p>
+            </div>
+        </div>
+
+        <div class="related-articles fade-in">
+            <h3>📚 延伸阅读</h3>
+            <div class="related-grid">
+                <a href="military.html" class="related-card"><h4>⚔️ 军政制度</h4><p>三国的军事力量和战争策略</p></a>
+                <a href="events.html" class="related-card"><h4>📅 历史大事记</h4><p>三国时期所有重大外交事件</p></a>
+                <a href="figures.html" class="related-card"><h4>👤 关键人物传</h4><p>诸葛亮、孙权等外交大师</p></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <div class="footer-links">
+            <a href="class.html">← 上一页：社会阶级</a>
+            <a href="index.html">返回三国首页</a>
+            <a href="price.html">下一页：物价参考 →</a>
+        </div>
+    </footer>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <!-- JS functions now handled by common.js -->
+    <script src="../common.js"></script>
+</body>
+</html>

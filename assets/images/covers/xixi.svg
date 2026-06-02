@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="520" height="140">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#150a20"/>
+      <stop offset="50%" style="stop-color:#1a0f2e"/>
+      <stop offset="100%" style="stop-color:#100820"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="140" fill="url(#bg)"/>
+  <!-- 对话泡泡 -->
+  <ellipse cx="160" cy="60" rx="55" ry="28" fill="rgba(155,89,182,0.06)" stroke="rgba(155,89,182,0.12)" stroke-width="0.8"/>
+  <ellipse cx="360" cy="55" rx="50" ry="25" fill="rgba(233,30,99,0.05)" stroke="rgba(233,30,99,0.1)" stroke-width="0.8"/>
+  <!-- 连接线 -->
+  <path d="M215,60 Q260,40 310,55" stroke="rgba(155,89,182,0.15)" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+  <!-- 人形剪影 -->
+  <circle cx="140" cy="45" r="8" fill="rgba(155,89,182,0.12)"/>
+  <path d="M130,55 Q140,52 150,55 L148,75 Q140,72 132,75 Z" fill="rgba(155,89,182,0.08)"/>
+  <circle cx="380" cy="40" r="7" fill="rgba(233,30,99,0.1)"/>
+  <path d="M372,50 Q380,47 388,50 L386,70 Q380,67 374,70 Z" fill="rgba(233,30,99,0.07)"/>
+  <!-- 心形装饰 -->
+  <path d="M250,80 Q250,70 260,70 Q270,70 270,80 Q270,90 260,100 Q250,90 250,80 Z" fill="rgba(155,89,182,0.08)"/>
+  <!-- 文字气泡内容 - 小点 -->
+  <circle cx="148" cy="58" r="1.5" fill="rgba(155,89,182,0.2)"/>
+  <circle cx="155" cy="55" r="1" fill="rgba(155,89,182,0.15)"/>
+  <circle cx="162" cy="60" r="1.5" fill="rgba(155,89,182,0.2)"/>
+  <circle cx="348" cy="52" r="1.5" fill="rgba(233,30,99,0.15)"/>
+  <circle cx="358" cy="55" r="1" fill="rgba(233,30,99,0.2)"/>
+  <circle cx="368" cy="50" r="1.5" fill="rgba(233,30,99,0.15)"/>
+  <!-- 底部波浪 -->
+  <path d="M0,120 Q60,110 120,120 Q180,130 240,120 Q300,110 360,120 Q420,130 480,120 Q510,115 520,120 L520,140 L0,140 Z" fill="rgba(155,89,182,0.04)"/>
+  <line x1="0" y1="137" x2="520" y2="137" stroke="rgba(155,89,182,0.08)" stroke-width="0.5"/>
+</svg>

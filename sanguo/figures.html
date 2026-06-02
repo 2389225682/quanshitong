@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>三国关键人物传 - 全史通 | 从零开始，读懂中国千年</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root { --primary: #2d4a1e; --secondary: #8B4513; --accent: #c9a227; }
+        .nav { background: linear-gradient(135deg, #2d4a1e 0%, #8B4513 100%); }
+        .section::before { background: linear-gradient(180deg, #c9a227, #2d4a1e); }
+        .section h3 { border-left-color: #c9a227; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .figure-profile { display: flex; gap: 30px; margin: 30px 0; padding: 30px; background: linear-gradient(135deg, rgba(45,74,30,0.03), rgba(139,69,19,0.03)); border-radius: 16px; border: 1px solid rgba(201,162,39,0.15); }
+        .figure-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #2d4a1e, #8B4513); display: flex; align-items: center; justify-content: center; font-size: 3rem; flex-shrink: 0; }
+        .figure-info { flex: 1; }
+        .figure-info h3 { color: var(--primary); font-family: 'Noto Serif SC', serif; font-size: 1.5em; margin-bottom: 10px; }
+        .figure-info .subtitle-text { color: var(--text-muted); font-size: 0.95em; margin-bottom: 15px; }
+        .figure-info .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .figure-info .tag-list .tag { background: rgba(201,162,39,0.15); color: var(--primary); padding: 4px 12px; border-radius: 15px; font-size: 0.85em; }
+        @media (max-width: 768px) { .figure-profile { flex-direction: column; align-items: center; text-align: center; } .figure-info .tag-list { justify-content: center; } }
+        
+        /* 生平故事样式 */
+        .bio-story {
+            background: rgba(45, 74, 30, 0.04);
+            border: 1px solid rgba(201, 162, 39, 0.12);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .bio-story h4 {
+            color: var(--accent);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1em;
+            margin: 18px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.1);
+        }
+        .bio-story h4:first-child {
+            margin-top: 0;
+        }
+        .bio-story p {
+            color: var(--text-gray);
+            line-height: 1.9;
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+        .bio-story ul {
+            margin: 10px 0 10px 20px;
+        }
+        .bio-story ul li {
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        .bio-summary {
+            background: rgba(201, 162, 39, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+        .bio-summary p {
+            margin: 0;
+            color: var(--text-light);
+        }
+        .figure-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.3), transparent);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="nav">
+        <a href="index.html" class="logo">⚔️ 三国</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div>
+            <a href="index.html">三国首页</a>
+            <a href="institution.html">国家机构</a>
+            <a href="military.html">军政制度</a>
+            <a href="tax.html">税收政策</a>
+            <a href="law.html">法律制度</a>
+            <a href="life.html">百姓生活</a>
+            <a href="events.html">历史大事</a>
+            <a href="figures.html" class="active">关键人物</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header fade-in">
+            <div class="breadcrumb">
+                <a href="../index.html">网站首页</a> > <a href="index.html">三国</a> > 关键人物传
+            </div>
+            <h1>👤 三国关键人物传</h1>
+            <p style="color: var(--text-muted); font-style: italic;">英雄与枭雄的群像——读懂一个人，也就读懂了一个时代</p>
+        </div>
+
+        <!-- ===== 曹操 ===== -->
+        <div class="section fade-in" id="fig_1">
+            <div class="figure-profile">
+                <div class="figure-avatar">🐉</div>
+                <div class="figure-info">
+                    <h3>曹操（155-220年）</h3>
+                    <div class="subtitle-text">字孟德 | 曹魏奠基者 | 政治家、军事家、文学家</div>
+                    <div class="tag-list"><span class="tag">政治家</span><span class="tag">军事家</span><span class="tag">诗人</span><span class="tag">枭雄</span></div>
+                    <p>曹操是中国历史上最具争议的人物之一。他统一北方，实行屯田制，唯才是举。他也是杰出的诗人，开创了"建安风骨"。</p>
+                    <p><strong>功绩</strong>：统一北方、屯田制、挟天子令诸侯 | <strong>争议</strong>：屠徐州、杀华佗杨修孔融</p>
+                    <p><strong>评价</strong>：治世之能臣，乱世之奸雄。——许劭</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>曹操字孟德，沛国谯县（今安徽亳州）人。他的父亲曹嵩是东汉大宦官曹腾的养子（曹腾是东汉中常侍，"四朝元老"级别的宦官）。曹嵩官至太尉，所以曹操也算官二代——虽然这个"官"的身份不太光彩（宦官之后在东汉很被人看不起）。</p>
+                <p>曹操年轻时"任侠放荡"，喜欢飞鹰走狗，和袁绍等人一起在洛阳城里混，干过不少荒唐事（比如抢别人新娘——这是真的，《世说新语》记载了）。但叔叔曹参、太尉桥玄都说他"非池中之物"。20岁时，曹操被举为孝廉，出任洛阳北部尉——相当于洛阳城北区的公安局局长。他上任后做了第一件狠事：用五色棒打死违禁的宦官蹇硕的叔叔，从此京城无人敢犯禁。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>曹操人生的转折点有两个：第一个是184年镇压黄巾起义，他率军参战，展现了出色的军事才能，被封为济南相；第二个是190年讨董联军解散，他一无所有地回到兖州，在荀彧、程昱等人的帮助下，逐步建立自己的根据地。这两件事让曹操从一个"热血青年"变成了"实干的创业者"。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>迎奉天子（196年）</strong>：采纳荀彧建议，将汉献帝迎至许昌，"挟天子以令诸侯"，获得政治上的主动权。</li>
+                    <li><strong>官渡之战（200年）</strong>：以少胜多击败袁绍，奠定统一北方的基础。这场胜利的核心不在于兵力的对比，而在于曹操敢于冒险、善用人才。</li>
+                    <li><strong>推行屯田制</strong>：在北方大规模推行军屯和民屯，解决了军粮问题，也恢复了战乱后的农业生产。</li>
+                    <li><strong>"唯才是举"</strong>：三次发布求贤令，打破门第观念，只要有才能就大胆任用。这是曹操最了不起的政治改革之一。</li>
+                    <li><strong>外定武功，内兴文学</strong>：曹操本人是建安文学的旗手，与儿子曹丕、曹植合称"三曹"。《短歌行》《观沧海》《龟虽寿》都是千古名篇。</li>
+                </ul>
+
+                <h4>⚔️ 冲突斗争</h4>
+                <p>曹操一生面临的最大冲突是"名分"问题——他究竟是汉朝的忠臣还是奸雄？他挟天子以令诸侯，但终生没有称帝。有人劝他称帝，他说："若天命在吾，吾为周文王矣。"意思是让儿子来当这个"周武王"。</p>
+                <p>曹操的矛盾性格还体现在他的用人与杀戮之间：他爱惜人才（哭郭嘉、烧掉部下通敌的信件），但也滥杀无辜（屠徐州、杀孔融、杀杨修）。这种"既豁达又刻薄，既仁慈又残暴"的性格，让他成为了中国历史上最复杂的人物之一。</p>
+
+                <h4>🏁 结局</h4>
+                <p>220年正月，曹操在洛阳病逝，享年66岁。临终前留下遗令："天下尚未安定，未得遵古也。葬毕，即除服……"叮嘱简葬、薄葬。他的儿子曹丕代汉称帝后，追尊曹操为魏武帝。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：一个复杂到让人又爱又恨的"全才"——论政治，他能统一北方、革新制度；论军事，他能以少胜多、用人如神；论文学，他开创了"建安风骨"；论私德，他屠城杀戮、多疑残暴。这就是曹操——他让你无法简单地用"好人"或"坏人"来定义。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 刘备 ===== -->
+        <div class="section fade-in" id="fig_2">
+            <div class="figure-profile">
+                <div class="figure-avatar">👸</div>
+                <div class="figure-info">
+                    <h3>刘备（161-223年）</h3>
+                    <div class="subtitle-text">字玄德 | 蜀汉开国皇帝 | 仁义化身</div>
+                    <div class="tag-list"><span class="tag">仁君</span><span class="tag">坚韧不拔</span><span class="tag">汉室宗亲</span></div>
+                    <p>前半生颠沛流离二十多年，始终不放弃理想。三顾茅庐请诸葛亮，最终建立蜀汉。夷陵之战冒进失误，但百折不挠的精神令人敬佩。</p>
+                    <p><strong>评价</strong>：先主之弘毅宽厚，知人待士，盖有高祖之风，英雄之器焉。——陈寿</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>刘备是中山靖王刘胜的后代，汉景帝的第六代孙。但到他这一代，家道早已败落——父亲刘弘早逝，刘备和母亲靠织草鞋、卖草席为生。从这个意义上说，刘备是三国三巨头中出身最卑微的一个（曹操是官宦之后，孙权是官二代）。</p>
+                <p>年轻的刘备有两大特点：一是家贫但有大志，他家的东南角有一棵大桑树，像车的华盖，小刘备指着说："我以后一定要坐这样的羽葆盖车（皇帝的车驾）。"二是他喜欢结交豪杰，关羽、张飞就是在这个时期跟他结拜了生死兄弟（"恩若兄弟"确见于正史，但具体桃园三结义是演义杜撰）。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>刘备的人生转折点是207年的"三顾茅庐"。此前他辗转依附公孙瓒、陶谦、曹操、袁绍、刘表，寄人篱下，没有自己的地盘。直到遇到26岁的诸葛亮，诸葛亮的"隆中对"给他指明了三条路：先占荆州，再取益州，最后两路北伐。此时的刘备已经46岁了——他奋斗了大半辈子，终于找到了正确的方向。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>三顾茅庐（207年）</strong>：三次拜访隐居隆中的诸葛亮，请其出山辅佐。这段佳话成为中国历史上尊贤纳士的典范。</li>
+                    <li><strong>赤壁之战（208年）</strong>：与孙权联合，在赤壁大败曹操。刘备趁乱夺取了荆州四郡，终于有了自己的"第一桶金"。</li>
+                    <li><strong>入蜀取益州（214年）</strong>：率军进入益州，最终取代刘璋，占领了"天府之国"成都。</li>
+                    <li><strong>汉中称王（219年）</strong>：在定军山击败曹操，夺取汉中，自称"汉中王"——他一生中最辉煌的时刻。</li>
+                </ul>
+
+                <h4>⚔️ 冲突斗争</h4>
+                <p>刘备一生最大冲突是"情义"与"战略"的冲突。219年关羽被杀、荆州被夺，刘备明知伐吴在战略上是错误的（赵云劝过，诸葛亮也犹豫），但兄弟情义让他无法坐视不理。221年他率军伐吴，222年在夷陵被陆逊火烧连营。这次惨败不仅让蜀汉元气大伤，也直接导致了刘备的死亡——223年，他在白帝城含恨而终。</p>
+
+                <h4>🏁 结局</h4>
+                <p>223年四月，刘备在白帝城托孤。他对诸葛亮说："君才十倍曹丕，必能安国，终定大事。若嗣子可辅，辅之；如其不才，君可自取。"这句话让诸葛亮"涕泣曰：臣敢竭股肱之力，效忠贞之节，继之以死。"——从此诸葛亮把一生都献给了蜀汉。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：一个从卖草鞋起家的"平民创业者"。前半生屡战屡败，但从不放弃；后半生终于成功，却被感情冲昏了头脑。他最大的优点是"仁厚待人"，最大的缺点也是"重情误事"。他用自己的生命证明：理想主义者也可以在乱世中闯出一片天。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 孙权 ===== -->
+        <div class="section fade-in" id="fig_3">
+            <div class="figure-profile">
+                <div class="figure-avatar">🌊</div>
+                <div class="figure-info">
+                    <h3>孙权（182-252年）</h3>
+                    <div class="subtitle-text">字仲谋 | 东吴开国皇帝 | 外交大师</div>
+                    <div class="tag-list"><span class="tag">外交家</span><span class="tag">善权衡</span><span class="tag">晚年多疑</span></div>
+                    <p>执政52年，三国中最长的君主。善于在外交上纵横捭阖，赤壁之战果断联刘抗曹，夷陵之战冷静应对。开发江南，派遣卫温远航台湾。</p>
+                    <p><strong>评价</strong>：屈身忍辱，任才尚计，有勾践之奇，英人之杰矣。——陈寿</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>孙权是江东小霸王孙策的弟弟，父亲孙坚在讨伐黄祖时战死（191年），哥哥孙策打下了江东六郡。200年，孙策被刺客所杀，临死前将年仅18岁的孙权叫到跟前说："举江东之众，与天下争衡，卿不若我；举贤任能，各尽其心，以保江东，我不若卿。"——意思是打仗你不如我，但用人保住江东，我不如你。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>208年赤壁之战是孙权一生最重要的选择。曹操大军南下，东吴上下人心惶惶，以张昭为首的主降派占了上风。孙权在周瑜、鲁肃的支持下，最终决定联刘抗曹。这个决定改变了他的命运——如果当时投降了，历史就要重写了。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>赤壁之战（208年）</strong>：联刘抗曹，一战定三分。</li>
+                    <li><strong>背刺关羽夺荆州（219年）</strong>：虽然背弃了盟约，但获得了版图上的重大收益。</li>
+                    <li><strong>夷陵之战（222年）</strong>：任命陆逊为大都督，大败刘备。此战证明了孙权在用人之道上的眼光。</li>
+                    <li><strong>开发江南</strong>：大力经营江南地区，设立郡县，发展农业，为江南地区的经济开发做出了重要贡献。</li>
+                    <li><strong>派卫温远航台湾</strong>：230年，孙权派将军卫温率领万人船队远航夷洲（今台湾），这是中国历史上首次有记载的官方赴台行动。</li>
+                </ul>
+
+                <h4>⚔️ 冲突斗争</h4>
+                <p>孙权晚年陷入了"立储之争"——太子孙和与鲁王孙霸互相争斗，朝中大臣分裂为两派。孙权处理不当，废掉了太子孙和，赐死了鲁王孙霸，还牵连了一大批大臣（包括陆逊——陆逊就在这场政治风波中忧愤而死）。晚年的孙权变成了一个猜忌多疑的暴君，与年轻时的英明截然不同。</p>
+
+                <h4>🏁 结局</h4>
+                <p>252年，孙权病逝，享年71岁，在位52年。他是三国中在位时间最长的君主。但他的继任者——小儿子孙亮还是个孩子，东吴从此进入了权臣掌权的时期。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：孙权是三国中最"会做人"的君主——他擅长平衡各方力量，善于在外交上左右逢源。该低头时低头（向曹丕称臣），该果断时果断（联刘备抗曹）。但晚年陷入了所有"老人"都容易犯的错误：猜忌、多疑、不会安排继承人。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 诸葛亮 ===== -->
+        <div class="section fade-in" id="fig_4">
+            <div class="figure-profile">
+                <div class="figure-avatar">🪶</div>
+                <div class="figure-info">
+                    <h3>诸葛亮（181-234年）</h3>
+                    <div class="subtitle-text">字孔明 | 蜀汉丞相 | 智慧与忠诚的化身</div>
+                    <div class="tag-list"><span class="tag">智者</span><span class="tag">忠臣</span><span class="tag">发明家</span></div>
+                    <p>27岁出山，辅佐刘备27年。隆中对规划战略，促成赤壁联盟，南征平定南中，五次北伐曹魏。发明木牛流马、连弩。以法治蜀，赏罚分明。</p>
+                    <p><strong>评价</strong>：鞠躬尽瘁，死而后已。</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>诸葛亮是琅琊阳都（今山东临沂）人，父亲诸葛珪是泰山郡丞（副郡长）。但父母早逝，诸葛亮很小就成了孤儿，跟着叔父诸葛玄在荆州生活。叔父去世后，17岁的诸葛亮在襄阳城西南的隆中隐居，一边种田一边读书。</p>
+                <p>诸葛亮在隆中的十年（197-207年）绝不是"与世隔绝"——他密切关注天下大势，经常与崔州平、徐庶、石韬等名士纵论天下。他自比管仲、乐毅，当时人都觉得他狂妄，但徐庶等人深知他的才能。民间谚语说"卧龙凤雏得一人可安天下"——诸葛亮就是"卧龙"。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>207年冬天，穷途末路的刘备三顾茅庐，拜访了年仅26岁的诸葛亮。诸葛亮献上了"隆中对"：先取荆州立足，再取益州与曹操、孙权形成鼎足之势，然后等待"天下有变"两路北伐中原。从此，诸葛亮的命运与蜀汉绑定在了一起——他把自己最好的年华都给了这个承诺。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>促孙刘联盟（208年）</strong>：孤身赴柴桑说服孙权联刘抗曹，初出茅庐就立下了大功。</li>
+                    <li><strong>治理蜀汉</strong>：刘备入蜀后，诸葛亮负责内政。他推行法治，制定《蜀科》，赏罚分明，蜀地大治。"诸葛亮治蜀"是中国古代优秀的治理案例。</li>
+                    <li><strong>南征南中（225年）</strong>："七擒七纵"孟获，平定南中。</li>
+                    <li><strong>北伐中原（227-234年）</strong>：五次北伐，虽未成功，但以弱攻强，牵制了曹魏大量兵力。</li>
+                    <li><strong>发明创造</strong>：改进连弩（诸葛连弩）、发明木牛流马（运输工具）、推演八阵图。</li>
+                    <li><strong>《出师表》</strong>：227年写给刘禅的奏表，是中国文学史上的经典之作，也是他忠诚人格的真实写照。</li>
+                </ul>
+
+                <h4>⚔️ 冲突斗争</h4>
+                <p>诸葛亮一生最大的冲突，是理想与现实的冲突。他明知以蜀汉的国力不可能灭掉曹魏，但受刘备托孤之重，只能"鞠躬尽瘁，死而后已"。他与司马懿的五丈原对决，是一场"明知不可为而为之"的悲壮坚持。</p>
+
+                <h4>🏁 结局</h4>
+                <p>234年八月，诸葛亮在五丈原病逝，享年54岁。临终遗命葬于定军山，墓穴仅能容纳棺材，穿平时衣服下葬。他家里只有八百棵桑树、十五顷田——作为一国丞相，他的清廉程度令人震惊。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：诸葛亮是中国历史上最完美的"理想主义政治家"。他忠心耿耿、才华横溢、清廉自律、勤政爱民。"鞠躬尽瘁，死而后已"这八个字，就是他一生的全部注解。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 关羽 ===== -->
+        <div class="section fade-in" id="fig_5">
+            <div class="figure-profile">
+                <div class="figure-avatar">🗡️</div>
+                <div class="figure-info">
+                    <h3>关羽（？-220年）</h3>
+                    <div class="subtitle-text">字云长 | 蜀汉名将 | 武圣</div>
+                    <div class="tag-list"><span class="tag">忠义</span><span class="tag">勇猛</span><span class="tag">骄傲</span></div>
+                    <p>跟随刘备不离不弃，水淹七军威震华夏。但骄傲自大导致荆州丢失，败走麦城被杀。后世被不断神化，尊为"关圣帝君"，与孔子并列"文武二圣"。</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>关羽是河东解良（今山西运城）人，本字长生，后改云长。早年因在家乡惹了事（一说杀了人），逃亡到了涿郡，在那里遇到了刘备和张飞，从此三人"恩若兄弟"（正史记载了三人"寝则同床，食则同器"）。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>200年官渡之战前，曹操东征徐州，关羽被俘。曹操对关羽非常赏识——拜为偏将军，赏赐极厚，还送了他一匹赤兔马。但关羽说："吾极知曹公待我厚，然吾受刘将军厚恩，誓以共死，不可背之。"在白马之战斩杀颜良回报曹操的恩情后，关羽直接离开曹营去找刘备了——这就是"千里走单骑"的故事原型。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>白马斩颜良（200年）</strong>："羽望见良麾盖，策马刺良于万众之中，斩其首还"——在千军万马中斩杀对方主将，这是真正的"万军之中取上将首级"。</li>
+                    <li><strong>镇守荆州</strong>：刘备入蜀后，关羽负责镇守荆州这个战略要地，长达十余年。</li>
+                    <li><strong>水淹七军（219年）</strong>：利用汉水暴涨，放水淹了于禁的三万大军，威震华夏。</li>
+                </ul>
+
+                <h4>⚔️ 冲突斗争</h4>
+                <p>关羽最大的冲突来自他性格中的"骄傲"。孙权为儿子向关羽求亲，关羽怒斥："吾虎女安肯嫁犬子乎！"——把我女儿嫁给你的狗儿子？这话传到孙权耳朵里，孙权恨不得生吃了关羽。同时关羽也看不起同僚：黄忠被封为后将军时，关羽怒曰"大丈夫终不与老兵同列"；他还经常苛责部下糜芳、士仁，导致这两人在东吴来袭时毫不犹豫地投降了。</p>
+
+                <h4>🏁 结局</h4>
+                <p>219年，关羽在襄樊前线得知后方荆州被东吴偷袭，回师救援失败，败走麦城。在逃往益州的路上，被东吴伏兵擒获。孙权下令斩杀关羽，关羽时年约60岁。孙权还将关羽的首级送到曹操那里——意思是我帮你杀了仇人。曹操以诸侯之礼安葬了关羽。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：关羽是一个"成也忠义、败也忠义"的悲情英雄。他忠于刘备，义薄云天，勇冠三军——但他太骄傲了，骄傲到得罪了朋友、忽略了敌人、轻视了部下。他的死亡成了一个悲剧启示：能力再强，性格缺陷也能毁了你了不起的前程。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 周瑜 ===== -->
+        <div class="section fade-in" id="fig_6">
+            <div class="figure-profile">
+                <div class="figure-avatar">🔥</div>
+                <div class="figure-info">
+                    <h3>周瑜（175-210年）</h3>
+                    <div class="subtitle-text">字公瑾 | 东吴大都督 | 少年英才</div>
+                    <div class="tag-list"><span class="tag">儒将</span><span class="tag">赤壁功臣</span></div>
+                    <p>24岁随孙策平江东，34岁指挥赤壁之战。36岁病逝。正史中的周瑜"性度恢廓"，绝非小说中狭隘之人。苏轼词"谈笑间，樯橹灰飞烟灭"才是真实的周瑜。</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>周瑜是庐江舒县（今安徽庐江）人，出身世家大族，族中很多人当过高官。周瑜不仅出身好，长得也帅——"瑜长壮有姿貌"，"曲有误，周郎顾"说的就是他精通音律。24岁时，他与同岁的孙策结为好友，一起平定江东。孙策称他"周郎"——"郎"是当时对俊美青年的尊称。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>200年孙策遇刺身亡，临终前让周瑜辅佐弟弟孙权。年仅26岁的周瑜成了东吴军队的统帅。从此他不仅是孙策的朋友，更是孙权的股肱之臣。208年，曹操南下，周瑜坚决主张抗曹，被任命为大都督，赤壁之战让他一战成名。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>赤壁之战总指挥（208年）</strong>：以三万水军大败曹操二十余万大军。周瑜用火攻，黄盖执行，是中国历史上最经典的火攻战例。</li>
+                    <li><strong>南郡之战</strong>：赤壁之战后，周瑜率军与曹仁激战一年，最终攻取江陵（南郡控制中心）。</li>
+                </ul>
+
+                <h4>⚔️ 冲突斗争</h4>
+                <p>周瑜与诸葛亮的关系被《三国演义》严重扭曲了。正史中的周瑜"性度恢廓"——心胸开阔，绝对不是那种被诸葛亮气死的人。他与诸葛亮之间有竞争（毕竟分属两个阵营），但远没有演义里写的那么戏剧化。周瑜在210年提出过攻打益州的计划，想为东吴开拓更大的战略空间。</p>
+
+                <h4>🏁 结局</h4>
+                <p>210年，周瑜在准备攻打益州途中，行至巴丘（今湖南岳阳）时突然病逝，年仅36岁。孙权闻讯后素服举哀。周瑜的死对东吴是一个巨大的打击——如果他能多活二十年，三国的格局可能会有很大的不同。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：周瑜是三国时期最耀眼的"完人"——出身好、长得好、能力强、气度大。如果他不英年早逝，东吴的发展会完全不同。可惜天妒英才，苏轼说"遥想公瑾当年，小乔初嫁了，雄姿英发"，给后人留下了无尽的想象。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 司马懿 ===== -->
+        <div class="section fade-in" id="fig_7">
+            <div class="figure-profile">
+                <div class="figure-avatar">🦊</div>
+                <div class="figure-info">
+                    <h3>司马懿（179-251年）</h3>
+                    <div class="subtitle-text">字仲达 | 西晋奠基者 | 三国最后的赢家</div>
+                    <div class="tag-list"><span class="tag">隐忍</span><span class="tag">权谋</span><span class="tag">赢家</span></div>
+                    <p>辅佐曹魏三代，隐忍数十年。249年高平陵之变一击致命，夺取大权。孙子司马炎建立西晋。他是三国博弈中真正的"终极赢家"。</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>司马懿是河内温县（今河南温县）人，司马氏是河内大族。他的父亲司马防当过京兆尹，生了八个儿子号称"司马八达"——司马懿是老二，字仲达。曹操早期就听说过司马懿的名声，想征召他做官。但司马懿不愿侍奉曹操，装病在家，躺在床上起不来（又一次装病！）。曹操派人去刺探，司马懿躺在床上一动不动，才蒙混过关。后来曹操当了丞相，直接下了死命令："再不来就抓你。"司马懿才被迫出山。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>239年，魏明帝曹叡病危，托孤给曹爽和司马懿。曹爽排挤司马懿，司马懿再次装病——这次装得更逼真，李胜来探望时，他"令两婢侍，持衣，衣落；指口言渴，婢进粥，粥皆流出沾胸"。曹爽从此视司马懿为死人。结果249年正月初六，曹爽陪皇帝出城扫墓，70岁的司马懿从床上跳起来，发动了蓄谋已久的高平陵之变。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>对抗诸葛亮</strong>：在与诸葛亮的对决中，采取"坚守不出"的战术，成功拖死了蜀汉最伟大的统帅。</li>
+                    <li><strong>平定辽东</strong>：238年率军远征辽东，击败公孙渊，彻底解决了东北边患。</li>
+                    <li><strong>高平陵之变（249年）</strong>：一击致命，铲除曹爽集团，夺取曹魏大权。</li>
+                </ul>
+
+                <h4>🏁 结局</h4>
+                <p>251年，司马懿病逝，享年73岁。他去世时，曹魏的江山实际上已经姓司马了。他的儿子司马师、司马昭继续掌权，孙子司马炎最终代魏建晋。司马懿本人虽然没有当皇帝，但他被追尊为"宣皇帝"。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：司马懿是三国时代最大的"黑马"。他从青年时代起就装病，装了几十年。他的一生告诉我们：在权力斗争中，最重要的不是跑得多快，而是等到别人都倒下了，你还站着。他不是最耀眼的，但一定是最能忍的。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 赵云 ===== -->
+        <div class="section fade-in" id="fig_8">
+            <div class="figure-profile">
+                <div class="figure-avatar">🛡️</div>
+                <div class="figure-info">
+                    <h3>赵云（？-229年）</h3>
+                    <div class="subtitle-text">字子龙 | 蜀汉名将 | 完美将军</div>
+                    <div class="tag-list"><span class="tag">忠勇</span><span class="tag">谨慎</span></div>
+                    <p>长坂坡保护刘禅（正史记载）、截江夺斗、北伐中空营退敌。一生征战未尝败绩，被称为"常胜将军"。性格忠诚谨慎，顾全大局。</p>
+                </div>
+            </div>
+
+            <div class="bio-story">
+                <h4>🌱 出身背景</h4>
+                <p>赵云是常山真定（今河北正定）人。早年率乡勇投靠公孙瓒，在那里遇到了刘备。赵云觉得刘备才是可以追随的人，后来离开公孙瓒投奔了刘备。</p>
+
+                <h4>⚡ 关键转折</h4>
+                <p>208年长坂坡之战是赵云人生中最耀眼的一刻。曹操的虎豹骑追上刘备的逃难队伍，打得刘备几乎全军覆没。赵云在乱军中杀了个七进七出，救出了甘夫人和刘禅——正史记载："云身抱弱子，即后主也，保护甘夫人，即后主母也，皆得免难。"这就是"赵子龙单骑救主"的正史原型。</p>
+
+                <h4>🏆 主要事迹</h4>
+                <ul>
+                    <li><strong>长坂坡救主（208年）</strong>：在乱军中保护刘禅和甘夫人安全脱险。</li>
+                    <li><strong>截江夺斗</strong>：孙权派人接走孙尚香（刘备的妻子），孙尚香想带刘禅一起走。赵云和张飞拦江截回刘禅——这个刘禅要是被带走了，刘备就得绝后了。</li>
+                    <li><strong>空营退敌（219年）</strong>：在汉中之战中，赵云率数十骑与曹操大军遭遇，且战且退。回到大营后，赵云下令大开营门，偃旗息鼓。曹军怀疑有埋伏，不敢进攻。这就是"一身是胆的赵子龙"故事的来源。</li>
+                </ul>
+
+                <h4>🏁 结局</h4>
+                <p>229年，赵云在成都病逝。后主刘禅追谥赵云为"顺平侯"——"执事有班曰顺，克定祸乱曰平"，恰如其分地概括了赵云忠诚、谨慎、有原则的一生。</p>
+
+                <div class="bio-summary">
+                    <p>💡 <strong>一句话评价</strong>：赵云是三国中最接近"完美"的将领——他忠诚勇敢，但不鲁莽；谨慎稳妥，但不怯懦；顾全大局，不争功邀赏。所以后人读三国，每个人都有自己的偶像，但很少有人会"黑"赵云——因为根本找不到他的黑点。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 正史vs演义 ===== -->
+        <div class="section fade-in" id="fig_9">
+            <h2>⚖️ 正史 vs 《三国演义》</h2>
+            <div class="warning-box">
+                <h4>⚠️ 必须知道的差异</h4>
+                <p>很多人的三国知识来自《三国演义》，但演义是"七分实三分虚"的历史小说。为了文学效果，罗贯中对很多人物进行了艺术加工。下面是一些最容易被误解的人物：</p>
+                <table>
+                    <tr><th>人物</th><th>《三国演义》形象</th><th>正史真实形象</th></tr>
+                    <tr><td>诸葛亮</td><td>能呼风唤雨的神人，掐指一算无所不知</td><td>杰出的政治家和军事家，但并非神仙。火烧博望坡、草船借箭、借东风等都是虚构</td></tr>
+                    <tr><td>周瑜</td><td>心胸狭隘，嫉妒诸葛亮的才能，被气死</td><td>"性度恢廓"的儒将，赤壁之战的总指挥。与诸葛亮的关系远没那么戏剧化</td></tr>
+                    <tr><td>刘备</td><td>只会哭泣的"妇人之仁"</td><td>有仁德之心的英雄，"以德服人"的代表。他的眼泪只是文学夸张</td></tr>
+                    <tr><td>曹操</td><td>彻头彻尾的大白脸奸臣</td><td>复杂的政治家——既是奸雄也是英雄。他有残暴的一面，也有杰出的治国才能和文学才华</td></tr>
+                    <tr><td>鲁肃</td><td>憨厚老实、总被诸葛亮骗的老好人</td><td>东吴一流的战略家，联刘抗曹战略的提出者，孙权最信任的谋士</td></tr>
+                    <tr><td>关羽</td><td>温酒斩华雄、华容道义释曹操</td><td>忠义勇猛的名将，但华雄是被孙坚杀的，华容道义释是虚构的</td></tr>
+                    <tr><td>赵云</td><td>长坂坡七进七出杀五十余将</td><td>确实在长坂坡保护了刘禅，但"七进七出"夸张了。真实中的赵云同样英勇，但更低调稳重</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="related-articles fade-in">
+            <h3>📚 延伸阅读</h3>
+            <div class="related-grid">
+                <a href="events.html" class="related-card"><h4>📅 历史大事记</h4><p>这些人物参与了哪些改变历史的重大事件？</p></a>
+                <a href="military.html" class="related-card"><h4>⚔️ 军政制度</h4><p>这些将领如何打仗、如何统兵？</p></a>
+                <a href="institution.html" class="related-card"><h4>🏛️ 国家机构</h4><p>这些人物担任了什么官职？魏蜀吴的官制有何不同？</p></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <div class="footer-links">
+            <a href="events.html">← 上一页：历史大事</a>
+            <a href="index.html">返回三国首页</a>
+            <a href="diary.html">下一页：穿越体验 →</a>
+        </div>
+    </footer>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <!-- JS functions now handled by common.js -->
+    <script src="../common.js"></script>
+</body>
+</html>

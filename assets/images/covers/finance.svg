@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="520" height="140">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a0a"/>
+      <stop offset="50%" style="stop-color:#200d0d"/>
+      <stop offset="100%" style="stop-color:#150808"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="140" fill="url(#bg)"/>
+  <!-- K线图 -->
+  <!-- 阳线（红） -->
+  <line x1="60" y1="30" x2="60" y2="90" stroke="rgba(231,76,60,0.25)" stroke-width="1"/>
+  <rect x="55" y="45" width="10" height="30" fill="rgba(231,76,60,0.2)" rx="1"/>
+  
+  <line x1="95" y1="25" x2="95" y2="80" stroke="rgba(231,76,60,0.3)" stroke-width="1"/>
+  <rect x="90" y="35" width="10" height="35" fill="rgba(231,76,60,0.25)" rx="1"/>
+  
+  <!-- 阴线（绿） -->
+  <line x1="130" y1="30" x2="130" y2="75" stroke="rgba(22,160,134,0.2)" stroke-width="1"/>
+  <rect x="125" y="40" width="10" height="25" fill="rgba(22,160,134,0.15)" rx="1"/>
+  
+  <!-- 阳线 -->
+  <line x1="165" y1="20" x2="165" y2="70" stroke="rgba(231,76,60,0.3)" stroke-width="1"/>
+  <rect x="160" y="30" width="10" height="30" fill="rgba(231,76,60,0.25)" rx="1"/>
+  
+  <line x1="200" y1="15" x2="200" y2="65" stroke="rgba(231,76,60,0.35)" stroke-width="1"/>
+  <rect x="195" y="25" width="10" height="30" fill="rgba(231,76,60,0.3)" rx="1"/>
+  
+  <!-- 阴线 -->
+  <line x1="235" y1="20" x2="235" y2="60" stroke="rgba(22,160,134,0.2)" stroke-width="1"/>
+  <rect x="230" y="30" width="10" height="20" fill="rgba(22,160,134,0.15)" rx="1"/>
+  
+  <!-- 阳线 -->
+  <line x1="270" y1="10" x2="270" y2="55" stroke="rgba(231,76,60,0.35)" stroke-width="1"/>
+  <rect x="265" y="20" width="10" height="25" fill="rgba(231,76,60,0.3)" rx="1"/>
+  
+  <line x1="305" y1="15" x2="305" y2="50" stroke="rgba(231,76,60,0.3)" stroke-width="1"/>
+  <rect x="300" y="25" width="10" height="20" fill="rgba(231,76,60,0.25)" rx="1"/>
+  
+  <!-- 阴线 -->
+  <line x1="340" y1="20" x2="340" y2="60" stroke="rgba(22,160,134,0.25)" stroke-width="1"/>
+  <rect x="335" y="30" width="10" height="25" fill="rgba(22,160,134,0.15)" rx="1"/>
+  
+  <!-- 阳线 -->
+  <line x1="375" y1="10" x2="375" y2="50" stroke="rgba(231,76,60,0.35)" stroke-width="1"/>
+  <rect x="370" y="18" width="10" height="22" fill="rgba(231,76,60,0.3)" rx="1"/>
+  
+  <line x1="410" y1="8" x2="410" y2="45" stroke="rgba(231,76,60,0.4)" stroke-width="1"/>
+  <rect x="405" y="15" width="10" height="20" fill="rgba(231,76,60,0.35)" rx="1"/>
+  
+  <line x1="445" y1="5" x2="445" y2="40" stroke="rgba(231,76,60,0.35)" stroke-width="1"/>
+  <rect x="440" y="12" width="10" height="18" fill="rgba(231,76,60,0.3)" rx="1"/>
+  
+  <!-- 均线 -->
+  <path d="M60,55 Q130,50 200,40 Q270,30 340,35 Q400,25 445,20" stroke="rgba(243,156,18,0.2)" stroke-width="1.5" fill="none"/>
+  <!-- 成交量柱 -->
+  <rect x="55" y="100" width="10" height="20" fill="rgba(231,76,60,0.08)" rx="1"/>
+  <rect x="90" y="95" width="10" height="25" fill="rgba(231,76,60,0.1)" rx="1"/>
+  <rect x="125" y="105" width="10" height="15" fill="rgba(22,160,134,0.06)" rx="1"/>
+  <rect x="160" y="98" width="10" height="22" fill="rgba(231,76,60,0.08)" rx="1"/>
+  <rect x="195" y="92" width="10" height="28" fill="rgba(231,76,60,0.1)" rx="1"/>
+  <rect x="230" y="108" width="10" height="12" fill="rgba(22,160,134,0.05)" rx="1"/>
+  <rect x="265" y="95" width="10" height="25" fill="rgba(231,76,60,0.1)" rx="1"/>
+  <rect x="300" y="100" width="10" height="20" fill="rgba(231,76,60,0.08)" rx="1"/>
+  <rect x="335" y="105" width="10" height="15" fill="rgba(22,160,134,0.06)" rx="1"/>
+  <rect x="370" y="96" width="10" height="24" fill="rgba(231,76,60,0.1)" rx="1"/>
+  <rect x="405" y="90" width="10" height="30" fill="rgba(231,76,60,0.12)" rx="1"/>
+  <rect x="440" y="88" width="10" height="32" fill="rgba(231,76,60,0.12)" rx="1"/>
+  <!-- 底部线 -->
+  <line x1="0" y1="137" x2="520" y2="137" stroke="rgba(231,76,60,0.08)" stroke-width="0.5"/>
+</svg>

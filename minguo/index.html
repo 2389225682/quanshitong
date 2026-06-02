@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>民国历史 - 全史通 | 中国历史深度学习网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 民国专属配色 */
+        :root {
+            --primary: #4a3728;
+            --secondary: #6b5344;
+            --accent: #c9a227;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #4a3728 0%, #6b5344 50%, #4a3728 100%);
+        }
+        
+        .hero::before {
+            background: linear-gradient(90deg, #c9a227, #4a3728, #c9a227);
+            background-size: 200% 100%;
+        }
+        
+        .hero h1 { color: #c9a227; }
+        .hero .subtitle { color: #c0b8a8; }
+        .hero .description { color: #c0b8a8; }
+        .hero .number { color: #c9a227; }
+        
+        .timeline-section {
+            background: rgba(201, 162, 39, 0.1);
+            border-color: rgba(201, 162, 39, 0.3);
+        }
+        
+        .timeline-section h3 { color: #c9a227; }
+        .timeline-item .year { color: #c9a227; }
+        .timeline-item { border-color: rgba(201, 162, 39, 0.3); }
+        .timeline-item::before { background: #c9a227; }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav class="nav">
+        <a href="../index.html" class="logo">◆ 全史通</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">网站首页</a>
+            <a href="index.html" class="active">民国</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">
+                    切换朝代 ▼
+                </button>
+                <div class="dynasty-dropdown">
+                    <a href="../qin/index.html">秦朝</a>
+                    <a href="../han/index.html">汉朝</a>
+                    <a href="../sanguo/index.html">三国</a>
+                    <a href="../jin/index.html">晋朝</a>
+                    <a href="../nanbeichao/index.html">南北朝</a>
+                    <a href="../sui/index.html">隋朝</a>
+                    <a href="../tang/index.html">唐朝</a>
+                    <a href="../wudai/index.html">五代十国</a>
+                    <a href="../song/index.html">宋朝</a>
+                    <a href="../yuan/index.html">元朝</a>
+                    <a href="../ming/index.html">明朝</a>
+                    <a href="../qing/index.html">清朝</a>
+                    <a href="../minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>🔴 民国</h1>
+                <div class="subtitle">亚洲第一个共和国</div>
+                <p class="description">
+                    民国（1912-1949）是中国历史上一个承前启后的特殊时代。它推翻了延续两千多年的封建帝制，
+                    建立了亚洲第一个共和国，迎来了思想解放与社会变革。然而，这个新生政权很快陷入了军阀混战、
+                    外敌入侵和经济崩溃的泥潭。从辛亥革命到五四运动，从北伐战争到抗日战争，从解放战争到新中国成立，
+                    民国见证了中国近代史最波澜壮阔的三百年风云。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="number">37年</span>
+                        <span class="label">国祚</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">8位</span>
+                        <span class="label">总统/主席</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">5.4亿</span>
+                        <span class="label">人口</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">14年</span>
+                        <span class="label">抗日战争</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-section">
+                    <h3>📅 民国历史时间轴</h3>
+                    <div class="timeline-item">
+                        <span class="year">1911年</span> - 辛亥革命爆发，武昌起义成功
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1912年</span> - 中华民国成立，孙中山就任临时大总统
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1916年</span> - 袁世凯称帝失败，病逝；护国运动结束
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1919年</span> - 五四运动，新文化运动高潮
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1921年</span> - 中国共产党成立
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1926-1928年</span> - 北伐战争，基本统一中国
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1931年</span> - 九一八事变，日本侵占东北
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1937年</span> - 七七事变，全面抗战爆发
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1945年</span> - 抗日战争胜利
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1946-1949年</span> - 解放战争
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">1949年</span> - 中华人民共和国成立，民国结束
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-section">
+            <h2>🎯 民国的核心特征</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">🏛️</div>
+                    <h4>共和体制</h4>
+                    <p>推翻帝制，建立亚洲第一个共和国</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎓</div>
+                    <h4>思想启蒙</h4>
+                    <p>新文化运动，民主科学深入人心</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚔️</div>
+                    <h4>全民族抗战</h4>
+                    <p>十四年抗战，最终取得胜利</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📰</div>
+                    <h4>社会变革</h4>
+                    <p>从传统到现代的剧烈转型</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="color: var(--primary); font-family: 'Noto Serif SC', serif; margin: 40px 0 20px; text-align: center;">📖 学习模块</h2>
+        <div class="topics">
+            <a href="institution.html" class="topic-card">
+                <h3>🏛️ 国家机构</h3>
+                <p>五权宪法、军阀割据、训政体制——还有曹锟贿选、七日总理等精彩故事</p>
+                <div class="meta">
+                    <span>7大章节+故事</span>
+                    <span>约12000字</span>
+                </div>
+            </a>
+            <a href="military.html" class="topic-card">
+                <h3>⚔️ 军政制度</h3>
+                <p>国民革命军、北伐战争、抗日战争——含八百壮士、张自忠、远征军悲壮故事</p>
+                <div class="meta">
+                    <span>7大章节+故事</span>
+                    <span>约15000字</span>
+                </div>
+            </a>
+            <a href="tax.html" class="topic-card">
+                <h3>💰 税收政策</h3>
+                <p>关税自主、法币改革、恶性通胀——还有教授发工资后狂奔买米的故事</p>
+                <div class="meta">
+                    <span>5大章节+故事</span>
+                    <span>约10000字</span>
+                </div>
+            </a>
+            <a href="law.html" class="topic-card">
+                <h3>📜 法律制度</h3>
+                <p>六法全书引进、西法东渐——含施剑翘复仇案等经典法律故事</p>
+                <div class="meta">
+                    <span>7大章节+故事</span>
+                    <span>约10000字</span>
+                </div>
+            </a>
+            <a href="life.html" class="topic-card">
+                <h3>🏘️ 百姓生活</h3>
+                <p>衣食住行、新文化运动——含黄包车夫、大学教授、逃难家庭的真实故事</p>
+                <div class="meta">
+                    <span>9大章节+故事</span>
+                    <span>约13000字</span>
+                </div>
+            </a>
+            <a href="class.html" class="topic-card">
+                <h3>👥 社会阶级</h3>
+                <p>民族资产阶级、工人阶级、知识分子——含纱厂女工、荣氏企业、佃农的故事</p>
+                <div class="meta">
+                    <span>8章+真实故事</span>
+                    <span>约11000字</span>
+                </div>
+            </a>
+            <a href="foreign.html" class="topic-card">
+                <h3>🌐 对外关系</h3>
+                <p>废除不平等条约、抗日外交——含顾维钧巴黎和会、宋美龄国会演讲等精彩故事</p>
+                <div class="meta">
+                    <span>7章+外交故事</span>
+                    <span>约12000字</span>
+                </div>
+            </a>
+            <a href="price.html" class="topic-card">
+                <h3>🪙 物价参考</h3>
+                <p>法币贬值、金圆券——含老太太棺材本、清华教授亿万工资等真实故事</p>
+                <div class="meta">
+                    <span>7章+真实故事</span>
+                    <span>约11000字</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="figures-section">
+            <h2>👤 关键人物</h2>
+            <div class="figures-grid">
+                <a href="figures.html#sunzhongshan" class="figure-card">
+                    <div class="name">孙中山</div>
+                    <div class="role">中华民国国父</div>
+                </a>
+                <a href="figures.html#yuanzongdai" class="figure-card">
+                    <div class="name">袁世凯</div>
+                    <div class="role">北洋政府总统</div>
+                </a>
+                <a href="figures.html#jiangjieshi" class="figure-card">
+                    <div class="name">蒋介石</div>
+                    <div class="role">国民政府领袖</div>
+                </a>
+                <a href="figures.html#zhouenlai" class="figure-card">
+                    <div class="name">周恩来</div>
+                    <div class="role">新中国总理</div>
+                </a>
+                <a href="figures.html#luxun" class="figure-card">
+                    <div class="name">鲁迅</div>
+                    <div class="role">文学巨匠</div>
+                </a>
+                <a href="figures.html#caikunying" class="figure-card">
+                    <div class="name">蔡元培</div>
+                    <div class="role">教育之父</div>
+                </a>
+                <a href="figures.html#zhangzuolin" class="figure-card">
+                    <div class="name">张作霖</div>
+                    <div class="role">东北王</div>
+                </a>
+                <a href="figures.html#zhangxueliang" class="figure-card">
+                    <div class="name">张学良</div>
+                    <div class="role">西安事变主将</div>
+                </a>
+            </div>
+        </div>
+        
+        <a href="events.html" class="special-card">
+            <h3>📅 历史大事记</h3>
+            <p>每个重大历史事件都写成完整故事——背景、人物、经过、结果、影响一应俱全。从辛亥革命到新中国成立，带您走进历史现场。</p>
+        </a>
+        
+        <a href="diary.html" class="special-card">
+            <h3>📔 穿越体验：我在民国当记者</h3>
+            <p>第一人称视角，体验民国时期普通人的生活。在1930年代的上海滩当记者，见证十里洋场的繁华与动荡。</p>
+        </a>
+        
+        <a href="figures.html" class="special-card">
+            <h3>👤 关键人物传</h3>
+            <p>每个人物都写成完整生平故事——出身、转折、事迹、冲突、结局。孙中山、袁世凯、蒋介石、周恩来、鲁迅等八位风云人物的人生全记录。</p>
+        </a>
+        
+        <!-- 新增：民国深度解读 -->
+        <div class="section" style="margin-top: 50px;">
+            <h2>🔍 民国深度解读</h2>
+            
+            <div class="quote-block">
+                <p>"革命尚未成功，同志仍须努力。"</p>
+                <span class="source">—— 孙中山《国父遗训》</span>
+            </div>
+            
+            <h3>为什么民国是一个"矛盾的时代"？</h3>
+            <p>民国（1912-1949）是中国历史上一个极其特殊的时期。这个时代充满了矛盾：</p>
+            
+            <div class="knowledge-card">
+                <h4>🎯 进步与落后并存</h4>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>新文化运动</strong>：提倡民主与科学，白话文取代文言文，思想大解放</li>
+                    <li><strong>同时</strong>：广大农村依然保留着封建残余，妇女仍受压迫</li>
+                    <li><strong>上海滩</strong>：霓虹灯闪烁，百乐门歌舞升平</li>
+                    <li><strong>西北农村</strong>：农民依然靠天吃饭，鸦片烟馆遍布</li>
+                </ul>
+            </div>
+            
+            <div class="knowledge-card">
+                <h4>🌾 繁荣与苦难同在</h4>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>民族工业</strong>：一战期间快速发展，出现"黄金十年"</li>
+                    <li><strong>抗日战争</strong>：战火纷飞，生灵涂炭</li>
+                    <li><strong>1940年代</strong>：法币贬值，物价飞涨，民不聊生</li>
+                </ul>
+            </div>
+            
+            <h3>民国时期的历史分期</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>时期</th>
+                        <th>时间</th>
+                        <th>主要特征</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>南京临时政府</td>
+                        <td>1912年</td>
+                        <td>共和初创，百废待兴</td>
+                    </tr>
+                    <tr>
+                        <td>北洋政府</td>
+                        <td>1912-1928年</td>
+                        <td>军阀混战，共和有名无实</td>
+                    </tr>
+                    <tr>
+                        <td>国民政府前期</td>
+                        <td>1928-1937年</td>
+                        <td>形式统一，"黄金十年"</td>
+                    </tr>
+                    <tr>
+                        <td>抗日战争</td>
+                        <td>1937-1945年</td>
+                        <td>全民族抗战</td>
+                    </tr>
+                    <tr>
+                        <td>解放战争</td>
+                        <td>1945-1949年</td>
+                        <td>国共内战，民国终结</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>民国留给我们的历史遗产</h3>
+            <p>尽管民国只存在了37年，但它留下了深远的影响：</p>
+            
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">共和</div>
+                    <div class="label">民主观念深入人心</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">科学</div>
+                    <div class="label">新文化运动的思想启蒙</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">抗战</div>
+                    <div class="label">中华民族不屈精神的体现</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">变革</div>
+                    <div class="label">为新中国奠基</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>💡 思考</h4>
+                <p>民国是一个充满希望与失望、进步与落后、抗争与妥协的时代。理解这个时代，可以帮助我们更好地理解中国近代史的复杂性。</p>
+            </div>
+        </div>
+        
+        <!-- 新增：学习路径推荐 -->
+        <div class="section" style="margin-top: 40px;">
+            <h2>📚 推荐学习路径</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">了解背景</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">制度学习</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">人物传记</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">穿越体验</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 20px;">建议按此顺序学习，循序渐进，效果更佳</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <p style="font-size: 0.85em; color: rgba(255,255,255,0.5);">本网站内容严格遵循史实，参考资料包括《中华民国史》《北洋军阀史》等</p>
+        <div class="footer-links">
+            <a href="../index.html">网站首页</a>
+            <a href="../qing/index.html">上一朝代：清朝</a>
+            <a href="../index.html">返回首页</a>
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../common.js"></script>
+</body>
+</html>

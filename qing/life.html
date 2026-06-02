@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>清朝百姓生活 - 全史通</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav class="nav">
+        <a href="../index.html" class="logo">◆ 全史通</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">网站首页</a>
+            <a href="life.html" class="active">清朝</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">切换朝代 ▼</button>
+                <div class="dynasty-dropdown">
+                    <a href="../qin/index.html">秦</a>
+                    <a href="../han/index.html">汉</a>
+                    <a href="../sanguo/index.html">三国</a>
+                    <a href="../jin/index.html">晋</a>
+                    <a href="../nanbeichao/index.html">南北朝</a>
+                    <a href="../sui/index.html">隋</a>
+                    <a href="../tang/index.html">唐</a>
+                    <a href="../wudai/index.html">五代</a>
+                    <a href="../song/index.html">宋</a>
+                    <a href="../yuan/index.html">元</a>
+                    <a href="../ming/index.html">明</a>
+                    <a href="../qing/index.html">清</a>
+                    <a href="../minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero区域 -->
+        <div class="hero">
+            <h1>🏘️ 清朝百姓生活</h1>
+            <p class="subtitle">衣食住行、婚丧嫁娶、科举考试——清代人的日常</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="number">1644-1912</span>
+                    <span class="label">清朝存续时间</span>
+                </div>
+                <div class="stat-item">
+                    <span class="number">4亿+</span>
+                    <span class="label">清末人口峰值</span>
+                </div>
+                <div class="stat-item">
+                    <span class="number">268年</span>
+                    <span class="label">国祚长度</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 服饰文化 -->
+        <div class="section">
+            <h2>👔 服饰文化</h2>
+            <p>清代服饰是中国古代服饰制度最为完备的时期之一。清朝入关后，强制推行<span class="term">剃发易服</span>政策，要求汉人改剃满族发型、穿着满族服饰。这一政策虽然遭到强烈抵抗，但最终还是成为清代服饰文化的基础。</p>
+            
+            <h3>男子服饰：长袍马褂与马蹄袖</h3>
+            <p>清代男子的标志性服饰是<span class="term">长袍马褂</span>。长袍是右衽、圆领、下摆开衩的袍服，根据季节有单、夹、棉、皮之分。马褂是套在长袍外面的短衣，分为对襟、大襟、琵琶襟三种样式，穿起来方便骑射。</p>
+            <p>最具清代特色的设计是<span class="term">马蹄袖</span>（也叫"箭袖"）。这种袖口呈弧形下垂，形状像马蹄，平时可以翻起来方便劳作，行礼时则必须放下遮住手背，以示恭敬。清代官员在朝见皇帝或拜见长辈时，必须打下马蹄袖行礼。</p>
+            
+            <h3>官服补子：文禽武兽</h3>
+            <p>清代官服沿用了明朝的<span class="term">补子</span>制度，在胸前和背后各缝一块绣有图案的方形织物，作为区分官员品级的重要标志。</p>
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="number">🦅</span>
+                    <span class="label">文官</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">鹤</span>
+                    <span class="label">一品</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">锦鸡</span>
+                    <span class="label">二品</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">孔雀</span>
+                    <span class="label">三品</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🦁</span>
+                    <span class="label">武官</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">麒麟</span>
+                    <span class="label">一品</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">狮子</span>
+                    <span class="label">二品</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">豹</span>
+                    <span class="label">三品</span>
+                </div>
+            </div>
+            
+            <h3>平民服饰的阶层差异</h3>
+            <p>清代对各阶层服饰有严格规定，不可僭越。平民只能穿布衣，不得使用丝绸、锦缎。商人虽有钱，但受"士农工商"等级观念限制，穿着打扮不能超越读书人和农民。只有取得功名的士绅，才能穿青蓝色长衫、系儒绦。</p>
+            <div class="tip-box">
+                <h4>💡 清代服饰颜色等级</h4>
+                <p>黄色为皇家专用，特别是明黄色只有皇帝能用。亲王、郡王可用杏黄色，贝子以上皇亲可用金黄色。一品至四品穿绯红色，五品至七品穿青色，八品至九品穿绿色。平民只能穿皂（黑）白色。</p>
+            </div>
+        </div>
+
+        <!-- 饮食习俗 -->
+        <div class="section">
+            <h2>🍜 饮食习俗</h2>
+            <p>清代是中国饮食文化集大成的时代。<span class="term">满汉全席</span>作为清代最隆重的宴席，集满族菜点和汉族菜点精华于一身，据说最多可达108道菜，分三天才能吃完。民间饮食则因地域差异而呈现出丰富多彩的面貌。</p>
+            
+            <h3>南北饮食差异</h3>
+            <p>清代民间饮食的南北差异非常明显。北方以<span class="term">面食</span>为主，馒头、面条、烙饼是日常主食。华北平原盛产小麦，山西人爱吃面到了极致，据说有上百种面条的做法。东北地区因为气候寒冷，主食以高粱米、小米为主，炖菜是冬季的主要烹饪方式。</p>
+            <p>南方则以<span class="term">稻米</span>为主食，米饭、米线、糍粑等米制品丰富多样。长江中下游地区物产丰富，讲究"鱼米之乡"的精致生活。广东、福建等沿海地区则以海鲜为主要蛋白质来源。</p>
+            
+            <h3>八大菜系形成</h3>
+            <p>清代中期以后，以地方风味为代表的<span class="term">八大菜系</span>逐渐形成：</p>
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="number">鲁</span>
+                    <span class="label">山东菜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">川</span>
+                    <span class="label">四川菜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">粤</span>
+                    <span class="label">广东菜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">苏</span>
+                    <span class="label">江苏菜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">浙</span>
+                    <span class="label">浙江菜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">闽</span>
+                    <span class="label">福建菜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">湘</span>
+                    <span class="label">湖南菜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">徽</span>
+                    <span class="label">安徽菜</span>
+                </div>
+            </div>
+            
+            <h3>茶文化与酒文化</h3>
+            <p>清代茶文化高度发达，茶叶品种繁多。福建<span class="term">武夷岩茶</span>、安徽<span class="term">黄山毛峰</span>、浙江<span class="term">龙井茶</span>、云南<span class="term">普洱茶</span>等名茶享誉全国。茶馆遍布城乡，是人们社交、休闲的重要场所。</p>
+            <p>酒文化同样丰富多彩。北方以高粱酒为主，汾酒、茅台（当时还叫"茅台烧春"）逐渐成名。南方则以黄酒为主，浙江绍兴花雕、江苏女儿红等都是著名黄酒。民间自酿的米酒、包谷酒也很普遍。</p>
+            
+            <div class="example-box">
+                <h4>📜 清代百姓的日常饮食</h4>
+                <p>普通农户的日常饮食很简单：早饭通常是稀粥配咸菜，午饭吃杂粮馒头或米饭配简单菜肴，晚饭以面食或稀饭为主。一年只有在节日、婚丧嫁娶时才能吃到肉。清代一个五口之家的农户，全年用于吃饭的支出约占家庭收入的60%以上。</p>
+            </div>
+        </div>
+
+        <!-- 居住建筑 -->
+        <div class="section">
+            <h2>🏠 居住建筑</h2>
+            <p>清代民居建筑充分体现了地域特色和阶层差异。从皇家宫殿到农村茅屋，从北方四合院到南方园林，建筑风格迥异，反映了不同地区的气候条件、文化传统和经济水平。</p>
+            
+            <h3>北方四合院</h3>
+            <p><span class="term">四合院</span>是北方，尤其是北京地区最具代表性的民居建筑。标准四合院由北房（正房）、南房（倒座房）、东厢房、西厢房四面围合而成，中间是方正的天井院落。四合院大门一般开在东南角，门内有影壁遮挡视线，体现"财不外露"的观念。</p>
+            <p>四合院的规模因家庭经济条件而异。小康之家住三合院或小四合院，殷实人家住标准四合院，豪门大户则由多个四合院串联组成深宅大院。清代北京城内，八大胡同里的四合院是达官贵人的居所。</p>
+            
+            <h3>南方民居与园林</h3>
+            <p>南方民居以<span class="term">粉墙黛瓦</span>为特色，白墙青瓦马头墙是徽派建筑的标志性形象。浙江、安徽、江西等地的民居注重雕刻，门楼、窗棂、雀替等构件上都雕有精美图案。江苏、浙江的富商巨贾则追求园林意境，将住宅与园林融为一体。</p>
+            
+            <h3>官式建筑与民间建筑</h3>
+            <p>清代官式建筑有严格的营造规范，以<span class="term">故宫</span>为代表，采用最高等级的规格。金砖琉璃瓦、龙凤彩画只在皇家建筑使用。寺庙建筑可使用黄琉璃瓦或绿琉璃瓦。民间建筑则受到等级制度严格限制，平民房屋不能使用彩色琉璃瓦，不能建歇山顶，只能用悬山顶或硬山顶。</p>
+            
+            <h3>农村住房</h3>
+            <p>普通农民的住房条件很差。北方多为<span class="term">土坯房</span>或<span class="term">茅草屋</span>，墙体用泥土夯筑或土坯垒成，屋顶铺茅草或瓦片。南方农村则多为木结构瓦房，因气候潮湿，房屋底部设有木地板架空层。一个五口之家的贫苦农户，往往只有一间十几平方米的屋子，既是卧室又是厨房。</p>
+        </div>
+
+        <!-- 交通运输 -->
+        <div class="section">
+            <h2>🛤️ 交通运输</h2>
+            <p>清代交通主要依靠人力、畜力和水运。陆路交通以官道和驿站为主，水路则依靠纵横交错的河流和人工运河。普通百姓出行主要靠步行，长途旅行则骑马或坐轿。</p>
+            
+            <h3>官道与驿站</h3>
+            <p>清代建立了覆盖全国的<span class="term">驿传系统</span>，以京城为中心，向四面八方辐射。主要驿道称为"官马大道"，可通行马车和轿子。驿站间距通常为60里左右，提供马匹、更夫和基本食宿服务。</p>
+            <p>普通百姓不能使用驿站的官方服务，只有官员因公出差持有"火票"才能在驿站换马休息。民间旅店（客栈）则分布于官道两侧，供普通商旅歇脚。</p>
+            
+            <h3>运河漕运</h3>
+            <p><span class="term">京杭大运河</span>是清代最重要的水上交通动脉，主要用于运输粮食（漕粮）进京。每年有数百万石粮食通过运河运往北京，供养皇室、官员和驻军。运河沿岸的扬州、济宁、天津等地因运河而繁荣。</p>
+            <p>民间水上交通依靠自然河流和沿海航线。长江、珠江、松花江等大河都有客货船航行。沿海地区则有小吨位的沙船、乌篷船从事近海和内河运输。</p>
+            
+            <h3>民间交通方式</h3>
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="number">🚶</span>
+                    <span class="label">步行</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">日行60里</span>
+                    <span class="label">普通步行速度</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🐴</span>
+                    <span class="label">骑马</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">日行200里</span>
+                    <span class="label">骑马速度</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🎍</span>
+                    <span class="label">坐轿</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">日行80里</span>
+                    <span class="label">抬轿速度</span>
+                </div>
+            </div>
+            <p>坐轿是清代有一定身份地位者的出行方式。官轿按官员品级有严格规定：八抬大轿只有三品以上官员才能乘坐，七品知县只能用四人抬的蓝轿。民间婚嫁时也用花轿迎亲。</p>
+        </div>
+
+        <!-- 婚姻习俗 -->
+        <div class="section">
+            <h2>💒 婚姻习俗</h2>
+            <p>清代婚姻遵循"父母之命、媒妁之言"的传统，实行一夫一妻多妾制。婚姻的目的不是爱情，而是传宗接代、家族联姻。婚姻习俗既有全国通行的礼仪，也有浓厚的地方特色。</p>
+            
+            <h3>六礼程序</h3>
+            <p>清代婚礼严格遵循传统<span class="term">六礼</span>程序：</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">纳采</div>
+                    <small>男方请媒人向女方提亲</small>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">问名</div>
+                    <small>询问女方姓名八字</small>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">纳吉</div>
+                    <small>合八字后送聘礼</small>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">纳征</div>
+                    <small>正式下聘礼</small>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">请期</div>
+                    <small>择定婚期</small>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-title">亲迎</div>
+                    <small>新郎亲自迎娶</small>
+                </div>
+            </div>
+            
+            <h3>门当户对</h3>
+            <p>清代婚姻极其讲究<span class="term">门当户对</span>。士绅家庭联姻讲究"书香门第"，商人家庭讲究"门当户对"，农民家庭则只能在同等阶层内通婚。跨越阶层的婚姻极为罕见，也得不到社会认可。</p>
+            <p>嫁妆是女方家庭的重要支出，嫁妆丰厚程度直接影响新娘在婆家的地位。穷人家嫁女往往要倾尽积蓄，而富户嫁女的嫁妆可能包括金银首饰、绫罗绸缎、田产地契。</p>
+            
+            <h3>特殊婚姻形式</h3>
+            <div class="example-box">
+                <h4>📜 童养媳与典妻</h4>
+                <p><span class="term">童养媳</span>是清代常见的婚姻形式。贫苦人家把年幼的女儿送到婆家抚养，待成年后再完婚。这种婚姻往往是因为男方家缺少劳力，或者女方家无力抚养。</p>
+                <p><span class="term">典妻</span>是一种更为残酷的婚姻形式。丈夫将妻子典当给他人，收取一定银钱，约定年限，到期赎回。清代法律虽然禁止"典买妻女"，但民间仍有发生。</p>
+            </div>
+        </div>
+
+        <!-- 丧葬习俗 -->
+        <div class="section">
+            <h2>⚰️ 丧葬习俗</h2>
+            <p>清代丧葬习俗深受儒家孝道思想影响，以<span class="term">土葬</span>为主，讲究"入土为安"。丧葬仪式繁复，礼节众多，既是对死者的尊重，也体现生者的孝道。</p>
+            
+            <h3>停尸与报丧</h3>
+            <p>清代习俗，人死后要<span class="term">停尸三日</span>，以便亲人最后告别，也防止"假死"误埋。死者被移至正厅铺设的门板上，脸覆白布，身着寿衣。家人随即向亲友"报丧"，报丧者不能进入他人家门，只能在门口通报。</p>
+            
+            <h3>披麻戴孝</h3>
+            <p>丧礼期间，家人必须<span class="term">披麻戴孝</span>。孝服的等级有严格区分：嫡长子、长孙穿"斩衰"（用最粗的生麻布制成，不缝边），其他儿子穿"齐衰"，孙辈穿"大功"，曾孙穿"小功"，玄孙穿"缌麻"。</p>
+            
+            <h3>守孝制度</h3>
+            <p>清代官员遇到父母丧事必须<span class="term">丁忧守制</span>，辞官回乡三年（实际是二十七个月），期间不得任官、不得婚嫁、不得应酬。只有皇帝特旨"夺情"才能起复。普通人家的守孝虽然没有这么严格，但三年内也不能举办喜庆活动。</p>
+            
+            <h3>下葬与祭祀</h3>
+            <p>出殡日期由风水先生根据死者生辰和下葬穴位确定。墓地讲究风水，棺木讲究材质。富户人家会请风水先生寻龙穴，修建气势恢宏的陵墓。普通百姓只能用薄棺浅葬。清明节、中元节、寒衣节是主要的祭祀节日。</p>
+        </div>
+
+        <!-- 节庆习俗 -->
+        <div class="section">
+            <h2>🎊 节庆习俗</h2>
+            <p>清代岁时节庆沿袭传统，但增添了满族特色。主要传统节日有春节、元宵、清明、端午、七夕、中秋、重阳、冬至等，每个节日都有独特的民俗活动。</p>
+            
+            <h3>春节</h3>
+            <p><span class="term">春节</span>是清代最隆重的节日。从腊月二十三"祭灶"开始，家家户户大扫除、贴春联、挂年画。除夕夜全家团圆吃"年夜饭"，守岁至天明。正月初一开始拜年走亲戚，一直延续到正月十五元宵节。</p>
+            <p>清代皇宫的春节尤其隆重：腊月初一开始，皇帝接受王公大臣的"封印"仪式，意味着一年政务结束。正月初一凌晨，皇帝在太和殿接受百官朝贺，举行"元旦开笔"仪式。</p>
+            
+            <h3>其他传统节日</h3>
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="number">🪔</span>
+                    <span class="label">元宵节</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🏮</span>
+                    <span class="label">赏灯猜谜</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🌿</span>
+                    <span class="label">清明节</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🚣</span>
+                    <span class="label">踏青扫墓</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🐉</span>
+                    <span class="label">端午节</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🥟</span>
+                    <span class="label">吃粽赛龙舟</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🥮</span>
+                    <span class="label">中秋节</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🌕</span>
+                    <span class="label">赏月团圆</span>
+                </div>
+            </div>
+            
+            <h3>花会与庙会</h3>
+            <p><span class="term">花会</span>和<span class="term">庙会</span>是清代民间重要的集体活动。花会通常在农历新年或重要节日举行，有舞龙舞狮、高跷、秧歌、旱船等表演。庙会则结合宗教祭祀和商业贸易，寺庙周围的空地成为临时集市。</p>
+            <p>北京的白云观庙会、南京的夫子庙会、上海的城隍庙会都是著名的大型庙会，吸引了周边地区的民众前来进香、购物、娱乐。</p>
+        </div>
+
+        <!-- 民间娱乐 -->
+        <div class="section">
+            <h2>🎭 民间娱乐</h2>
+            <p>清代民间娱乐活动丰富多彩，既有传统的戏曲、说书，也有各种民俗竞技。清代中后期，<span class="term">京剧</span>的诞生标志着中国戏曲艺术达到了新的高峰。</p>
+            
+            <h3>京剧的形成</h3>
+            <p><span class="term">京剧</span>形成于清代乾隆年间，是在徽剧、汉调的基础上，吸收昆曲、秦腔等地方戏曲的精华而形成的。1790年，乾隆皇帝八十大寿，四大徽班进京祝寿，随后留在北京发展，逐渐形成了京剧这一剧种。</p>
+            <p>京剧以其独特的表演体系著称：<span class="term">唱</span>（歌唱）、<span class="term">念</span>（念白）、<span class="term">做</span>（表演）、<span class="term">打</span>（武打）四大功夫，以及<span class="term">生</span>（男性角色）、<span class="term">旦</span>（女性角色）、<span class="term">净</span>（花脸）、<span class="term">丑</span>（丑角）四大行当，构成完整的表演体系。</p>
+            
+            <h3>其他戏曲形式</h3>
+            <p>京剧之外，各地方戏曲也很活跃。昆曲以其典雅细腻著称，多在士大夫阶层流行。梆子、评剧、粤剧、豫剧等地方戏曲在民间广受欢迎。乡村草台班子农闲时走村串乡演出，是农民重要的文化生活。</p>
+            
+            <h3>说书、杂耍与竞技</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">📖</div>
+                    <h4>说书</h4>
+                    <p>评书、评话在茶馆书场演出，说书人只凭一张嘴，生动讲述历史故事、武侠传奇。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎪</div>
+                    <h4>杂耍</h4>
+                    <p>耍把式、抖空竹、踢毽子、套圈等民间游艺，是庙会集市上的常见娱乐。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🐔</div>
+                    <h4>斗鸡斗蟋蟀</h4>
+                    <p>斗鸡、斗蟋蟀（斗蛐蛐）是清代流行的博戏，上至王公，下至平民，都有人热衷。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🏮</div>
+                    <h4>灯会</h4>
+                    <p>元宵灯会是清代重要的集体娱乐，赏花灯、猜灯谜是节日传统。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 教育与科举 -->
+        <div class="section">
+            <h2>📚 教育与科举</h2>
+            <p>清代教育承袭明代制度，以<span class="term">科举考试</span>为核心。科举是普通人改变命运的唯一正途，"朝为田舍郎，暮登天子堂"的梦想激励着无数寒门学子。</p>
+            
+            <h3>教育机构</h3>
+            <p>清代教育机构分为多个层次：</p>
+            <div class="data-display">
+                <div class="data-item">
+                    <span class="number">🏠</span>
+                    <span class="label">私塾</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">民间</span>
+                    <span class="label">主要形式</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">📚</span>
+                    <span class="label">义学</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">官办</span>
+                    <span class="label">免费教育</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">🏛️</span>
+                    <span class="label">社学</span>
+                </div>
+                <div class="data-item">
+                    <span class="number">地方</span>
+                    <span class="label">基层教育</span>
+                </div>
+            </div>
+            <p><span class="term">私塾</span>是清代最主要的识字教育场所，由秀才或举人开办，教授儿童识字、写字、背诵《三字经》《百家姓》《千字文》等启蒙读物，以及四书五经等科举考试内容。</p>
+            
+            <h3>科举考试的层层选拔</h3>
+            <div class="timeline-section">
+                <h3>科举进阶之路</h3>
+                <div class="timeline-item">
+                    <span class="year">县试</span>
+                    在本县参加，考取者称为"童生"
+                </div>
+                <div class="timeline-item">
+                    <span class="year">府试</span>
+                    在府城参加，考取者称为"生员"（秀才）
+                </div>
+                <div class="timeline-item">
+                    <span class="year">乡试</span>
+                    在省城举行，每三年一次，考取者称为"举人"
+                </div>
+                <div class="timeline-item">
+                    <span class="year">会试</span>
+                    在京城举行，考取者称为"贡士"
+                </div>
+                <div class="timeline-item">
+                    <span class="year">殿试</span>
+                    皇帝亲自主持，分出一甲、二甲、三甲
+                </div>
+            </div>
+            
+            <h3>考中难度</h3>
+            <p>科举考试的录取率极低。以乡试为例，每省每次录取举人约1000人左右，而参加考试的童生通常有数万人，录取比例约为三十分之一。清代260多年间，累计录取举人约15万人，进士约2.7万人。</p>
+            
+            <div class="quote-box">
+                "十年寒窗无人问，一举成名天下知。"<br>
+                ——这句诗道尽了科举之路的艰辛与荣耀
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <div class="footer-links">
+            <a href="../index.html">网站首页</a>
+            <a href="life.html">百姓生活</a>
+            <a href="../ming/index.html">← 明朝</a>
+            <a href="../minguo/index.html">民国 →</a>
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../common.js"></script>
+</body>
+</html>

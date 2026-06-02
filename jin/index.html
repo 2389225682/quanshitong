@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>晋朝历史 - 全史通 | 中国历史深度学习网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 晋朝专属配色：褐色+金色 */
+        :root {
+            --primary: #4a3728;
+            --secondary: #2F4F4F;
+            --accent: #8b6914;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #4a3728 0%, #3d2a1f 50%, #2d1f1a 100%);
+        }
+        
+        .hero::before {
+            background: linear-gradient(90deg, #8b6914, #c9a227, #8b6914);
+            background-size: 200% 100%;
+        }
+        
+        .hero h1 { color: #c9a227; }
+        .hero .subtitle { color: #d4c4b0; }
+        .hero .description { color: #d4c4b0; }
+        .hero .number { color: #c9a227; }
+        
+        .timeline-section {
+            background: rgba(139, 105, 20, 0.1);
+            border-color: rgba(139, 105, 20, 0.3);
+        }
+        
+        .timeline-section h3 { color: #c9a227; }
+        .timeline-item .year { color: #c9a227; }
+        .timeline-item { border-color: rgba(139, 105, 20, 0.3); }
+        .timeline-item::before { background: #c9a227; }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav class="nav">
+        <a href="../index.html" class="logo">◆ 全史通</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">网站首页</a>
+            <a href="index.html" class="active">晋朝</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">切换朝代 ▼</button>
+                <div class="dynasty-dropdown">
+                    <a href="../qin/index.html">秦朝</a>
+                    <a href="../han/index.html">汉朝</a>
+                    <a href="../sanguo/index.html">三国</a>
+                    <a href="../jin/index.html">晋朝</a>
+                    <a href="../nanbeichao/index.html">南北朝</a>
+                    <a href="../sui/index.html">隋朝</a>
+                    <a href="../tang/index.html">唐朝</a>
+                    <a href="../wudai/index.html">五代十国</a>
+                    <a href="../song/index.html">宋朝</a>
+                    <a href="../yuan/index.html">元朝</a>
+                    <a href="../ming/index.html">明朝</a>
+                    <a href="../qing/index.html">清朝</a>
+                    <a href="../minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>☕ 晋朝</h1>
+                <div class="subtitle">门阀士族的黄金时代</div>
+                <p class="description">
+                    晋朝（265年-420年）分为西晋（265年-316年）和东晋（317年-420年）两个时期。
+                    西晋短暂统一中国，但很快陷入八王之乱、永嘉之乱的动荡，最终被匈奴所灭。
+                    东晋偏安江南，门阀政治达到顶峰，"王与马，共天下"成为这一时期政治格局的写照。
+                    王羲之的书法、陶渊明的诗歌、玄学的清谈，共同构成了魏晋风度的文化底色。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="number">155年</span>
+                        <span class="label">国祚</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">15位</span>
+                        <span class="label">皇帝</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">太康之治</span>
+                        <span class="label">繁荣时期</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">王谢风流</span>
+                        <span class="label">门阀时代</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-section">
+                    <h3>📅 晋朝历史时间轴</h3>
+                    <div class="timeline-item">
+                        <span class="year">265年</span> - 司马炎逼迫曹魏禅让，建立西晋
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">280年</span> - 西晋灭吴，统一中国，结束三国分裂
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">290年</span> - 晋武帝驾崩，晋惠帝继位，八王之乱爆发
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">311年</span> - 永嘉之乱，匈奴攻破洛阳，俘虏晋怀帝
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">316年</span> - 西晋灭亡，晋愍帝被杀
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">317年</span> - 司马睿在江南建立东晋
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">383年</span> - 淝水之战，东晋大败前秦
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">420年</span> - 刘裕代晋建宋，东晋灭亡
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-section">
+            <h2>🎯 晋朝的核心特征</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">🏛️</div>
+                    <h4>门阀政治</h4>
+                    <p>士族垄断政治资源，王导、谢安执掌朝政，"王与马共天下"</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📝</div>
+                    <h4>玄学清谈</h4>
+                    <p>以老庄思想为核心，竹林七贤开创清谈之风</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎨</div>
+                    <h4>文艺繁荣</h4>
+                    <p>王羲之书法、陶渊明诗歌、刘勰《文心雕龙》</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚔️</div>
+                    <h4>五胡乱华</h4>
+                    <p>北方少数民族南下，开启南北朝对峙格局</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="color: var(--primary); font-family: 'Noto Serif SC', serif; margin: 40px 0 20px; text-align: center;">📖 学习模块</h2>
+        <div class="topics">
+            <a href="institution.html" class="topic-card">
+                <h3>🏛️ 国家机构</h3>
+                <p>门阀政治、中央官制、地方行政——了解晋朝的政治体制如何被士族把持</p>
+                <div class="meta"><span>门阀时代</span><span>约8000字</span></div>
+            </a>
+            <a href="military.html" class="topic-card">
+                <h3>⚔️ 军政制度</h3>
+                <p>八王之乱、永嘉之乱、淝水之战——晋朝的战争与军事制度</p>
+                <div class="meta"><span>三大战役</span><span>约10000字</span></div>
+            </a>
+            <a href="tax.html" class="topic-card">
+                <h3>💰 税收政策</h3>
+                <p>占田制、户调制——晋朝的土地与赋税制度</p>
+                <div class="meta"><span>土地制度</span><span>约6000字</span></div>
+            </a>
+            <a href="law.html" class="topic-card">
+                <h3>📜 法律制度</h3>
+                <p>《晋律》、张杜律——中国第一部儒家化法典</p>
+                <div class="meta"><span>儒家立法</span><span>约7000字</span></div>
+            </a>
+            <a href="life.html" class="topic-card">
+                <h3>🏘️ 百姓生活</h3>
+                <p>玄学清谈、服药饮酒、魏晋风度——士族的优雅生活</p>
+                <div class="meta"><span>魏晋风度</span><span>约8000字</span></div>
+            </a>
+            <a href="class.html" class="topic-card">
+                <h3>👥 社会阶级</h3>
+                <p>门阀士族、寒门、佃客、部曲——等级森严的社会结构</p>
+                <div class="meta"><span>门阀时代</span><span>约7000字</span></div>
+            </a>
+            <a href="foreign.html" class="topic-card">
+                <h3>🌐 对外关系</h3>
+                <p>匈奴、鲜卑、羯、氐、羌——五胡内迁与民族融合</p>
+                <div class="meta"><span>五胡乱华</span><span>约6000字</span></div>
+            </a>
+            <a href="price.html" class="topic-card">
+                <h3>🪙 物价参考</h3>
+                <p>货币贬值、物价飞涨——西晋的经济困境</p>
+                <div class="meta"><span>经济民生</span><span>约5000字</span></div>
+            </a>
+        </div>
+        
+        <div class="figures-section">
+            <h2>👤 关键人物</h2>
+            <div class="figures-grid">
+                <a href="figures.html#simayiyi" class="figure-card">
+                    <div class="name">司马懿</div>
+                    <div class="role">晋朝奠基人</div>
+                </a>
+                <a href="figures.html#simayan" class="figure-card">
+                    <div class="name">司马炎</div>
+                    <div class="role">晋武帝，统一三国</div>
+                </a>
+                <a href="figures.html#simayi" class="figure-card">
+                    <div class="name">司马昭</div>
+                    <div class="role">高平陵之变</div>
+                </a>
+                <a href="figures.html#wangdao" class="figure-card">
+                    <div class="name">王导</div>
+                    <div class="role">东晋名相</div>
+                </a>
+                <a href="figures.html#xieany" class="figure-card">
+                    <div class="name">谢安</div>
+                    <div class="role">淝水之战胜者</div>
+                </a>
+                <a href="figures.html#wangxizhi" class="figure-card">
+                    <div class="name">王羲之</div>
+                    <div class="role">书圣</div>
+                </a>
+                <a href="figures.html#taoyuanming" class="figure-card">
+                    <div class="name">陶渊明</div>
+                    <div class="role">田园诗人</div>
+                </a>
+                <a href="figures.html#jiayizhi" class="figure-card">
+                    <div class="name">嵇康</div>
+                    <div class="role">竹林七贤</div>
+                </a>
+            </div>
+        </div>
+        
+        <a href="events.html" class="special-card">
+            <h3>📅 历史大事记</h3>
+            <p>从西晋统一到东晋偏安，详细解读晋朝每一个重大历史事件的背景、经过和影响。</p>
+        </a>
+        
+        <a href="diary.html" class="special-card">
+            <h3>📔 穿越体验：我在晋朝当士族</h3>
+            <p>第一人称视角，体验晋朝士族的生活。清谈玄学、服药饮酒、兰亭雅集，感受魏晋风度的魅力。</p>
+        </a>
+        
+        <!-- 新增：晋朝深度解读 -->
+        <div class="section" style="margin-top: 50px;">
+            <h2>🔍 晋朝深度解读</h2>
+            
+            <div class="quote-block">
+                <p>"时无英雄，使竖子成名！"</p>
+                <span class="source">—— 阮籍</span>
+            </div>
+            
+            <h3>为什么晋朝成为中国历史上的"另类"王朝？</h3>
+            <p>晋朝是中国历史上一个独特的时期。它既完成了统一，又迅速陷入分裂；既有文化繁荣，又有社会动荡；既有门阀士族的优雅，又有底层百姓的苦难。这种矛盾性正是晋朝历史的魅力所在。</p>
+            
+            <div class="knowledge-card">
+                <h4>🎯 太康之治的繁荣与隐患</h4>
+                <p>晋武帝司马炎统一全国后，出现了短暂的繁荣景象，史称"太康之治"：</p>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>人口增长</strong>：战争减少，人口从不足千万恢复到两千万</li>
+                    <li><strong>经济发展</strong>：实行占田制，农民有了土地，生产积极性提高</li>
+                    <li><strong>社会安定</strong>：统一消除了战乱，百姓得以休养生息</li>
+                    <li><strong>文化繁荣</strong>：太康文学兴起，左思《三都赋》"洛阳纸贵"</li>
+                </ul>
+                <p>但繁荣背后隐藏着巨大隐患：</p>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>分封诸王</strong>：司马炎大封宗室为王，埋下内乱种子</li>
+                    <li><strong>门阀垄断</strong>：九品中正制固化士族地位，阶层流动停滞</li>
+                    <li><strong>外族威胁</strong>：匈奴、鲜卑等内迁，边疆危机加深</li>
+                    <li><strong>皇权虚弱</strong>：晋惠帝痴呆，太后干政，外戚专权</li>
+                </ul>
+            </div>
+            
+            <div class="knowledge-card">
+                <h4>🌾 门阀士族的崛起</h4>
+                <p>晋朝是门阀士族的黄金时代。士族凭借家世背景垄断政治，形成"上品无寒门，下品无士族"的局面。</p>
+                <ul style="margin: 15px 0; padding-left: 25px;">
+                    <li><strong>王谢家族</strong>：王导、王羲之、谢安、谢灵运是其中代表</li>
+                    <li><strong>政治特权</strong>：高官厚禄只在小圈子内传承</li>
+                    <li><strong>经济特权</strong>：占有大量土地和佃客，免除赋税</li>
+                    <li><strong>文化特权</strong>：垄断教育，传承家学</li>
+                </ul>
+            </div>
+            
+            <h3>魏晋风度：一种独特的文化精神</h3>
+            <p>"魏晋风度"是这一时期士族文化的精髓，表现为：</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>表现特征</th>
+                        <th>代表人物</th>
+                        <th>核心精神</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>服药五石散</td>
+                        <td>嵇康、何晏</td>
+                        <td>追求精神超脱，突破身体束缚</td>
+                    </tr>
+                    <tr>
+                        <td>饮酒放达</td>
+                        <td>刘伶、阮籍</td>
+                        <td>借酒避祸，保持精神独立</td>
+                    </tr>
+                    <tr>
+                        <td>清谈玄理</td>
+                        <td>王弼、向秀</td>
+                        <td>探讨宇宙人生，追求智慧</td>
+                    </tr>
+                    <tr>
+                        <td>书法艺术</td>
+                        <td>王羲之、王献之</td>
+                        <td>以书法抒发性情，表达自我</td>
+                    </tr>
+                    <tr>
+                        <td>归隐田园</td>
+                        <td>陶渊明</td>
+                        <td>拒绝同流合污，保持人格完整</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>晋朝的历史遗产</h3>
+            <p>尽管晋朝政治上多有失败，但它在文化和制度方面留下了深刻印记：</p>
+            
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">书法</div>
+                    <div class="label">王羲之奠定书圣地位</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">诗歌</div>
+                    <div class="label">陶渊明开创田园诗派</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">玄学</div>
+                    <div class="label">儒道融合的思想突破</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">门阀</div>
+                    <div class="label">影响后世贵族文化</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4>💡 思考</h4>
+                <p>晋朝的门阀政治是中国历史上阶层固化的典型案例。为什么会出现这种现象？它对后世有什么影响？这些问题可以帮助我们理解中国社会的深层结构。</p>
+            </div>
+        </div>
+        
+        <!-- 学习路径推荐 -->
+        <div class="section" style="margin-top: 40px;">
+            <h2>📚 推荐学习路径</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">了解背景</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">政治制度</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">战争事件</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">文化人物</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 20px;">建议按此顺序学习，循序渐进，效果更佳</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <p style="font-size: 0.85em; color: rgba(255,255,255,0.5);">本网站内容严格遵循史实，参考资料包括《晋书》《世说新语》《资治通鉴》等</p>
+        <div class="footer-links">
+            <a href="../sanguo/index.html">← 上一朝代：三国</a>
+            <a href="../index.html">网站首页</a>
+            <a href="../nanbeichao/index.html">下一朝代：南北朝 →</a>
+        </div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../common.js"></script>
+</body>
+</html>

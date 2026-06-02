@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>三国社会阶级 - 全史通 | 从零开始，读懂中国千年</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root { --primary: #2d4a1e; --secondary: #8B4513; --accent: #c9a227; }
+        .nav { background: linear-gradient(135deg, #2d4a1e 0%, #8B4513 100%); }
+        .section::before { background: linear-gradient(180deg, #c9a227, #2d4a1e); }
+        .section h3 { border-left-color: #c9a227; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .story-card {
+            background: rgba(45, 74, 30, 0.06);
+            border: 1px solid rgba(201, 162, 39, 0.15);
+            border-radius: 14px;
+            padding: 28px;
+            margin: 25px 0;
+            transition: all 0.3s;
+        }
+        .story-card:hover { border-color: rgba(201, 162, 39, 0.35); }
+        .story-card h4 {
+            color: var(--accent);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1em;
+            margin: 18px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+        }
+        .story-card p { color: var(--text-gray); line-height: 1.9; margin-bottom: 12px; text-align: justify; }
+        .story-card ul { margin: 10px 0 10px 20px; }
+        .story-card ul li { color: var(--text-gray); margin-bottom: 8px; line-height: 1.7; }
+        .story-card .highlight-box {
+            background: rgba(201, 162, 39, 0.06);
+            border-left: 3px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .story-card .highlight-box p { font-style: italic; margin: 0; }
+        .person-tag {
+            display: inline-block;
+            background: rgba(139, 69, 19, 0.2);
+            color: #d4a76a;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            border: 1px solid rgba(139, 69, 19, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="nav">
+        <a href="index.html" class="logo">⚔️ 三国</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div>
+            <a href="index.html">三国首页</a>
+            <a href="institution.html">国家机构</a>
+            <a href="military.html">军政制度</a>
+            <a href="tax.html">税收政策</a>
+            <a href="law.html">法律制度</a>
+            <a href="life.html">百姓生活</a>
+            <a href="class.html" class="active">社会阶级</a>
+            <a href="events.html">历史大事</a>
+            <a href="figures.html">关键人物</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header fade-in">
+            <div class="breadcrumb">
+                <a href="../index.html">网站首页</a> > <a href="index.html">三国</a> > 社会阶级
+            </div>
+            <h1>👥 三国社会阶级</h1>
+            <p style="color: var(--text-muted); font-style: italic;">士族崛起、门阀形成——影响中国数百年的社会大变局。在这个阶层固化的时代，一个人的出身几乎决定了他的一切</p>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📌 核心概念：什么是"士族"？</h2>
+            <div class="definition-box">
+                <h4>📝 一句话解释</h4>
+                <p>三国时期最重要的社会变化，就是<span class="term">士族</span>（也叫门阀、世族）的崛起。士族就是那些世代做官、拥有大量土地和门生故吏的大族。他们垄断了政治权力和文化资源，形成了"上品无寒门，下品无世族"的阶层固化格局。这个格局影响了此后三四百年的中国历史。</p>
+            </div>
+
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">3-4%</div>
+                    <div class="label">士族占总人口比例</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">90%+</div>
+                    <div class="label">高官出自士族</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">400年</div>
+                    <div class="label">士族影响时长</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">≈0%</div>
+                    <div class="label">寒门做高官概率</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📊 一、三国社会阶层一览</h2>
+
+            <table>
+                <tr><th>阶层</th><th>人口比例</th><th>主要特征</th><th>代表人物</th></tr>
+                <tr>
+                    <td><span class="term">皇族</span></td>
+                    <td>极少</td>
+                    <td>皇帝及宗室，拥有最高权力</td>
+                    <td>曹氏、刘氏、孙氏</td>
+                </tr>
+                <tr>
+                    <td><span class="term">士族/门阀</span></td>
+                    <td>约3-4%</td>
+                    <td>世代做官、拥有大量土地和门生、垄断文化教育</td>
+                    <td>汝南袁氏、弘农杨氏、颍川荀氏</td>
+                </tr>
+                <tr>
+                    <td><span class="term">地方豪强</span></td>
+                    <td>约5-10%</td>
+                    <td>在地方上拥有武力和经济实力，但未必有全国性声望</td>
+                    <td>各地坞堡堡主、地方豪族</td>
+                </tr>
+                <tr>
+                    <td><span class="term">自耕农</span></td>
+                    <td>约40-50%</td>
+                    <td>拥有自己的土地，独立耕作，是国家赋税的主要来源</td>
+                    <td>普通农民</td>
+                </tr>
+                <tr>
+                    <td><span class="term">佃农/部曲</span></td>
+                    <td>约20-30%</td>
+                    <td>依附于地主或豪强，失去独立身份</td>
+                    <td>豪强的依附农民</td>
+                </tr>
+                <tr>
+                    <td><span class="term">兵户</span></td>
+                    <td>约5-10%</td>
+                    <td>世代为兵，地位低下，不能转行</td>
+                    <td>曹魏世兵</td>
+                </tr>
+                <tr>
+                    <td><span class="term">奴隶</span></td>
+                    <td>约3-5%</td>
+                    <td>完全没有自由的劳动力，可以买卖</td>
+                    <td>战俘、罪犯家属</td>
+                </tr>
+            </table>
+
+            <div class="story-card">
+                <h4>💡 一句话理解阶层差异</h4>
+                <p>想象一下，在三国时期：</p>
+                <ul>
+                    <li><strong>士族子弟</strong>20岁当官，30岁当太守，40岁当三公——只需要投个好胎。</li>
+                    <li><strong>自耕农家的孩子</strong>从小在地里干活，一辈子最大的愿望就是遇到一个丰年，能多吃几顿干的。</li>
+                    <li><strong>佃农</strong>连自己的地都没有，种着别人的田，收成的一半以上要交租。</li>
+                    <li><strong>兵户</strong>一出生就注定要当兵，不能考功名、不能务农、不能经商，只配在战场上送命。</li>
+                    <li><strong>奴隶</strong>甚至不被当人看——主人可以随意打骂、买卖，就像对待一头牛。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🏛️ 二、士族是怎么崛起的？</h2>
+
+            <h3>2.1 士族的起源</h3>
+            <p>士族的起源可以追溯到<span class="term">西汉的察举制</span>。汉代通过"举孝廉""举秀才"来选拔官员，被举荐的人往往出自有一定文化素养和财力的家庭。久而久之，这些家族积累了做官的经验、人脉和文化资源，形成了"世代为官"的世家。</p>
+
+            <div class="example-box">
+                <h4>💡 典型的士族：汝南袁氏</h4>
+                <p><span class="term">汝南袁氏</span>是东汉末年最显赫的士族之一。从袁安开始，袁家连续四代都有人位列"三公"（东汉最高官职），被称为"四世三公"。</p>
+                <p>袁安→袁敞→袁汤→袁逢/袁隗，连续四代人都是朝廷最高级别的官员。这种积累让袁家拥有了巨大的政治资本和人脉网络。</p>
+                <p>袁绍就是袁家的后代。他之所以能号召那么多诸侯讨伐董卓，很大程度上靠的就是"汝南袁氏"这块金字招牌。你要知道，袁绍本人的能力其实远不如曹操，但他的出身比曹操好太多了——这就是士族优势最直观的体现。</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 另一个案例：颍川荀氏</h4>
+                <p>如果说袁氏是"政治豪门"，那颍川荀氏就是"智囊家族"。荀彧的祖父荀淑以品德著称，有八个儿子号称"荀氏八龙"。荀彧本人是曹操的首席谋士，他的侄子荀攸又是曹操的军师。颍川荀氏一族在曹魏朝廷中占据了大量重要位置。</p>
+                <p>有趣的是，荀彧虽然辅佐曹操，但内心始终忠于汉室。曹操要称王时，荀彧"饮药而卒"（也有说是曹操送了个空盒子逼他自杀）。这个悲剧生动地展现了士族的困境：他们既是皇权的合作者，也是皇权的制衡者。</p>
+            </div>
+
+            <h3>2.2 东汉末年：士族的"黄金时代"</h3>
+            <p>东汉末年天下大乱，中央政权崩溃。大量百姓失去土地，投靠地方上的大族寻求保护。这些大族招募<span class="term">部曲</span>（私兵）和<span class="term">佃客</span>（依附农民），建立了大大小小的<span class="term">坞堡</span>（武装庄园），实际上成了一个个"独立王国"。</p>
+
+            <div class="definition-box">
+                <h4>📝 什么是"坞堡"？</h4>
+                <p><span class="term">坞堡</span>是东汉末年到三国时期常见的一种防御性庄园。周围有高墙和壕沟，里面住着地主家族和他们的依附农民、私兵。外面有农田，可以自给自足。</p>
+                <p>天下大乱时，普通百姓纷纷逃到坞堡里避难。作为交换，他们需要为坞堡的主人种地、当兵。久而久之，他们就失去了自由，成了"部曲"或"佃客"。</p>
+            </div>
+
+            <div class="story-card">
+                <h4>🌾 一个坞堡里的真实生活</h4>
+                <p>假设你是一个中原的农民。184年黄巾起义后，天下大乱。你住的村子被流寇烧了，你家的地也被乱兵踩坏了。你带着妻儿老小逃难，途中遇到了许家庄的坞堡。</p>
+                <p>许家庄的堡主许大爷收留了你们。条件很简单：他给你们一块地种，提供保护；收成你拿四成，他拿六成。农闲时你还要帮修坞堡的围墙。如果打仗，你要拿起长矛站在围墙上。</p>
+                <p>听起来剥削？但这是乱世中唯一的选择——要么有地种、有保护，要么饿死在逃难路上。许大爷不逼你们签合同，也不需要你们交保证金——因为在这种乱世，你们根本没有谈判的资格。</p>
+                <p>渐渐地，你和你的后代就成了许家的"部曲"。你们不是奴隶——许大爷不能卖你们。但你们也不是自由人——没有许家的同意，你们不能离开这块地。你们的身份就这样一代一代传下去：爷爷是许家的部曲，爸爸是许家的部曲，你也是许家的部曲，你的儿子还是许家的部曲。</p>
+                <p>这就是三国时期，绝大多数普通人的真实生活。</p>
+            </div>
+
+            <h3>2.3 九品中正制：士族的法律保障</h3>
+            <p>前面在"国家机构"篇中讲过，曹魏创立的<span class="term">九品中正制</span>，名义上是选拔人才，实际上被士族把持。中正官大多出身士族，他们自然倾向于给士族子弟评定高品级。</p>
+
+            <div class="warning-box">
+                <h4>⚠️ "上品无寒门，下品无世族"</h4>
+                <p>这是晋代刘毅对九品中正制的经典批评。意思是：一品到三品的高官，全都出自世家大族；四品以下的低级官员，几乎全是寒门出身。如果你出生在普通农民家庭，不管多聪明、多努力，都当不了大官。</p>
+            </div>
+
+            <div class="story-card">
+                <h4>📋 一个寒门子弟的绝望</h4>
+                <p>你叫刘小牛，出身兖州一个普通自耕农家。你从小特别聪明，在村里跟私塾先生学了几年认字，能把《论语》倒背如流。你听说了郡里搞"举孝廉"，你兴冲冲地跑到县衙去报名。</p>
+                <p>县吏看了你一眼，问："你家有人当官吗？"你说没有。"你家有钱吗？"你说只有十几亩地。"你家认识什么名士吗？"你连名士是什么都没听说过。</p>
+                <p>县吏笑了——不是恶意的，是无奈的笑。他说："小子，回家好好种地吧。举孝廉不是咱们这种人能想的事。你没看到吗？去年举的孝廉是孙县令的小舅子，前年举的是张主簿的外甥。这方圆一百里内的孝廉名额，早就被那几家当官的分完了。"</p>
+                <p>这个故事不是某个具体的历史事件，但它代表了三国时期千千万万寒门子弟的共同遭遇。士族垄断的不仅是官位，更是希望本身。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🌍 三、三国各国的社会结构差异</h2>
+
+            <h3>3.1 曹魏：士族最强大</h3>
+            <p>曹魏的士族势力最强。<span class="term">颍川荀氏</span>（荀彧、荀攸）、<span class="term">陈氏</span>（陈群、陈泰）、<span class="term">司马氏</span>（司马懿、司马师、司马昭）等士族在曹魏朝廷中占据了绝对主导地位。</p>
+            <p>有意思的是，曹操本人其实是"反士族"的。他三次下"求贤令"，强调"唯才是举"——不管品德如何、出身如何，只要有才能就要用。他提拔了很多出身低微的人，比如郭嘉（寒门）、戏志才（寒门）等。但在曹操死后，士族势力迅速反弹——曹丕正是靠着士族的支持才当上皇帝的，所以他一上台就推行了九品中正制，向士族妥协。</p>
+            <p>最终，士族的代表<span class="term">司马氏</span>篡夺了曹魏的皇权，建立了晋朝。这可以说是士族势力达到顶峰的标志。</p>
+
+            <h3>3.2 蜀汉：士族力量相对弱</h3>
+            <p>蜀汉地处益州（今四川），远离中原文化中心，本地的士族势力相对较弱。加上刘备和诸葛亮有意压制本地士族，所以蜀汉的权力更多集中在从荆州和北方来的"外来派"手中。</p>
+
+            <div class="knowledge-card">
+                <h4>📋 蜀汉的"三派"势力</h4>
+                <ul>
+                    <li><strong>荆州派</strong>：跟随刘备从荆州入蜀的，如诸葛亮、关羽、张飞、赵云等。核心统治集团</li>
+                    <li><strong>东州派</strong>：刘焉、刘璋时期入蜀的外来人士，如李严、法正。地位仅次于荆州派</li>
+                    <li><strong>益州本土派</strong>：益州本地人，如谯周、黄权。政治地位最低，经常受到压制</li>
+                </ul>
+                <p>诸葛亮在世时还能平衡各方势力。诸葛亮死后，这种矛盾越来越尖锐，最终导致蜀汉灭亡时，益州本地派极力主降。谯周写了《仇国论》，公开主张投降——因为在他代表的本土派看来，刘氏政权是"外来统治者"，不值得为它拼命。</p>
+            </div>
+
+            <div class="story-card">
+                <h4>🎯 诸葛亮如何平衡阶层矛盾？</h4>
+                <p>诸葛亮治蜀有一个非常厉害的招数——<strong>以法治蜀，一视同仁</strong>。他制定了《蜀科》，无论你是荆州来的老部下，还是益州本地的豪强，犯了法一样处罚。</p>
+                <p>最有名的案例是<span class="person-tag">李严</span>。李严是东州派的代表，地位仅次于诸葛亮（刘备托孤时诸葛亮排第一、李严排第二）。第四次北伐时，李严负责押运粮草，结果粮草没有按时送到，他怕被追究责任，竟然假传圣旨说"后主让退兵"。诸葛亮查明真相后，毫不客气地将李严废为庶人。</p>
+                <p>这个处理让益州本地派拍手称快——你看，连皇帝的"二号托孤大臣"犯了法都要受罚，我们还有什么好说的？诸葛亮用公平执法，暂时压制了蜀汉内部的阶层矛盾。</p>
+            </div>
+
+            <h3>3.3 东吴：士族与皇权共治</h3>
+            <p>东吴的建立本身就依赖于<span class="term">江东四大家族</span>的支持：吴郡<span class="term">顾氏</span>、<span class="term">陆氏</span>、<span class="term">朱氏</span>、<span class="term">张氏</span>。孙权虽然称帝，但权力在很大程度上受制于这些大家族。</p>
+
+            <div class="example-box">
+                <h4>💡 陆逊的悲剧——士族与皇权的冲突</h4>
+                <p><span class="term">陆逊</span>是东吴士族的代表人物。他在夷陵之战中力挽狂澜，官至丞相。但到了晚年，孙权对陆逊越来越猜忌。原因很简单：陆逊出自吴郡陆氏，功勋太高，门生故吏遍天下。孙权怕自己死后，陆逊会取代孙家。</p>
+                <p>更重要的背景是：陆家在江南有巨大的土地和人口资源。陆家手下的部曲和佃客数以万计，这些人只听陆家的，不听孙家的。孙权的皇权是架在士族支持的沙滩上的。</p>
+                <p>到了晚年，孙权的猜忌症发作，大兴"南鲁党争"（太子孙和与鲁王孙霸的党争），借机打压陆逊为代表的江南士族。陆逊最终在孙权的反复逼问下忧愤而死。他去世后，家里竟然"无余财"——作为一国丞相和顶级士族的掌门人，陆逊的清廉令人敬佩。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📖 四、底层人民的生活百态</h2>
+
+            <div class="story-card">
+                <h4>🗡️ 兵户：生下来就注定要上战场的人</h4>
+                <p>三国时期的军队中有一个特殊的群体——<span class="term">兵户</span>（也叫"士家"）。他们是世代当兵的家族，归军中管辖，不归地方管。兵户的身份是世袭的——你爷爷是兵，你爸爸是兵，你也是兵，你的子子孙孙都是兵。</p>
+                <p>兵户的地位有多低？曹魏有规定：兵户家的女儿只能嫁给兵户，不能嫁给普通人。如果你不想当兵想逃跑？抓住就是死罪；你的家人会被连坐，一起服苦役。</p>
+                <p>但兵户也有"福利"：政府会给兵户分一块地，由兵户家属耕种，免除田租。但这块地在兵役期间只够维持基本生活，退役后则归公。实际上，兵户就成了"军事农奴"——给国家种地、为国家打仗，终身不得脱离。</p>
+                <p>最惨的是，每次大战之后，"户主"战死了，国家会从你的儿子中再选一个来接替——如果儿子太小，那就等他成年了再来。兵户就这样一代一代地消耗在无休止的战争中。</p>
+            </div>
+
+            <div class="story-card">
+                <h4>⛓️ 奴隶：不被人当人看的人</h4>
+                <p>三国时期奴隶的来源主要有三种：战俘、卖身为奴的穷人、罪犯家属。奴隶的价格大约相当于一头牛——一匹绢到十匹绢不等。</p>
+                <p>在这个"命如草芥"的时代，奴隶的遭遇是最悲惨的。东吴有一个叫<span class="person-tag">贺齐</span>的将军，他征讨山越时俘虏了数万人，将其中老弱者全部杀死，青壮年编入军队，妇女和儿童则全部分给将士做奴隶。他的部下因为分到了大量奴隶，对他感恩戴德。</p>
+                <p>蜀汉的法律相对仁慈一些——诸葛亮规定"不可以力胁人"，禁止强行抓人为奴。汉末三国的大动乱中，有良知的政治家（如诸葛亮、曹操在部分地区），都在努力减少奴隶数量。但整体而言，三国依然是一个"人吃人"的等级社会。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🔄 五、阶层流动：几乎不可能的事</h2>
+            <p>前面说过，三国时期的社会阶层是极度固化的。但"几乎不可能"不等于"绝对不可能"。历史上还是有几个寒门子弟逆袭成功的案例——虽然数量少到可以忽略不计。</p>
+
+            <div class="story-card">
+                <h4>🌟 唯二的逆袭案例</h4>
+                <p><strong>案例一：张飞</strong>。正史中的张飞不是"屠夫"（那是演义编的），但也确实出身不高。他因为跟对了人（刘备），成了蜀汉的核心将领，官至车骑将军。但他的女儿嫁给了刘禅（后主），两个女儿先后都当了皇后——张家从寒门一跃成了皇亲国戚。这就是"跟对人"的力量。</p>
+                <p><strong>案例二：邓艾</strong>。邓艾从小丧父，家境贫寒，还因为口吃被人嘲笑。但他靠着努力读书，从一个小吏干起，最终成为曹魏名将，偷渡阴平灭了蜀汉。不过邓艾最后的结局也很惨——被钟会诬陷冤杀。这也从侧面说明：寒门出身的人即使靠自己的能力爬到最高处，也随时可能被士族出身的同僚踩下去。</p>
+                <p><strong>反面案例：庞德</strong>。庞德本是马超的部将，后投降曹操。关羽水淹七军时，庞德宁死不降，最终被杀。曹操"闻而悲之"，为他的死流了泪。但庞德死后，他的儿子庞会虽然被封了官，但仕途一直不顺畅——原因很简单：庞家不是士族。</p>
+            </div>
+
+            <div class="highlight-box">
+                <p>💡 <strong>大白话总结</strong>：三国时期社会阶层的核心特征就是"出身决定命运"。如果你是士族子弟，你的人生之路是铺好的；如果你出身寒门，哪怕你再有能力，绝大多数情况下也只能认命。这种情况直到隋朝创立科举制（605年）才被打破。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🔮 六、士族时代的终结</h2>
+            <p>士族门阀的统治从三国开始，一直延续到<span class="term">隋朝</span>（581年）。隋文帝创立<span class="term">科举制</span>，用考试代替推荐来选拔官员，从根本上打破了士族对官场的垄断。</p>
+            <p>不过，士族的影响并没有完全消失。直到<span class="term">唐朝</span>中后期，崔、卢、李、郑等旧士族仍然享有很高的社会声望。唐文宗曾想娶士族女子为妃，结果被拒绝——士族觉得皇室（李唐皇室并非传统士族出身）配不上他们。皇帝也无可奈何。</p>
+            <p>最终，唐末五代的战乱彻底摧毁了士族门阀的根基。到了<span class="term">宋朝</span>，科举已经成为选拔官员的主要方式，"朝为田舍郎，暮登天子堂"成为了可能。刘禹锡的诗说得好："旧时王谢堂前燕，飞入寻常百姓家。"士族时代，终于永远地结束了。</p>
+
+            <div class="warning-box">
+                <h4>⚠️ 总结思考：士族时代的遗产</h4>
+                <p>士族时代的核心问题在于：社会阶层流动性丧失。当一个社会不再允许底层人才向上流动时，这个社会就会失去活力。西晋的短命、东晋的偏安，归根到底都可以归因于"阶层固化"。而隋唐通过科举制重新打开了上升通道，才迎来了盛世。这个教训，放在今天依然引人深思。</p>
+            </div>
+        </div>
+
+        <div class="related-articles fade-in">
+            <h3>📚 延伸阅读</h3>
+            <div class="related-grid">
+                <a href="institution.html" class="related-card">
+                    <h4>🏛️ 国家机构</h4>
+                    <p>九品中正制如何保障士族利益？</p>
+                </a>
+                <a href="law.html" class="related-card">
+                    <h4>📜 法律制度</h4>
+                    <p>"八议"制度如何保护特权阶层？</p>
+                </a>
+                <a href="life.html" class="related-card">
+                    <h4>🏘️ 百姓生活</h4>
+                    <p>不同阶层的生活差异有多大？</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <div class="footer-links">
+            <a href="life.html">← 上一页：百姓生活</a>
+            <a href="index.html">返回三国首页</a>
+            <a href="foreign.html">下一页：对外关系 →</a>
+        </div>
+    </footer>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <!-- JS functions now handled by common.js -->
+    <script src="../common.js"></script>
+</body>
+</html>

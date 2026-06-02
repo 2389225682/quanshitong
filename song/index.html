@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>宋朝历史 - 全史通 | 中国历史深度学习网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .dynasty-switcher {
+            position: relative;
+            display: inline-block;
+        }
+        .dynasty-switcher-btn {
+            background: transparent;
+            border: 1px solid rgba(102, 126, 234, 0.5);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dynasty-switcher-btn:hover {
+            border-color: var(--song-purple);
+            color: var(--song-purple);
+        }
+        .dynasty-dropdown {
+            display: none;
+            position: absolute;
+            background: var(--song-bg-light);
+            min-width: 120px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            z-index: 1000;
+            border-radius: 8px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        .dynasty-dropdown a {
+            color: var(--text-light);
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            border-radius: 0;
+            border: none;
+        }
+        .dynasty-dropdown a:hover {
+            background: rgba(102, 126, 234, 0.2);
+            color: var(--song-purple);
+        }
+        .dynasty-switcher:hover .dynasty-dropdown {
+            display: block;
+        }
+        .feature-section {
+            background: linear-gradient(135deg, #252542 0%, #1a1a2e 100%);
+            border-radius: 16px;
+            padding: 35px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        .feature-section h2 {
+            color: var(--song-purple);
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        .feature-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .feature-item h4 {
+            color: var(--song-purple);
+            margin-bottom: 10px;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .feature-item p {
+            color: var(--text-gray);
+            font-size: 0.9em;
+        }
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .topic-card {
+            background: linear-gradient(135deg, #252542 0%, #1a1a2e 100%);
+            border-radius: 16px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .topic-card h3 {
+            color: var(--song-purple);
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 12px;
+        }
+        .topic-card p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+        .topic-card .meta {
+            display: flex;
+            gap: 10px;
+        }
+        .topic-card .meta span {
+            background: rgba(102, 126, 234, 0.15);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: var(--song-purple);
+        }
+        .special-card {
+            display: block;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 15px 0;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+        .special-card:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+        .special-card h3 {
+            color: var(--song-purple);
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 10px;
+        }
+        .special-card p {
+            color: var(--text-gray);
+        }
+        .hero-content h1 {
+            color: white;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .hero-content .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        .hero-content .description {
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .number {
+            display: block;
+            font-size: 2em;
+            font-weight: 600;
+            color: white;
+        }
+        .stat-item .label {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9em;
+        }
+        .footer-links {
+            margin-top: 20px;
+        }
+        .footer-links a {
+            color: var(--song-purple);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav class="nav">
+        <a href="../index.html" class="logo">◆ 全史通</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">网站首页</a>
+            <a href="index.html" class="active">宋朝</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">切换朝代 ▼</button>
+                <div class="dynasty-dropdown">
+                    <a href="../qin/index.html">秦朝</a>
+                    <a href="../han/index.html">汉朝</a>
+                    <a href="../sanguo/index.html">三国</a>
+                    <a href="../jin/index.html">晋朝</a>
+                    <a href="../nanbeichao/index.html">南北朝</a>
+                    <a href="../sui/index.html">隋朝</a>
+                    <a href="../tang/index.html">唐朝</a>
+                    <a href="../wudai/index.html">五代十国</a>
+                    <a href="../song/index.html">宋朝</a>
+                    <a href="../yuan/index.html">元朝</a>
+                    <a href="../ming/index.html">明朝</a>
+                    <a href="../qing/index.html">清朝</a>
+                    <a href="../minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>宋朝</h1>
+                <div class="subtitle">经济文化巅峰，重文轻武</div>
+                <p class="description">宋朝是中国历史上经济最繁荣、文化最昌盛的朝代。GDP占当时世界经济总量的22.7%，出现了世界最早的纸币"交子"。宋词达到巅峰，但"重文轻武"的政策最终导致亡于蒙古铁骑。</p>
+                <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="number">319年</span>
+                    <span class="label">国祚</span>
+                </div>
+                <div class="stat-item">
+                    <span class="number">18位</span>
+                    <span class="label">皇帝</span>
+                </div>
+                <div class="stat-item">
+                    <span class="number">1亿</span>
+                    <span class="label">人口</span>
+                </div>
+                <div class="stat-item">
+                    <span class="number">22.7%</span>
+                    <span class="label">世界GDP</span>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-section">
+            <h2>🎯 宋朝的核心特征</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">💰</div>
+                    <h4>经济繁荣</h4>
+                    <p>世界最早纸币交子，商业发达</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📜</div>
+                    <h4>宋词巅峰</h4>
+                    <p>苏轼、李清照、辛弃疾</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📝</div>
+                    <h4>王安石变法</h4>
+                    <p>试图扭转积贫积弱</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚔️</div>
+                    <h4>靖康之耻</h4>
+                    <p>北宋灭亡的惨痛教训</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="color: var(--primary); font-family: 'Noto Serif SC', serif; margin: 40px 0 20px; text-align: center;">📖 学习模块</h2>
+        <div class="topics">
+            <a href="institution.html" class="topic-card">
+                <h3>🏛️ 国家机构</h3>
+                <p>了解宋朝的政治体制、官僚体系、中央与地方关系</p>
+                <div class="meta"><span>深度解读</span><span>约8000字</span></div>
+            </a>
+            <a href="military.html" class="topic-card">
+                <h3>⚔️ 军政制度</h3>
+                <p>军事组织、兵制、战争与国防体系</p>
+                <div class="meta"><span>深度解读</span><span>约8000字</span></div>
+            </a>
+            <a href="tax.html" class="topic-card">
+                <h3>💰 税收政策</h3>
+                <p>赋税制度、财政收入与百姓负担</p>
+                <div class="meta"><span>深度解读</span><span>约6000字</span></div>
+            </a>
+            <a href="law.html" class="topic-card">
+                <h3>📜 法律制度</h3>
+                <p>法律体系、司法制度、刑罚与审判</p>
+                <div class="meta"><span>深度解读</span><span>约7000字</span></div>
+            </a>
+            <a href="life.html" class="topic-card">
+                <h3>🏘️ 百姓生活</h3>
+                <p>衣食住行、婚丧嫁娶、文化娱乐</p>
+                <div class="meta"><span>深度解读</span><span>约8000字</span></div>
+            </a>
+            <a href="class.html" class="topic-card">
+                <h3>👥 社会阶级</h3>
+                <p>社会分层、阶层流动、身份制度</p>
+                <div class="meta"><span>深度解读</span><span>约7000字</span></div>
+            </a>
+            <a href="foreign.html" class="topic-card">
+                <h3>🌐 对外关系</h3>
+                <p>外交政策、民族关系、对外战争与交流</p>
+                <div class="meta"><span>深度解读</span><span>约6000字</span></div>
+            </a>
+            <a href="price.html" class="topic-card">
+                <h3>🪙 物价参考</h3>
+                <p>货币制度、物价水平、工资与购买力</p>
+                <div class="meta"><span>深度解读</span><span>约5000字</span></div>
+            </a>
+        </div>
+        
+        <div class="feature-section">
+            <h2>🔬 宋朝的四大发明与世界贡献</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">📰</div>
+                    <h4>活字印刷</h4>
+                    <p>毕昇发明泥活字，比古登堡早400年</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🧭</div>
+                    <h4>指南针航海</h4>
+                    <p>首次用于航海，开启大航海时代</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💣</div>
+                    <h4>火药武器</h4>
+                    <p>震天雷、突火枪领先世界</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💴</div>
+                    <h4>世界最早纸币</h4>
+                    <p>交子比欧洲早600多年</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-section">
+            <h2>📅 宋朝历史分期</h2>
+            <div class="feature-grid" style="grid-template-columns: 1fr;">
+                <div class="feature-item" style="border-left: 4px solid var(--song-purple); text-align: left;">
+                    <h4>北宋（960-1127年）· 167年</h4>
+                    <p><strong>定都</strong>：东京开封府（今河南开封）</p>
+                    <p><strong>疆域</strong>：约280万平方公里，控制中原、江南、四川</p>
+                    <p><strong>大事</strong>：陈桥兵变→杯酒释兵权→澶渊之盟→庆历新政→王安石变法→靖康之耻</p>
+                    <p><strong>代表人物</strong>：赵匡胤、寇准、范仲淹、包拯、王安石、苏轼、沈括</p>
+                    <p>北宋是宋朝的上升期，经济繁荣、文化昌盛，但"重文轻武"的国策导致军事积弱，最终亡于金国。</p>
+                </div>
+                <div class="feature-item" style="border-left: 4px solid #e74c3c; text-align: left;">
+                    <h4>南宋（1127-1279年）· 152年</h4>
+                    <p><strong>定都</strong>：临安府（今浙江杭州）</p>
+                    <p><strong>疆域</strong>：约200万平方公里，控制淮河以南</p>
+                    <p><strong>大事</strong>：岳飞抗金→绍兴和议→隆兴和议→开禧北伐→端平入洛→崖山海战</p>
+                    <p><strong>代表人物</strong>：赵构、岳飞、韩世忠、朱熹、陆游、辛弃疾、文天祥</p>
+                    <p>南宋偏安江南，经济持续繁荣，但始终面临金国和蒙古的威胁，最终亡于蒙古铁骑。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-section">
+            <h2>🌍 宋朝在世界上的位置</h2>
+            <div class="feature-grid" style="grid-template-columns: 1fr;">
+                <table style="background: transparent; border: none;">
+                    <tr><th>对比维度</th><th>宋朝（960-1279年）</th><th>同时期世界</th></tr>
+                    <tr><td>经济总量</td><td>占世界GDP的22.7%</td><td>欧洲总和不及宋朝</td></tr>
+                    <tr><td>最大城市</td><td>开封100-150万人口</td><td>巴黎、伦敦10-20万</td></tr>
+                    <tr><td>科技</td><td>四大发明中的三项成熟应用</td><td>欧洲处于中世纪</td></tr>
+                    <tr><td>商业</td><td>纸币、海运贸易、资本主义萌芽</td><td>以物易物为主</td></tr>
+                    <tr><td>文化</td><td>宋词、理学、文人画巅峰</td><td>经院哲学、哥特式建筑起步</td></tr>
+                    <tr><td>军事</td><td>火药武器、神臂弓</td><td>骑士重甲、城堡防御</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <a href="events.html" class="special-card">
+            <h3>📅 历史大事记</h3>
+            <p>详细解读宋朝时期的重大历史事件，包括背景、经过和影响。</p>
+        </a>
+        
+        <a href="figures.html" class="special-card">
+            <h3>👤 关键人物传</h3>
+            <p>宋朝时期的重要人物生平事迹，包括帝王、将相、文人、思想家等。</p>
+        </a>
+        
+        <a href="diary.html" class="special-card">
+            <h3>📔 穿越体验</h3>
+            <p>第一人称视角，体验宋朝时期普通人的生活，感受历史的温度。</p>
+        </a>
+    </div>
+    
+    <footer>
+        <p class="copyright">© 全史通 · 从零开始，读懂中国千年</p>
+        <div class="footer-links">
+            <a href="../wudai/index.html">← 上一朝代：五代十国</a>
+            <a href="../index.html">网站首页</a>
+            <a href="../yuan/index.html">下一朝代：元朝 →</a>
+        
+        <div class="figures-section">
+            <h2>👤 关键人物</h2>
+            <div class="figures-grid">
+            <a href="figures.html#fig_1" class="figure-card">
+                <div class="name">赵匡胤</div>
+                <div class="role">宋太祖，开创大宋</div>
+            </a>
+            <a href="figures.html#fig_6" class="figure-card">
+                <div class="name">王安石</div>
+                <div class="role">变法图强的改革家</div>
+            </a>
+            <a href="figures.html#fig_8" class="figure-card">
+                <div class="name">苏轼</div>
+                <div class="role">文坛巨匠</div>
+            </a>
+            <a href="figures.html#fig_4" class="figure-card">
+                <div class="name">岳飞</div>
+                <div class="role">抗金名将</div>
+            </a>
+            <a href="figures.html#fig_5" class="figure-card">
+                <div class="name">文天祥</div>
+                <div class="role">抗元英雄</div>
+            </a>
+            </div>
+        </div></div>
+    </footer>
+    
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../common.js"></script>
+</body>
+</html>

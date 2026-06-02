@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>全史通 | 中国历史深度学习网站 - 从零开始，读懂中国千年</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scroll-decoration"></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <a href="quanshitong.html" class="logo">◆ 全史通</a>
+        <a href="index.html" style="font-size:0.9em; margin-right:4px;">🏠</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div>
+            <a href="#intro">首页</a>
+            <a href="#topics">八大主题</a>
+            <a href="#how-to-use">使用指南</a>
+            <a href="#dynasties">探索朝代</a>
+            <div class="dynasty-switcher">
+                <button class="dynasty-switcher-btn">朝代导航 ▼</button>
+                <div class="dynasty-dropdown">
+                    <a href="qin/index.html">秦朝</a>
+                    <a href="han/index.html">汉朝</a>
+                    <a href="sanguo/index.html">三国</a>
+                    <a href="jin/index.html">晋朝</a>
+                    <a href="nanbeichao/index.html">南北朝</a>
+                    <a href="sui/index.html">隋朝</a>
+                    <a href="tang/index.html">唐朝</a>
+                    <a href="wudai/index.html">五代十国</a>
+                    <a href="song/index.html">宋朝</a>
+                    <a href="yuan/index.html">元朝</a>
+                    <a href="ming/index.html">明朝</a>
+                    <a href="qing/index.html">清朝</a>
+                    <a href="minguo/index.html">民国</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 全屏 -->
+    <section class="home-hero">
+        <div class="hero-content">
+            <div class="hero-badge">千年华夏 · 一脉相承</div>
+            <h1>全史通</h1>
+            <p class="hero-subtitle">从零开始，读懂中国千年<br>深度解读中国历史，零基础也能看懂</p>
+
+            <div class="home-stats">
+                <div class="stat-item">
+                    <span class="home-stat-number">14</span>
+                    <span class="home-stat-label">历史时期</span>
+                </div>
+                <div class="stat-item">
+                    <span class="home-stat-number">2200+</span>
+                    <span class="home-stat-label">年历史跨度</span>
+                </div>
+                <div class="stat-item">
+                    <span class="home-stat-number">168</span>
+                    <span class="home-stat-label">深度主题</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>向下滚动探索</span>
+            <div style="margin-top: 10px;">↓</div>
+        </div>
+    </section>
+
+    <!-- 介绍区域 -->
+    <section id="intro" class="intro-section">
+        <div class="intro-container">
+            <h2 class="section-title fade-in">探索历史的新方式</h2>
+            <p class="intro-text fade-in">
+                我们不堆砌枯燥的年代和事件，而是用<strong style="color: var(--primary);">大白话</strong>讲述历史制度的来龙去脉。
+                每个术语都有解释，每个政策都有故事，让你真正理解历史为什么这样发展。
+                更有<strong style="color: var(--primary);">第一人称穿越体验</strong>，带你亲身体验古人的生活。
+            </p>
+
+            <div class="features-grid stagger-children">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📚</div>
+                    <h3>零基础友好</h3>
+                    <p>不需要任何历史基础，每个概念都从最基础讲起，用现代语言解释古代制度</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎭</div>
+                    <h3>沉浸式体验</h3>
+                    <p>第一人称视角穿越回古代，从早到晚体验普通人的生活，感受历史的温度</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3>数据可视化</h3>
+                    <p>用表格、对比、场景还原，让抽象的税收、物价变得具体可感</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔍</div>
+                    <h3>深度解读</h3>
+                    <p>不仅讲"是什么"，更讲"为什么"和"怎么样"，培养历史思维能力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 八大主题预览 -->
+    <section id="topics" class="content-preview">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="section-title fade-in">八大主题，全景呈现</h2>
+            <p class="intro-text fade-in">每个朝代从八个维度深度解读，构建完整的历史认知体系</p>
+        </div>
+
+        <div class="preview-grid stagger-children">
+            <div class="preview-item fade-in">
+                <div class="preview-icon">🏛️</div>
+                <h3>国家机构</h3>
+                <p>皇帝、丞相、六部...古代政府如何运作？权力如何分配？</p>
+            </div>
+            <div class="preview-item fade-in">
+                <div class="preview-icon">⚔️</div>
+                <h3>军政制度</h3>
+                <p>征兵还是募兵？军队如何组织？打仗怎么打？</p>
+            </div>
+            <div class="preview-item fade-in">
+                <div class="preview-icon">💰</div>
+                <h3>税收政策</h3>
+                <p>田赋、人头税、商税...古人交多少税？怎么交？</p>
+            </div>
+            <div class="preview-item fade-in">
+                <div class="preview-icon">📜</div>
+                <h3>法律制度</h3>
+                <p>原文+白话翻译，看懂古代法律条文，了解司法体系</p>
+            </div>
+            <div class="preview-item fade-in">
+                <div class="preview-icon">🏘️</div>
+                <h3>百姓生活</h3>
+                <p>吃什么？穿什么？住什么？古人的日常生活全景</p>
+            </div>
+            <div class="preview-item fade-in">
+                <div class="preview-icon">👥</div>
+                <h3>社会阶级</h3>
+                <p>士农工商，阶层如何划分？如何流动？社会地位差异</p>
+            </div>
+            <div class="preview-item fade-in">
+                <div class="preview-icon">🌐</div>
+                <h3>对外关系</h3>
+                <p>朝贡体系、战争与和平、贸易往来，古代中国与世界</p>
+            </div>
+            <div class="preview-item fade-in">
+                <div class="preview-icon">🪙</div>
+                <h3>物价参考</h3>
+                <p>米价、工资、房价...古代物价换算成今天多少钱？</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用指南 -->
+    <section id="how-to-use" class="how-to-use">
+        <div class="steps-container">
+            <div style="text-align: center;">
+                <h2 class="section-title fade-in">如何使用本网站</h2>
+            </div>
+            <div class="steps stagger-children">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-title">选择朝代</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9em; margin-top: 8px;">从14个历史时期中选择你感兴趣的朝代开始探索</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-title">阅读主题</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9em; margin-top: 8px;">每个朝代8大主题，从制度到生活全方位了解</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-title">穿越体验</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9em; margin-top: 8px;">阅读第一人称穿越日记，身临其境感受历史</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <div class="step-title">对比学习</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9em; margin-top: 8px;">跨朝代对比，理解制度的演变和历史的规律</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 朝代选择 -->
+    <section id="dynasties" class="dynasties-section">
+        <div class="dynasties-container">
+            <div class="dynasties-header fade-in">
+                <h2 class="section-title">选择你的探索之旅</h2>
+                <p class="intro-text">点击任意朝代，开启一段跨越时空的历史之旅</p>
+            </div>
+
+            <div class="timeline-path"></div>
+
+            <div class="dynasties-grid stagger-children">
+                <a href="qin/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header qin">
+                        <div class="dynasty-number">01</div>
+                        <div class="dynasty-header-content">
+                            <h3>秦朝</h3>
+                            <div class="dynasty-period">前221 - 前207年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">中国历史上第一个大一统王朝。秦始皇统一六国，建立皇帝制度，推行郡县制，统一文字、货币、度量衡。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">中央集权</span>
+                            <span class="dynasty-tag">统一制度</span>
+                            <span class="dynasty-tag">万里长城</span>
+                            <span class="dynasty-tag">秦律</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="han/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header han">
+                        <div class="dynasty-number">02</div>
+                        <div class="dynasty-header-content">
+                            <h3>汉朝</h3>
+                            <div class="dynasty-period">前202 - 220年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">中国历史上最强盛的王朝之一。文景之治、汉武大帝开疆拓土、丝绸之路开通，汉族由此得名。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">文景之治</span>
+                            <span class="dynasty-tag">丝绸之路</span>
+                            <span class="dynasty-tag">独尊儒术</span>
+                            <span class="dynasty-tag">史记</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="sanguo/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header sanguo">
+                        <div class="dynasty-number">03</div>
+                        <div class="dynasty-header-content">
+                            <h3>三国</h3>
+                            <div class="dynasty-period">220 - 280年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">魏蜀吴三分天下，英雄辈出的时代。曹操、刘备、孙权逐鹿中原，诸葛亮鞠躬尽瘁。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">赤壁之战</span>
+                            <span class="dynasty-tag">三国演义</span>
+                            <span class="dynasty-tag">九品中正</span>
+                            <span class="dynasty-tag">屯田制</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="jin/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header jin">
+                        <div class="dynasty-number">04</div>
+                        <div class="dynasty-header-content">
+                            <h3>晋朝</h3>
+                            <div class="dynasty-period">265 - 420年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">短暂统一后陷入分裂。西晋八王之乱、永嘉之乱，东晋偏安江南，门阀政治鼎盛。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">太康之治</span>
+                            <span class="dynasty-tag">八王之乱</span>
+                            <span class="dynasty-tag">门阀政治</span>
+                            <span class="dynasty-tag">王羲之</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="nanbeichao/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header nanbeichao">
+                        <div class="dynasty-number">05</div>
+                        <div class="dynasty-header-content">
+                            <h3>南北朝</h3>
+                            <div class="dynasty-period">420 - 589年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">南北对峙的大分裂时期。民族大融合，佛教兴盛，科技文化取得重大成就。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">北魏孝文帝</span>
+                            <span class="dynasty-tag">均田制</span>
+                            <span class="dynasty-tag">石窟艺术</span>
+                            <span class="dynasty-tag">祖冲之</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="sui/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header sui">
+                        <div class="dynasty-number">06</div>
+                        <div class="dynasty-header-content">
+                            <h3>隋朝</h3>
+                            <div class="dynasty-period">581 - 618年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">结束分裂，重新统一。开创科举制，开凿大运河，确立三省六部制，为唐朝盛世奠基。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">开皇之治</span>
+                            <span class="dynasty-tag">科举制</span>
+                            <span class="dynasty-tag">大运河</span>
+                            <span class="dynasty-tag">三省六部</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="tang/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header tang">
+                        <div class="dynasty-number">07</div>
+                        <div class="dynasty-header-content">
+                            <h3>唐朝</h3>
+                            <div class="dynasty-period">618 - 907年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">中国封建社会的巅峰。贞观之治、开元盛世，诗歌黄金时代，开放包容的世界帝国。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">贞观之治</span>
+                            <span class="dynasty-tag">开元盛世</span>
+                            <span class="dynasty-tag">唐诗</span>
+                            <span class="dynasty-tag">长安城</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="wudai/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header wudai">
+                        <div class="dynasty-number">08</div>
+                        <div class="dynasty-header-content">
+                            <h3>五代十国</h3>
+                            <div class="dynasty-period">907 - 979年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">唐亡后的分裂动荡时期。中原五朝更迭，十国并立，武将专权，社会动荡不安。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">朱温建梁</span>
+                            <span class="dynasty-tag">儿皇帝</span>
+                            <span class="dynasty-tag">周世宗</span>
+                            <span class="dynasty-tag">词兴起</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="song/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header song">
+                        <div class="dynasty-number">09</div>
+                        <div class="dynasty-header-content">
+                            <h3>宋朝</h3>
+                            <div class="dynasty-period">960 - 1279年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">经济繁荣、文化昌盛的巅峰时代。王安石变法、世界最早纸币"交子"、宋词巅峰。重文轻武。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">王安石变法</span>
+                            <span class="dynasty-tag">交子</span>
+                            <span class="dynasty-tag">宋词</span>
+                            <span class="dynasty-tag">靖康之耻</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="yuan/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header yuan">
+                        <div class="dynasty-number">10</div>
+                        <div class="dynasty-header-content">
+                            <h3>元朝</h3>
+                            <div class="dynasty-period">1271 - 1368年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">蒙古人建立的大一统王朝。疆域空前辽阔，行省制度沿用至今。民族等级森严，马可·波罗来华。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">行省制</span>
+                            <span class="dynasty-tag">四等人制</span>
+                            <span class="dynasty-tag">元曲</span>
+                            <span class="dynasty-tag">马可波罗</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="ming/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header ming">
+                        <div class="dynasty-number">11</div>
+                        <div class="dynasty-header-content">
+                            <h3>明朝</h3>
+                            <div class="dynasty-period">1368 - 1644年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">汉人重建的王朝。朱元璋废丞相、设锦衣卫，郑和下西洋，资本主义萌芽。后期党争激烈。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">锦衣卫</span>
+                            <span class="dynasty-tag">郑和下西洋</span>
+                            <span class="dynasty-tag">一条鞭法</span>
+                            <span class="dynasty-tag">万历怠政</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="qing/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header qing">
+                        <div class="dynasty-number">12</div>
+                        <div class="dynasty-header-content">
+                            <h3>清朝</h3>
+                            <div class="dynasty-period">1644 - 1912年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">满族建立的最后一个封建王朝。康乾盛世，疆域达到极盛。后期闭关锁国，鸦片战争后沦为半殖民地。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">康乾盛世</span>
+                            <span class="dynasty-tag">摊丁入亩</span>
+                            <span class="dynasty-tag">鸦片战争</span>
+                            <span class="dynasty-tag">太平天国</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+
+                <a href="minguo/index.html" class="dynasty-card fade-in">
+                    <div class="dynasty-header minguo">
+                        <div class="dynasty-number">13</div>
+                        <div class="dynasty-header-content">
+                            <h3>民国</h3>
+                            <div class="dynasty-period">1912 - 1949年</div>
+                        </div>
+                    </div>
+                    <div class="dynasty-body">
+                        <p class="dynasty-desc">亚洲第一个共和国。军阀混战、抗日战争、国共内战。社会剧烈转型，新旧思想碰撞，民族觉醒。</p>
+                        <div class="dynasty-features">
+                            <span class="dynasty-tag">辛亥革命</span>
+                            <span class="dynasty-tag">抗日战争</span>
+                            <span class="dynasty-tag">法币通胀</span>
+                            <span class="dynasty-tag">五四运动</span>
+                        </div>
+                        <div class="explore-btn"><span>开始探索</span><span>→</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="home-footer">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary)); background-size: 200% 100%; animation: shimmer 3s linear infinite;"></div>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="footer-logo">全史通</div>
+            <p style="font-size: 1.1em; opacity: 0.9; margin-bottom: 10px;">从零开始，读懂中国千年</p>
+            <p style="opacity: 0.7; margin-bottom: 40px;">以史为鉴，可以知兴替</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; max-width: 900px; margin: 0 auto 50px; padding: 40px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">早期王朝</h4>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="qin/index.html" class="footer-nav-home" style="padding: 0;">秦朝</a>
+                        <a href="han/index.html" class="footer-nav-home" style="padding: 0;">汉朝</a>
+                        <a href="sanguo/index.html" class="footer-nav-home" style="padding: 0;">三国</a>
+                        <a href="jin/index.html" class="footer-nav-home" style="padding: 0;">晋朝</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">分裂与统一</h4>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="nanbeichao/index.html" class="footer-nav-home" style="padding: 0;">南北朝</a>
+                        <a href="sui/index.html" class="footer-nav-home" style="padding: 0;">隋朝</a>
+                        <a href="tang/index.html" class="footer-nav-home" style="padding: 0;">唐朝</a>
+                        <a href="wudai/index.html" class="footer-nav-home" style="padding: 0;">五代十国</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">近世王朝</h4>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="song/index.html" class="footer-nav-home" style="padding: 0;">宋朝</a>
+                        <a href="yuan/index.html" class="footer-nav-home" style="padding: 0;">元朝</a>
+                        <a href="ming/index.html" class="footer-nav-home" style="padding: 0;">明朝</a>
+                        <a href="qing/index.html" class="footer-nav-home" style="padding: 0;">清朝</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">近现代</h4>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="minguo/index.html" class="footer-nav-home" style="padding: 0;">民国</a>
+                    </div>
+                </div>
+            </div>
+
+            <p style="opacity: 0.5; font-size: 0.9em;">愿这份资料能帮助你更好地理解中国历史</p>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+</body>
+</html>

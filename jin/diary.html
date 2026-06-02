@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <title>晋朝穿越体验 - 全史通 | 从零开始，读懂中国千年</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root { --primary: #4a3728; --secondary: #2F4F4F; --accent: #8b6914; }
+        .hero { background: linear-gradient(135deg, #4a3728 0%, #3d2a1f 50%, #2d1f1a 100%); }
+        .hero::before { background: linear-gradient(90deg, #8b6914, #c9a227, #8b6914); }
+        .nav { background: linear-gradient(135deg, #4a3728 0%, #3d2a1f 50%, #2d1f1a 100%); }
+        .section::before { background: linear-gradient(180deg, #8b6914, #4a3728); }
+        .section h3 { border-left-color: #8b6914; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .story-card {
+            background: rgba(74, 55, 40, 0.06);
+            border: 1px solid rgba(139, 105, 20, 0.15);
+            border-radius: 14px;
+            padding: 28px;
+            margin: 25px 0;
+            transition: all 0.3s;
+        }
+        .story-card h4 {
+            color: var(--accent);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1em;
+            margin: 18px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(139, 105, 20, 0.12);
+        }
+        .story-card p { color: var(--text-gray); line-height: 1.9; margin-bottom: 12px; text-align: justify; }
+        .story-card ul { margin: 10px 0 10px 20px; }
+        .story-card ul li { color: var(--text-gray); margin-bottom: 8px; line-height: 1.7; }
+        .highlight-box {
+            background: rgba(139, 105, 20, 0.06);
+            border-left: 3px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p { font-style: italic; margin: 0; }
+        .person-tag {
+            display: inline-block;
+            background: rgba(47, 79, 79, 0.2);
+            color: #7a9e9e;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            border: 1px solid rgba(47, 79, 79, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="nav">
+        <a href="index.html" class="logo">☕ 晋朝</a>
+        <button class="nav-toggle" aria-label="菜单">☰</button>
+        <div>
+            <a href="index.html">晋朝首页</a>
+            <a href="institution.html">国家机构</a>
+            <a href="military.html">军政制度</a>
+            <a href="tax.html">税收政策</a>
+            <a href="law.html">法律制度</a>
+            <a href="life.html">百姓生活</a>
+            <a href="class.html">社会阶级</a>
+            <a href="foreign.html">对外关系</a>
+            <a href="price.html">物价参考</a>
+            <a href="events.html">历史大事</a>
+            <a href="figures.html">关键人物</a>
+            <a href="diary.html" class="active">穿越体验</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header fade-in">
+            <div class="breadcrumb">
+                <a href="../index.html">网站首页</a> > <a href="index.html">晋朝</a> > 穿越体验
+            </div>
+            <h1>📔 穿越体验：我在晋朝当士族</h1>
+            <p style="color: var(--text-muted); font-style: italic;">清谈玄学、服药饮酒、兰亭雅集——用一天时间，体验魏晋风度最极致的风雅与忧伤</p>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📌 穿越须知</h2>
+            <div class="definition-box">
+                <h4>📝 穿越设定</h4>
+                <p>你现在是东晋时期琅琊王氏的一位年轻士族子弟，名叫王逸之（虚构人物），时间是永和九年（353年），也就是王羲之写下《兰亭集序》的这一年。你的身份是王羲之的远房侄子，刚满二十岁，已经通过了"秀孝"（秀才和孝廉）的选拔，开始在官场崭露头角。你住在建康（今南京）乌衣巷——没错，就是"旧时王谢堂前燕"中的那条乌衣巷。</p>
+            </div>
+            
+            <div class="tip-box">
+                <h4>💡 温馨提示</h4>
+                <p>晋朝是一个重视门第的时代。你出身琅琊王氏，这是最顶级的门阀。记住：你的姓氏就是你的通行证，但你的言行也要配得上这个姓氏。你的叔伯王导是当年"王与马共天下"的主角之一，你从小耳濡目染，深知这个家族的责任——既要保持风雅，也要守住权力。</p>
+            </div>
+
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">353年</div>
+                    <div class="label">永和九年</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">建康</div>
+                    <div class="label">东晋都城</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">琅琊王氏</div>
+                    <div class="label">你的家族</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">士族</div>
+                    <div class="label">你的社会阶层</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🌅 清晨：被五石散"散发"唤醒</h2>
+            
+            <p>清晨的阳光透过雕花木窗洒进卧房，我被一阵燥热唤醒——昨晚服下的五石散开始"散发"了。</p>
+            
+            <div class="story-card">
+                <h4>🔥 五石散的"后劲"</h4>
+                <p>我翻身坐起，只觉得浑身发热，皮肤仿佛要燃烧起来。按照惯例，我让仆人端来一碗冷粥，又喝了几杯热酒，然后开始在房间里慢慢走动，让药力"散"出来。此时的感觉是：全身像被火烤，皮肤干裂发痒，但精神状态却异常兴奋——仿佛有无穷的灵感在脑中迸发。</p>
+                <p>这就是魏晋士族最标志性的生活方式——<strong>服散</strong>。五石散的成分是石钟乳、石硫黄、白石英、紫石英和赤石脂——五种矿物质配制而成。服下之后，人会感到全身发热、精神亢奋、思维敏捷。据说嵇康就是在服散后写出了那些惊世骇俗的文章。</p>
+                <p>但代价也很大：长期服用会导致重金属中毒，皮肤溃烂、关节疼痛、精神错乱。很多名士最后都被五石散折磨得不成人形。何晏（最早服用五石散的名士）四十多岁就牙齿脱落、头发掉光。但我们都还在吃——因为不吃就不够"风雅"。</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 什么是"散发"？</h4>
+                <p>服用五石散后，全身会发热发燥。这时需要：</p>
+                <ul>
+                    <li>吃冷食、喝热酒（冷热交替"以毒攻毒"）</li>
+                    <li>在房间里慢慢走动，帮助药力"散发"</li>
+                    <li>穿宽松的衣服（最好是大袖飘飘的那种）</li>
+                    <li>用冷水擦身降温</li>
+                </ul>
+                <p>如果不"散发"，轻则皮肤溃烂，重则丧命。所以士族们服药后都要小心翼翼地"散发"，这也成为了一种独特的养生方式——虽然从现代医学角度看，这种"养生"无异于慢性自杀。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>☀️ 上午：清谈玄理——最烧脑的社交活动</h2>
+            
+            <p>"散发"完毕后，我换上一身褒衣博带（宽大的衣服和宽松的腰带——五石散爱好者的标准装扮，因为宽松的衣服不摩擦皮肤），出门拜访朋友。今天的目的地是庾亮的府邸——那里正在举办一场清谈会。</p>
+            
+            <div class="story-card">
+                <h4>🚶 建康的早晨</h4>
+                <p>马车穿过建康城的街道。街道两旁是熙熙攘攘的商铺——卖布的、卖米的、卖笔墨纸砚的，还有专门卖五石散的药铺。最有意思的是那些"胡人"商人——他们从西域来到建康，卖香料、珠宝、葡萄酒。东晋的开放程度远超你的想象，街头可以看到各种肤色、各种服饰的人。</p>
+                <p>街道上人来人往，有挑担叫卖的小贩，有像我一样乘坐马车出行的士族——他们的马车装饰华丽，车帘是用蜀锦做的，随风飘动。偶尔还能看到一两个衣衫褴褛的乞丐蜷缩在街角。我移开视线。这是士族之间暗暗达成的默契：只看风雅，不看苦难。</p>
+            </div>
+            
+            <p>来到庾府，清谈会已经开始了。十几位名士围坐在大厅中，正在讨论一个永恒的话题：<strong>"名教与自然"</strong>——究竟是应该遵从儒家的名教礼法，还是应该追求老庄的自然逍遥？</p>
+            
+            <div class="story-card">
+                <h4>🗣️ 一场典型的清谈</h4>
+                <p>主谈者是一位四十来岁的名士，手持麈尾——一种用麋鹿尾巴制成的拂尘，是清谈家的"标配"。他开口提问："天地万物，以无为本。然则圣人何以贵有？"（万物以"无"为根本，但为什么圣人还重视"有"呢？）</p>
+                <p>这个问题一下子点燃了全场的讨论。有人说"无"是本体，"有"是功用；有人说"无"和"有"是一回事。大家引经据典——老子、庄子、王弼（魏国玄学家）的著作轮番上场。辩论越来越激烈，有人拍案叫绝，有人抚掌大笑。</p>
+                <p>我被点名发言——紧张得手心冒汗。但想起叔父教的要诀：清谈不是要你"说服"对方，而是要你展现出思维的"清通"（清晰通畅）和"简要"（简明扼要）。我引用了庄子的话，又联系了当下的时局，说了一句"圣人应物而无累于物"（圣人应接万物但不被万物所累）。众人大笑——当然是赞赏的笑。我被夸了一句"王家子弟果然不同凡响"。</p>
+                <p>这就是晋朝的清谈——与其说是哲学讨论，不如说是一种极度风雅的智力游戏。胜负不重要，重要的是"谈"的过程中展现出的才华和气质。</p>
+            </div>
+            
+            <div class="quote-block">
+                <p>"名教出于自然，自然者，道也。"</p>
+                <span class="source">——王弼</span>
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 清谈的常用话题</h4>
+                <ul>
+                    <li><strong>有无之辩</strong>：万物的本体是"有"还是"无"？</li>
+                    <li><strong>名教与自然</strong>：儒家礼法与道家自然的统一</li>
+                    <li><strong>言意之辩</strong>：语言能否完全表达意思？</li>
+                    <li><strong>才性四本</strong>：才能与性格的关系</li>
+                </ul>
+                <p>清谈不需要得出结论，重要的是思维的过程和语言的优雅。一场好的清谈就像一场精彩的口才表演——谁"谈"得最精彩，谁就最有面子。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🌸 午后：兰亭雅集——永和九年那场改变了中国文化的一天</h2>
+            
+            <p>下午，我赶往会稽山阴的兰亭——今天是王羲之叔叔邀请的修禊日。</p>
+            
+            <div class="story-card">
+                <h4>🏞️ 兰亭—直美到让人想写诗</h4>
+                <p>马车在山间小路上颠簸了一个多时辰。两旁是翠绿的竹林，风吹过竹叶发出沙沙的响声。路边有清澈的溪流，水声潺潺。终于到了兰亭——只见一群名士已经聚集在溪水边。</p>
+                <p>王羲之叔叔今天打扮得特别风雅——他穿了一身素白的衣袍，头上戴着葛巾，手持一柄玉如意。他正在指挥仆人们布置"流觞曲水"的场地：在溪流两岸铺上坐席，将酒杯放入水中让其顺流而下。</p>
+                <p>今天来的客人有谢安（当时还隐居在东山，没出来做官）、孙绰（诗人）、支遁（高僧，也是清谈高手）等四十多位名士。大家列坐在溪水两旁，谈笑风生。</p>
+            </div>
+            
+            <p>兰亭修禊是东晋最风雅的活动。名士们列坐溪水两岸，将酒杯放在水上漂流。酒杯停在谁面前，谁就要作诗一首；如果作不出来，就要罚酒三杯。</p>
+            
+            <div class="story-card">
+                <h4>🍶 流觞曲水——一场"压力山大"的酒局</h4>
+                <p>"开始了开始了！"有人兴奋地喊道。一个漆器酒杯被放入水中，顺流而下。每个人都盯着酒杯，心情复杂：既希望它漂到自己面前（展示才华的机会到了），又怕它漂到自己面前（万一作不出诗多丢人）。</p>
+                <p>酒杯漂到谢安面前停了。谢安微微一笑，从容地吟了一首四言诗——意境高远，全场鼓掌。他随即把酒杯放回水中。</p>
+                <p>酒杯又漂到了孙绰面前。孙绰是建康有名的才子，他吟了一首五言诗，同样精彩。</p>
+                <p>终于，酒杯漂到了我面前。我脑子里一片空白——但我之前偷偷准备了一首（不能说）。于是"从容"地吟了出来。王羲之叔叔赞许地点了点头，我的心才放了下来。</p>
+                <p>酒杯继续漂流。有人作得出来，有人作不出来——作不出来的人老老实实地喝了三杯酒，场面更加热闹了。</p>
+            </div>
+            
+            <div class="quote-block">
+                <p>"此地有崇山峻岭，茂林修竹，又有清流激湍，映带左右。引以为流觞曲水，列坐其次。"</p>
+                <span class="source">——王羲之《兰亭集序》</span>
+            </div>
+            
+            <div class="story-card">
+                <h4>✍️ 亲眼见证"天下第一行书"的诞生</h4>
+                <p>诗作收集齐了，一共三十七首。有人提议："请王逸少（王羲之字逸少）为我们的诗集写一篇序文吧！"</p>
+                <p>王羲之叔叔今天喝了不少酒，已经有些微醺了。但他没有推辞，命人铺上茧纸，他提笔蘸墨，在纸上一气呵成地写了起来。</p>
+                <p>我站在他身后，亲眼看着他写下这三百二十四个字。他的笔法飘逸灵动，时而如行云流水，时而如惊雷闪电。每个字都像是有生命的——从他的笔下"活"了出来。</p>
+                <p>写到"后之视今，亦犹今之视昔"时，他停顿了一下。我看到他的眼睛里闪过一丝难以言说的情绪——或许是悲凉，或许是感慨。然后他继续写下去，直到最后一个字。</p>
+                <p>我们谁也不知道，这篇序文会成为千古绝唱，后世尊为"天下第一行书"。我们只知道——今天，是一个值得永远记住的日子。</p>
+            </div>
+            
+            <div class="tip-box">
+                <h4>💡 什么是修禊？</h4>
+                <p>修禊是古代的一种祭祀习俗，起源于周代。人们在农历三月上巳日到水边祭祀，用香草沐浴，以求去除不祥。后来演变为士族文人的雅集活动。王羲之的兰亭雅集是其中最著名的一次。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🍶 傍晚：饮酒放达——当"礼教"被踩在脚下</h2>
+            
+            <p>兰亭雅集结束后，我受邀去王献之府上赴宴。王献之是王羲之的第七子，也是著名书法家。</p>
+            
+            <div class="story-card">
+                <h4>🎭 晋朝最"疯狂"的夜宴</h4>
+                <p>王献之的宴会从来不以精致著称——但气氛是建康城里最"放达"的。今天来的客人更是"猛人"云集。酒过三巡，气氛渐渐热烈起来。有人开始脱掉外衣——在五石散的作用下，穿衣服实在是让人焦躁不安。有人跳到桌上唱歌——唱的是当下流行的"吴声歌曲"。</p>
+                <p>最让人瞠目结舌的是：一个清谈名士直接躺在地上，让人往他身上倒酒——然后他用嘴接住落下的酒滴。所有人都大笑着拍手叫好。有人当场开始写诗——写完后揉成一团扔到别人脸上："你看我的诗比你的好！"</p>
+                <p>这就是<strong>"放达"</strong>——放下礼仪的束缚，展现真实的自我。在官场上的尔虞我诈之外，名士们用这种方式寻找内心的自由。但有时候我也在想：这种"放达"到底是真正的自由，还是另一种形式的逃避？</p>
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 魏晋名士的"放达"行为</h4>
+                <ul>
+                    <li><strong>刘伶</strong>：乘鹿车出行，让人荷锸跟随，说"死便埋我"——对死亡都这么不在乎。</li>
+                    <li><strong>阮籍</strong>：醉酒六十天不醒，以逃避与司马氏联姻——用酒来躲政治。</li>
+                    <li><strong>嵇康</strong>：在树下打铁，与向秀"锻"炼身体——用体力劳动来对抗世俗的功名。</li>
+                    <li><strong>王羲之</strong>：坦腹东床，被郗鉴选为女婿——别人都装斯文，他偏要晒肚皮。</li>
+                </ul>
+                <p>这些行为看似荒唐，实际上是名士们表达自我、反抗礼教的方式。在一个"以貌取人"和"以出身定命运"的时代，他们用行为艺术来寻找出口。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>🌙 夜晚：归家沉思——风雅背后的焦虑</h2>
+            
+            <p>夜深了，我乘马车回到乌衣巷的府邸。躺在床上，回想今天的一天。</p>
+            
+            <div class="story-card">
+                <h4>🤔 风雅背后的真实</h4>
+                <p>服散、清谈、雅集、饮酒……这是我作为士族的一天。听起来很惬意。但我知道这一切都是建立在特权之上的。</p>
+                <p>在这个时代，我的家族垄断了最好的教育资源，占据了最高的位置。我们不需要通过科举就能做官——不，应该说"科举"这个制度根本还没有诞生。我们只需要有好的家世和好人脉。而那些出身寒门的人，即使再有才华，也很难出人头地。</p>
+                <p>白天清谈的时候，大家高谈阔论"名教与自然"——仿佛天下的真理都在我们的舌头上。但此刻我不得不面对一个残酷的真相：我们的"风雅"是建立在亿万农民的痛苦之上的。他们家徒四壁、食不果腹，我们服用五石散、饮酒放达。</p>
+                <p>我突然理解了为什么阮籍会整日醉酒——他不是爱喝酒，他是不想清醒。为什么嵇康临刑前弹奏《广陵散》——他不是不怕死，他是用音乐来对抗恐惧。这些名士们看到了这个时代的虚伪和不公，但他们无力改变，只能用"放达"来掩饰内心的痛苦和绝望。</p>
+                <p>魏晋风度——风雅是真的风雅，但忧伤，也是真的忧伤。</p>
+            </div>
+            
+            <div class="impact-box">
+                <h4>✅ 穿越体验总结</h4>
+                <ul>
+                    <li><strong>服散</strong>：体验了魏晋名士的独特养生方式——代价是重金属中毒。</li>
+                    <li><strong>清谈</strong>：参与了玄学辩论，感受了智力碰撞的快感。</li>
+                    <li><strong>雅集</strong>：参加了永和九年那场改变了中国文化史的兰亭盛会。</li>
+                    <li><strong>饮酒</strong>：体验了"放达"的文化氛围——也看到了放纵背后的无奈。</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <p>💡 <strong>深度思考</strong>：魏晋风度之所以让人着迷，正是因为它包含了极致的矛盾——既高雅又颓废，既清醒又疯狂，既自由又绝望。它不是一个朝代的文化装饰，而是一群敏感的灵魂在乱世中寻找出路的挣扎。理解了这种矛盾，才能真正理解晋朝。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📖 番外一：如果你穿越成西晋洛阳的士族</h2>
+
+            <div class="story-card">
+                <h4>🏰 太康年间：洛阳纸贵的时代</h4>
+                <p>假设你穿越的时间不是353年的东晋，而是290年的西晋太康年间——那时西晋刚统一天下，洛阳城是整个东亚最繁华的城市。</p>
+                <p>你走在洛阳的大街上，看到的是这样的景象：到处都是豪华的马车——石崇的金谷园就在洛阳城外，里面奇珍异宝堆积如山。左思的《三都赋》刚刚问世，全城的人都争着抄写——你买不到纸，因为所有的纸都被拿去抄《三都赋》了。</p>
+                <p>士族们不再清谈玄学——他们更热衷于斗富和享乐。石崇和王恺斗富的故事你一定听说过：王恺用麦芽糖洗锅，石崇就用蜡烛当柴烧；王恺用丝绸铺了四十里路障，石崇就铺了五十里。这种奢华挥霍到了极致。</p>
+                <p>但你也感到不安：街头巷尾到处是鲜卑人、匈奴人——他们是被内迁到中原的。洛阳城外的农田大片荒芜——不是因为没人种，而是因为土地都被士族兼并了，"耕者无其田"。</p>
+                <p>繁华的表象下，整个帝国正在走向崩溃。而你和你的士族同僚选择视而不见——继续醉生梦死。</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📖 番外二：如果你穿越成晋朝的农民</h2>
+            
+            <p>当然，如果你穿越的不是士族，而是普通农民，体验就完全不同了。</p>
+            
+            <div class="warning-box">
+                <h4>⚠️ 普通农民的一天</h4>
+                <ul>
+                    <li><strong>天不亮起床（寅时，凌晨4点）</strong>：去田间劳作。没有早饭吃——早饭是中午那顿。</li>
+                    <li><strong>上午种地（卯时到午时）</strong>：用简陋的农具——铁犁？不存在的。大部分农民还在用木犁。你的双手满是老茧和裂痕。</li>
+                    <li><strong>午餐（午时）</strong>：一碗稀粥，几根腌菜——这就是一个成年劳动力全部的"午餐"。</li>
+                    <li><strong>下午继续（未时到酉时）</strong>：翻地、除草、挑水——一年365天，你只有腊月三十到正月初三可以"放假"。</li>
+                    <li><strong>晚上（戌时）</strong>：点上油灯，妻子织布。你修理农具。孩子在地上玩——他光着脚，因为他只有一条裤子，穿着穿到地里就弄脏了。</li>
+                    <li><strong>全年最重要的日子</strong>：秋天收粮后——要交田租、户调（绢帛），还要服力役（帮官府修路、挖渠）。算下来，你一年的劳动成果，有四成左右要上交。</li>
+                </ul>
+            </div>
+            
+            <div class="story-card">
+                <h4>🌾 最绝望的事</h4>
+                <p>作为晋朝的农民，最绝望的不是累——累是常态。最绝望的是你的子女也没有希望。你的儿子会重复你的人生：种地、交租、服徭役、老死田间。你的女儿可能会被卖给有钱人家当婢女——或者更糟。</p>
+                <p>你听说建康城里有名士们在饮酒作诗。你听不懂他们在说什么——你连自己的名字都不认识。但你知道一点：他们的衣服很漂亮。你一年到头穿同一件麻衣——补了又补，洗了又洗。</p>
+                <p>你也会抱怨。但抱怨完了，第二天天亮你还得下地。因为田地里还有一家人等着吃饭。</p>
+            </div>
+            
+            <p>这就是晋朝社会的两极分化——士族在物质世界里享受奢华，在精神世界里追求超越；而农民在现实的苦难中挣扎，在战乱的夹缝中求生。两种人生，同一个时代。</p>
+        </div>
+
+        <div class="section fade-in">
+            <h2>📊 穿越体验总评分</h2>
+            
+            <div class="data-display">
+                <div class="data-item">
+                    <div class="number">★★★★★</div>
+                    <div class="label">精神享受（士族）</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">★★★★☆</div>
+                    <div class="label">文化体验</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">★★★★★</div>
+                    <div class="label">书法艺术</div>
+                </div>
+                <div class="data-item">
+                    <div class="number">★☆☆☆☆</div>
+                    <div class="label">社会公平度</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 30px; background: linear-gradient(135deg, rgba(139, 105, 20, 0.1) 0%, rgba(74, 55, 40, 0.1) 100%); border-radius: 16px; border: 1px solid rgba(139, 105, 20, 0.2);">
+                <p style="color: var(--text-muted); font-size: 1.1em; margin: 0;">
+                    <strong style="color: var(--secondary);">💡 一句话总结：</strong>
+                    如果你穿越成晋朝的士族，你将体验到中国历史上最独特的文化氛围——服药、饮酒、清谈、归隐。但这一切都是建立在特权之上的，而且几十年后的永嘉之乱将彻底摧毁这个风雅的世界。穿越有风险，选择需谨慎。如果你想活着离开，最好带上一本《世说新语》和几剂抗生素。
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <button class="back-to-top" id="backToTop">↑</button>
+    
+    <footer>
+        <p>全史通 · 从零开始，读懂中国千年</p>
+        <p class="copyright">本页内容为穿越体验文学创作，参考《晋书》《世说新语》《兰亭集序》等史料</p>
+    </footer>
+    <!-- JS functions now handled by common.js -->
+    <script src="../common.js"></script>
+</body>
+</html>
