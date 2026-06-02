@@ -218,29 +218,19 @@
     <!-- 月报区域 -->
     <div class="report-section" id="monthlySection">
         <div class="report-section-title">📋 月度趋势分析</div>
-        <div id="monthlyList">
-            <div class="empty-reports animate">
-                <div class="empty-reports-icon">📊</div>
-                <div class="empty-reports-text">
-                    月度报告将自动生成并出现在这里<br>
-                    <span style="font-size:12px;color:var(--kb-text-muted)">每月1日 09:00 自动更新</span>
-                </div>
-            </div>
-        </div>
+        <div id="monthlyList"></div>
     </div>
 
     <!-- 周报区域 -->
     <div class="report-section" id="weeklySection">
         <div class="report-section-title">📰 每周市场总结</div>
-        <div id="weeklyList">
-            <div class="empty-reports animate">
-                <div class="empty-reports-icon">📰</div>
-                <div class="empty-reports-text">
-                    周度报告将自动生成并出现在这里<br>
-                    <span style="font-size:12px;color:var(--kb-text-muted)">每周一 08:30 自动更新</span>
-                </div>
-            </div>
-        </div>
+        <div id="weeklyList"></div>
+    </div>
+
+    <!-- 日报区域 -->
+    <div class="report-section" id="dailySection">
+        <div class="report-section-title">🔥 每日信息简报</div>
+        <div id="dailyList"></div>
     </div>
 
     <!-- 主题聚焦 -->
@@ -271,9 +261,40 @@
 (function() {
     'use strict';
 
-    // 报告数据（后续由自动化脚本自动追加）
-    // 格式：{ date, type, title, summary, highlights, path }
-    const REPORTS = [];
+    // 报告数据（由自动化脚本维护，新报告追加到数组头部）
+    const REPORTS = [
+        // ---- 月报 ----
+        { date: '2026年05月', type: 'monthly', title: '2026年5月 月度投资报告', summary: '科创50月涨+11.47%领涨全球，DeepSeek 500亿估值创纪录，月末科技股巨震', path: 'monthly/2026-05.html' },
+        { date: '2026年04月', type: 'monthly', title: '2026年4月投资参考报告', summary: 'A股四月强势反弹，沪指站上4100点，科创50单月涨超10%', path: 'monthly/2026-04.html' },
+        { date: '2026年03月', type: 'monthly', title: '2026年3月投资参考报告', summary: '两会行情引领反弹，政策预期升温', path: 'monthly/2026-03.html' },
+        { date: '2026年02月', type: 'monthly', title: '2026年2月投资月报', summary: '春节后市场回暖，AI概念持续活跃', path: 'monthly/2026-02.html' },
+        { date: '2026年01月', type: 'monthly', title: '2026年1月月度投资参考报告', summary: '年初调整，DeepSeek引爆AI主题', path: 'monthly/2026-01.html' },
+        { date: '2025年12月', type: 'monthly', title: '2025年12月月度投资参考报告', summary: '年末收官，创业板全年涨近50%领涨全球', path: 'monthly/2025-12.html' },
+        { date: '2025年11月', type: 'monthly', title: '2025年11月月度投资报告', summary: '', path: 'monthly/2025-11.html' },
+        { date: '2025年10月', type: 'monthly', title: '2025年10月月度投资参考报告', summary: '', path: 'monthly/2025-10.html' },
+        { date: '2025年09月', type: 'monthly', title: '2025年9月月度投资参考报告', summary: '数据截至2025年9月30日', path: 'monthly/2025-09.html' },
+        { date: '2025年08月', type: 'monthly', title: '2025年8月月度投资参考报告', summary: '报告期间：2025年8月1日 - 8月31日', path: 'monthly/2025-08.html' },
+        { date: '2025年07月', type: 'monthly', title: '2025年7月月度投资参考报告', summary: '东方财富、新浪财经数据', path: 'monthly/2025-07.html' },
+        { date: '2025年06月', type: 'monthly', title: '2025年6月月度投资参考报告', summary: '', path: 'monthly/2025-06.html' },
+        { date: '2025年05月', type: 'monthly', title: '2025年5月月度投资参考报告', summary: '', path: 'monthly/2025-05.html' },
+        { date: '2025年04月', type: 'monthly', title: '2025年4月月度投资参考报告', summary: '报告期间：2025年4月1日 - 4月30日', path: 'monthly/2025-04.html' },
+        { date: '2025年03月', type: 'monthly', title: '2025年3月月度投资参考报告', summary: '报告日期：2025年3月31日', path: 'monthly/2025-03.html' },
+        { date: '2025年02月', type: 'monthly', title: '2025年2月月度投资参考报告', summary: '', path: 'monthly/2025-02.html' },
+        { date: '2025年01月', type: 'monthly', title: '2025年1月月度投资参考报告', summary: '', path: 'monthly/2025-01.html' },
+        // ---- 周报 ----
+        { date: '2026-W22', type: 'weekly', title: '每周信息总结与投资参考（2026-W22）', summary: '5/26-5/29：A股冲高回落，科创50从高位回落-2.20%，创业板逆势+2.53%', path: 'weekly/2026-W22.html' },
+        { date: '2026-W21', type: 'weekly', title: '每周信息总结与投资参考（2026-W21）', summary: '5/19-5/22：英伟达财报+SpaceX IPO，美股续创新高', path: 'weekly/2026-W21.html' },
+        { date: '2026-W20', type: 'weekly', title: '投资信息周报｜2026-W20', summary: '5/11-5/15：节后首周调整，美伊局势缓和', path: 'weekly/2026-W20.html' },
+        // ---- 日报 ----
+        { date: '2026-05-24', type: 'daily', title: '每日信息总结（晚）', summary: '科创50月涨11.47%，SpaceX IPO创纪录', path: 'daily/2026-05-24-evening.html' },
+        { date: '2026-05-24', type: 'daily', title: '每日信息总结', summary: '科创50创历史新高1901点后急转直下', path: 'daily/2026-05-24.html' },
+        { date: '2026-05-23', type: 'daily', title: '每日信息总结', summary: '全球AI技术大会召开，半导体板块走强', path: 'daily/2026-05-23.html' },
+        { date: '2026-05-16', type: 'daily', title: '每日信息总结', summary: '华为提出"τ定律"，预测2031年芯片1.4nm', path: 'daily/2026-05-16.html' },
+        { date: '2026-05-07', type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-05-07.html' },
+        { date: '2026-05-04', type: 'daily', title: '每日信息总结', summary: '五一假期：苹果财报超预期，巴菲特股东大会', path: 'daily/2026-05-04.html' },
+        { date: '2026-05-02', type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-05-02.html' },
+        { date: '2026-04-13', type: 'daily', title: '每日信息总结', summary: '', path: 'daily/2026-04-13.html' }
+    ];
 
     // ---- 渲染指数概览 ----
     // 实际数据通过 neodata-financial-search / westock-data 获取
@@ -307,6 +328,7 @@
     // ---- 初始化 ----
     renderReports('monthly', 'monthlyList');
     renderReports('weekly', 'weeklyList');
+    renderReports('daily', 'dailyList');
 
 })();
 </script>
