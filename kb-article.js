@@ -191,12 +191,11 @@
         document.body.appendChild(bar);
 
         document.getElementById('mobileBack').addEventListener('click', function () {
-            // 尝试返回上一层，否则回到知识库首页
-            if (window.history.length > 1) {
-                window.history.back();
-            } else {
-                window.location.href = '../index.html';
-            }
+            // 统一回到知识库首页（/quanshitong/index.html）
+            var base = window.location.pathname.indexOf('/quanshitong/') !== -1
+                ? '/quanshitong/index.html'
+                : '../index.html';
+            window.location.href = base;
         });
 
         document.getElementById('mobileBackTop').addEventListener('click', function () {
