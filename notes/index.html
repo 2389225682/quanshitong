@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>我的笔记 | 飞飞的知识库</title>
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="stylesheet" href="kb-core.css">
+    <style>
+        /* ---------- 笔记门户布局 ---------- */
+        .notes-container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: var(--kb-safe-top) var(--sp-4) var(--kb-safe-bottom);
+        }
+
+        .notes-header {
+            padding: var(--sp-5) 0 var(--sp-4);
+            text-align: center;
+        }
+
+        .notes-header h1 {
+            font-size: clamp(1.25rem, 5vw, 1.75rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .notes-header .subtitle {
+            font-size: var(--sp-3);
+            color: var(--kb-text-sec);
+        }
+
+        /* ---------- 搜索框 ---------- */
+        .notes-search {
+            margin: var(--sp-4) 0;
+            position: relative;
+        }
+
+        .notes-search input {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            background: var(--kb-bg-glass);
+            border: 1px solid var(--kb-border);
+            border-radius: 12px;
+            color: var(--kb-text);
+            font-size: 14px;
+            -webkit-tap-highlight-color: transparent;
+            transition: var(--kb-transition);
+            box-sizing: border-box;
+        }
+
+        .notes-search input:focus {
+            outline: none;
+            border-color: rgba(251, 191, 36, 0.5);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+        }
+
+        .notes-search input::placeholder {
+            color: var(--kb-text-muted);
+        }
+
+        .notes-search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--kb-text-muted);
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        /* ---------- 分类Tab ---------- */
+        .notes-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 0 var(--sp-3);
+            scrollbar-width: none;
+        }
+
+        .notes-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .notes-tab {
+            flex-shrink: 0;
+            padding: 8px 16px;
+            background: var(--kb-bg-glass);
+            border: 1px solid var(--kb-border);
+            border-radius: 20px;
+            color: var(--kb-text-sec);
+            font-size: 13px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: var(--kb-transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .notes-tab:hover {
+            background: var(--kb-bg-glass-hover);
+            color: var(--kb-text);
+        }
+
+        .notes-tab.active {
+            background: rgba(251, 191, 36, 0.15);
+            border-color: rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+        }
+
+        .notes-tab .badge {
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1px 7px;
+            border-radius: 10px;
+            color: var(--kb-text-muted);
+        }
+
+        .notes-tab.active .badge {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        /* ---------- 统计栏 ---------- */
+        .notes-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--sp-3) 0;
+            margin-bottom: var(--sp-2);
+            border-bottom: 1px solid var(--kb-border);
+        }
+
+        .notes-stats-text {
+            font-size: 12px;
+            color: var(--kb-text-muted);
+        }
+
+        .notes-clear-btn {
+            font-size: 12px;
+            color: #ef4444;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 6px;
+            -webkit-tap-highlight-color: transparent;
+            transition: var(--kb-transition);
+        }
+
+        .notes-clear-btn:hover {
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        /* ---------- 笔记列表 ---------- */
+        .notes-list {
+            padding: var(--sp-2) 0;
+        }
+
+        .note-item {
+            background: var(--kb-bg-card);
+            border: 1px solid var(--kb-border);
+            border-radius: 12px;
+            padding: var(--sp-4);
+            margin-bottom: var(--sp-3);
+            transition: var(--kb-transition);
+            animation: fadeInUp 0.3s ease forwards;
+        }
+
+        .note-item:hover {
+            background: var(--kb-bg-card-hover);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .note-item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--sp-2);
+        }
+
+        .note-item-category {
+            font-size: 11px;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .note-cat-finance { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .note-cat-history { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+        .note-cat-reading { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+        .note-cat-life { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+        .note-cat-other { background: rgba(255, 255, 255, 0.08); color: var(--kb-text-sec); }
+
+        .note-item-time {
+            font-size: 11px;
+            color: var(--kb-text-muted);
+        }
+
+        .note-item-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--kb-text);
+            margin-bottom: var(--sp-2);
+            word-break: break-word;
+        }
+
+        .note-item-source {
+            font-size: 11px;
+            color: var(--kb-text-muted);
+            padding-top: var(--sp-2);
+            border-top: 1px solid var(--kb-border);
+        }
+
+        .note-item-source a {
+            color: var(--kb-text-sec);
+            text-decoration: none;
+        }
+
+        .note-item-source a:hover {
+            color: #60a5fa;
+        }
+
+        .note-item-delete {
+            float: right;
+            font-size: 12px;
+            color: var(--kb-text-muted);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .note-item-delete:hover {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        /* ---------- 空状态 ---------- */
+        .notes-empty {
+            text-align: center;
+            padding: var(--sp-16) var(--sp-4);
+            color: var(--kb-text-muted);
+        }
+
+        .notes-empty-icon {
+            font-size: 48px;
+            margin-bottom: var(--sp-4);
+            opacity: 0.5;
+        }
+
+        .notes-empty-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .notes-empty-hint {
+            font-size: 12px;
+            color: var(--kb-text-muted);
+            margin-top: var(--sp-2);
+            opacity: 0.7;
+        }
+
+        /* ---------- 亮色主题 ---------- */
+        [data-theme="light"] .notes-header h1 { color: #1a1a2e; }
+
+        [data-theme="light"] .notes-search input {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.1);
+            color: #1a1a2e;
+        }
+
+        [data-theme="light"] .notes-tab.active {
+            background: rgba(251, 191, 36, 0.12);
+            color: #92400e;
+        }
+
+        [data-theme="light"] .note-cat-finance { background: rgba(16, 185, 129, 0.1); color: #059669; }
+        [data-theme="light"] .note-cat-history { background: rgba(59, 130, 246, 0.1); color: #2563eb; }
+        [data-theme="light"] .note-cat-reading { background: rgba(168, 85, 247, 0.1); color: #7c3aed; }
+        [data-theme="light"] .note-cat-life { background: rgba(251, 191, 36, 0.1); color: #92400e; }
+        [data-theme="light"] .note-cat-other { background: rgba(0, 0, 0, 0.04); color: #6b7280; }
+
+        [data-theme="light"] .note-item {
+            background: rgba(0, 0, 0, 0.02);
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="light"] .note-item-text { color: #1a1a2e; }
+        [data-theme="light"] .note-item-source { border-top-color: rgba(0, 0, 0, 0.06); }
+        [data-theme="light"] .note-item-source a { color: #4a4a5e; }
+
+        /* ---------- 响应式 ---------- */
+        @media (min-width: 600px) {
+            .notes-container { padding-left: var(--sp-6); padding-right: var(--sp-6); }
+        }
+    </style>
+</head>
+<body>
+    <div class="notes-container">
+        <header class="notes-header">
+            <h1>&#x1F4DD; 我的笔记</h1>
+            <div class="subtitle">记录想法，留住灵感</div>
+        </header>
+
+        <!-- 搜索 -->
+        <div class="notes-search">
+            <span class="notes-search-icon">&#x1F50D;</span>
+            <input type="text" id="noteSearchInput" placeholder="搜索笔记内容、来源...">
+        </div>
+
+        <!-- 分类Tab -->
+        <div class="notes-tabs" id="noteTabs">
+            <!-- JS 动态渲染 -->
+        </div>
+
+        <!-- 统计 -->
+        <div class="notes-stats">
+            <span class="notes-stats-text" id="noteStatsText"></span>
+            <button class="notes-clear-btn" id="noteClearBtn" style="display:none">&#x1F5D1; 清空</button>
+        </div>
+
+        <!-- 笔记列表 -->
+        <div class="notes-list" id="noteList"></div>
+    </div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        var STORAGE_KEY = 'kb-notes';
+        var CATEGORIES = [
+            { value: 'all', label: '全部' },
+            { value: 'finance', label: '财经想法' },
+            { value: 'history', label: '历史理解' },
+            { value: 'reading', label: '读书笔记' },
+            { value: 'life', label: '生活感悟' },
+            { value: 'other', label: '其他' }
+        ];
+
+        var activeCategory = 'all';
+        var searchQuery = '';
+
+        // 主题
+        var saved = localStorage.getItem('kb-theme');
+        if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+
+        function getNotes() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+            catch(e) { return []; }
+        }
+
+        function deleteNote(id) {
+            var notes = getNotes().filter(function(n) { return n.id !== id; });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+            render();
+        }
+
+        function clearAllNotes() {
+            if (!confirm('确定清空所有笔记？此操作不可恢复。')) return;
+            localStorage.setItem(STORAGE_KEY, '[]');
+            render();
+        }
+
+        function filterNotes(notes) {
+            return notes.filter(function(n) {
+                var matchCat = activeCategory === 'all' || n.category === activeCategory;
+                var q = searchQuery.toLowerCase();
+                var matchSearch = !q ||
+                    (n.text || '').toLowerCase().indexOf(q) !== -1 ||
+                    (n.pageTitle || '').toLowerCase().indexOf(q) !== -1 ||
+                    (n.categoryLabel || '').toLowerCase().indexOf(q) !== -1;
+                return matchCat && matchSearch;
+            });
+        }
+
+        function formatTime(iso) {
+            try {
+                var d = new Date(iso);
+                var y = d.getFullYear();
+                var m = String(d.getMonth() + 1).padStart(2, '0');
+                var day = String(d.getDate()).padStart(2, '0');
+                var h = String(d.getHours()).padStart(2, '0');
+                var min = String(d.getMinutes()).padStart(2, '0');
+                return y + '-' + m + '-' + day + ' ' + h + ':' + min;
+            } catch(e) { return iso; }
+        }
+
+        function renderTabs(notes) {
+            var html = '';
+            CATEGORIES.forEach(function(cat) {
+                var count = cat.value === 'all' ? notes.length : notes.filter(function(n) { return n.category === cat.value; }).length;
+                var active = activeCategory === cat.value ? ' active' : '';
+                html += '<button class="notes-tab' + active + '" data-cat="' + cat.value + '">' +
+                    cat.label + '<span class="badge">' + count + '</span></button>';
+            });
+            document.getElementById('noteTabs').innerHTML = html;
+
+            // 事件
+            document.querySelectorAll('.notes-tab').forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                    activeCategory = this.getAttribute('data-cat');
+                    render();
+                });
+            });
+        }
+
+        function renderList(filtered) {
+            var el = document.getElementById('noteList');
+            if (filtered.length === 0) {
+                var msg = searchQuery ? '没有找到匹配的笔记' : '还没有笔记';
+                var hint = searchQuery ? '试试其他关键词' : '在知识库页面点击右下角 📝 按钮，随时记录你的想法';
+                el.innerHTML =
+                    '<div class="notes-empty">' +
+                        '<div class="notes-empty-icon">&#x1F4DD;</div>' +
+                        '<div class="notes-empty-text">' + msg + '</div>' +
+                        '<div class="notes-empty-hint">' + hint + '</div>' +
+                    '</div>';
+                return;
+            }
+
+            var html = '';
+            filtered.forEach(function(n, i) {
+                var catClass = 'note-cat-' + (n.category || 'other');
+                var time = formatTime(n.createdAt);
+                var source = n.pageTitle ? '<a href="' + (n.pagePath || '#') + '">' + n.pageTitle + '</a>' : '';
+                var sourceHtml = source ? '<div class="note-item-source">&#x1F4C4; 来源：' + source + '</div>' : '';
+
+                html += '<div class="note-item" style="animation-delay:' + (i * 0.05) + 's">' +
+                    '<div class="note-item-meta">' +
+                        '<span class="note-item-category ' + catClass + '">' + (n.categoryLabel || '其他') + '</span>' +
+                        '<span class="note-item-time">' + time + '</span>' +
+                    '</div>' +
+                    '<div class="note-item-text">' + escapeHtml(n.text) + '</div>' +
+                    sourceHtml +
+                    '<button class="note-item-delete" data-id="' + n.id + '" title="删除">&#x1F5D1;</button>' +
+                '</div>';
+            });
+            el.innerHTML = html;
+
+            // 删除事件
+            document.querySelectorAll('.note-item-delete').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    deleteNote(this.getAttribute('data-id'));
+                });
+            });
+        }
+
+        function escapeHtml(text) {
+            var div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML.replace(/\n/g, '<br>');
+        }
+
+        function render() {
+            var notes = getNotes();
+            var filtered = filterNotes(notes);
+
+            renderTabs(notes);
+            renderList(filtered);
+
+            // 统计
+            document.getElementById('noteStatsText').textContent =
+                '共 ' + notes.length + ' 条笔记' + (filtered.length !== notes.length ? '，当前显示 ' + filtered.length + ' 条' : '');
+            document.getElementById('noteClearBtn').style.display = notes.length > 0 ? '' : 'none';
+        }
+
+        // 搜索
+        document.getElementById('noteSearchInput').addEventListener('input', function() {
+            searchQuery = this.value.trim();
+            render();
+        });
+
+        // 清空
+        document.getElementById('noteClearBtn').addEventListener('click', clearAllNotes);
+
+        // Ctrl+K
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                document.getElementById('noteSearchInput').focus();
+            }
+            if (e.key === 'Escape') {
+                document.getElementById('noteSearchInput').value = '';
+                searchQuery = '';
+                render();
+            }
+        });
+
+        // 初始化
+        render();
+    })();
+    </script>
+</body>
+</html>
