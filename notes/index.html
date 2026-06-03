@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>我的笔记 | 飞飞的知识库</title>
-    <link rel="icon" type="image/png" href="icons/icon-192.png">
-    <link rel="stylesheet" href="kb-core.css">
+    <link rel="icon" type="image/png" href="../icons/icon-192.png">
+    <link rel="stylesheet" href="../kb-core.css">
     <style>
-        /* ---------- 笔记门户布局 ---------- */
-        .notes-container {
-            max-width: 640px;
+        /* ========== 容器 ========== */
+        .notes-wrap {
+            max-width: 680px;
             margin: 0 auto;
-            padding: var(--kb-safe-top) var(--sp-4) var(--kb-safe-bottom);
+            padding: var(--kb-safe-top) var(--sp-4) 60px;
         }
 
-        /* 返回按钮 */
+        /* ========== 顶栏 ========== */
+        .notes-topbar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: var(--sp-4);
+        }
+
         .notes-back {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             padding: 6px 12px;
-            margin-bottom: var(--sp-3);
             background: var(--kb-bg-glass);
             border: 1px solid var(--kb-border);
             border-radius: 8px;
             color: var(--kb-text-sec);
             font-size: 13px;
             text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
             transition: var(--kb-transition);
+            white-space: nowrap;
         }
 
         .notes-back:hover {
@@ -36,55 +42,67 @@
             color: var(--kb-text);
         }
 
-        .notes-header {
-            padding: var(--sp-5) 0 var(--sp-4);
+        .notes-page-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--kb-text);
+        }
+
+        /* ========== 头部 ========== */
+        .notes-hero {
             text-align: center;
+            padding: var(--sp-6) 0 var(--sp-5);
         }
 
-        .notes-header h1 {
-            font-size: clamp(1.25rem, 5vw, 1.75rem);
+        .notes-hero-icon {
+            font-size: 40px;
+            margin-bottom: var(--sp-3);
+        }
+
+        .notes-hero h1 {
+            font-size: clamp(1.4rem, 5vw, 1.8rem);
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 4px;
+            color: var(--kb-text);
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
         }
 
-        .notes-header .subtitle {
-            font-size: var(--sp-3);
+        .notes-hero .sub {
+            font-size: 14px;
             color: var(--kb-text-sec);
         }
 
-        /* ---------- 搜索框 ---------- */
-        .notes-search {
-            margin: var(--sp-4) 0;
+        /* ========== 搜索 ========== */
+        .notes-search-wrap {
             position: relative;
+            margin-bottom: var(--sp-4);
         }
 
-        .notes-search input {
+        .notes-search-wrap input {
             width: 100%;
-            padding: 12px 16px 12px 40px;
+            padding: 12px 16px 12px 42px;
             background: var(--kb-bg-glass);
             border: 1px solid var(--kb-border);
-            border-radius: 12px;
+            border-radius: 14px;
             color: var(--kb-text);
             font-size: 14px;
-            -webkit-tap-highlight-color: transparent;
             transition: var(--kb-transition);
             box-sizing: border-box;
-        }
-
-        .notes-search input:focus {
             outline: none;
-            border-color: rgba(251, 191, 36, 0.5);
-            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
         }
 
-        .notes-search input::placeholder {
+        .notes-search-wrap input:focus {
+            border-color: rgba(251, 191, 36, 0.5);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.08);
+        }
+
+        .notes-search-wrap input::placeholder {
             color: var(--kb-text-muted);
         }
 
         .notes-search-icon {
             position: absolute;
-            left: 14px;
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--kb-text-muted);
@@ -92,35 +110,34 @@
             pointer-events: none;
         }
 
-        /* ---------- 分类Tab ---------- */
+        /* ========== 分类Tab ========== */
         .notes-tabs {
             display: flex;
             gap: 8px;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            padding: 0 0 var(--sp-3);
+            padding-bottom: var(--sp-3);
+            margin-bottom: var(--sp-3);
             scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .notes-tabs::-webkit-scrollbar {
-            display: none;
-        }
+        .notes-tabs::-webkit-scrollbar { display: none; }
 
         .notes-tab {
             flex-shrink: 0;
-            padding: 8px 16px;
+            padding: 7px 16px;
             background: var(--kb-bg-glass);
             border: 1px solid var(--kb-border);
             border-radius: 20px;
             color: var(--kb-text-sec);
             font-size: 13px;
             cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
             transition: var(--kb-transition);
             display: flex;
             align-items: center;
             gap: 6px;
             white-space: nowrap;
+            user-select: none;
         }
 
         .notes-tab:hover {
@@ -136,10 +153,11 @@
 
         .notes-tab .badge {
             font-size: 11px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.08);
             padding: 1px 7px;
             border-radius: 10px;
             color: var(--kb-text-muted);
+            transition: var(--kb-transition);
         }
 
         .notes-tab.active .badge {
@@ -147,222 +165,242 @@
             color: #fbbf24;
         }
 
-        /* ---------- 统计栏 ---------- */
-        .notes-stats {
+        /* ========== 统计栏 ========== */
+        .notes-toolbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: var(--sp-3) 0;
-            margin-bottom: var(--sp-2);
-            border-bottom: 1px solid var(--kb-border);
+            padding: var(--sp-2) 0;
+            margin-bottom: var(--sp-3);
         }
 
-        .notes-stats-text {
-            font-size: 12px;
+        .notes-count {
+            font-size: 13px;
             color: var(--kb-text-muted);
         }
 
-        .notes-clear-btn {
+        .notes-clear {
             font-size: 12px;
-            color: #ef4444;
+            color: var(--kb-text-muted);
             background: none;
-            border: none;
+            border: 1px solid transparent;
             cursor: pointer;
-            padding: 4px 8px;
+            padding: 4px 10px;
             border-radius: 6px;
-            -webkit-tap-highlight-color: transparent;
             transition: var(--kb-transition);
         }
 
-        .notes-clear-btn:hover {
-            background: rgba(239, 68, 68, 0.1);
+        .notes-clear:hover {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.08);
+            border-color: rgba(239, 68, 68, 0.2);
         }
 
-        /* ---------- 笔记列表 ---------- */
+        /* ========== 笔记卡片 ========== */
         .notes-list {
-            padding: var(--sp-2) 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--sp-3);
         }
 
-        .note-item {
+        .note-card {
             background: var(--kb-bg-card);
             border: 1px solid var(--kb-border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: var(--sp-4);
-            margin-bottom: var(--sp-3);
             transition: var(--kb-transition);
-            animation: fadeInUp 0.3s ease forwards;
+            animation: noteIn 0.35s ease both;
+            position: relative;
         }
 
-        .note-item:hover {
+        .note-card:hover {
             background: var(--kb-bg-card-hover);
+            border-color: rgba(255,255,255,0.08);
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(8px); }
+        @keyframes noteIn {
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .note-item-meta {
+        .note-card-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: var(--sp-2);
+            margin-bottom: 10px;
         }
 
-        .note-item-category {
+        .note-tag {
             font-size: 11px;
-            padding: 2px 10px;
+            padding: 3px 10px;
             border-radius: 10px;
             font-weight: 500;
+            letter-spacing: 0.02em;
         }
 
-        .note-cat-finance { background: rgba(16, 185, 129, 0.15); color: #10b981; }
-        .note-cat-history { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
-        .note-cat-reading { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
-        .note-cat-life { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
-        .note-cat-other { background: rgba(255, 255, 255, 0.08); color: var(--kb-text-sec); }
+        .tag-finance { background: rgba(16,185,129,0.13); color: #34d399; }
+        .tag-history { background: rgba(96,165,250,0.13); color: #60a5fa; }
+        .tag-reading { background: rgba(168,85,247,0.13); color: #a78bfa; }
+        .tag-life   { background: rgba(251,191,36,0.13); color: #fbbf24; }
+        .tag-other  { background: rgba(255,255,255,0.06); color: var(--kb-text-sec); }
 
-        .note-item-time {
+        .note-time {
             font-size: 11px;
             color: var(--kb-text-muted);
         }
 
-        .note-item-text {
+        .note-text {
             font-size: 14px;
-            line-height: 1.7;
+            line-height: 1.75;
             color: var(--kb-text);
-            margin-bottom: var(--sp-2);
+            margin-bottom: 12px;
             word-break: break-word;
         }
 
-        .note-item-source {
-            font-size: 11px;
+        .note-source {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
             color: var(--kb-text-muted);
-            padding-top: var(--sp-2);
+            padding-top: 10px;
             border-top: 1px solid var(--kb-border);
         }
 
-        .note-item-source a {
+        .note-source a {
             color: var(--kb-text-sec);
             text-decoration: none;
+            transition: var(--kb-transition);
         }
 
-        .note-item-source a:hover {
+        .note-source a:hover {
             color: #60a5fa;
         }
 
-        .note-item-delete {
-            float: right;
-            font-size: 12px;
-            color: var(--kb-text-muted);
+        .note-del {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: none;
             border: none;
+            color: var(--kb-text-muted);
             cursor: pointer;
-            padding: 2px 6px;
-            border-radius: 4px;
-            -webkit-tap-highlight-color: transparent;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: var(--kb-transition);
+            opacity: 0;
         }
 
-        .note-item-delete:hover {
+        .note-card:hover .note-del {
+            opacity: 1;
+        }
+
+        .note-del:hover {
             color: #ef4444;
             background: rgba(239, 68, 68, 0.1);
         }
 
-        /* ---------- 空状态 ---------- */
+        /* ========== 空状态 ========== */
         .notes-empty {
             text-align: center;
-            padding: var(--sp-16) var(--sp-4);
+            padding: 60px var(--sp-4);
             color: var(--kb-text-muted);
         }
 
-        .notes-empty-icon {
-            font-size: 48px;
+        .notes-empty-emoji {
+            font-size: 52px;
             margin-bottom: var(--sp-4);
             opacity: 0.5;
         }
 
-        .notes-empty-text {
-            font-size: 14px;
-            line-height: 1.6;
+        .notes-empty-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--kb-text-sec);
+            margin-bottom: 8px;
         }
 
-        .notes-empty-hint {
-            font-size: 12px;
+        .notes-empty-desc {
+            font-size: 13px;
+            line-height: 1.7;
             color: var(--kb-text-muted);
-            margin-top: var(--sp-2);
-            opacity: 0.7;
         }
 
-        /* ---------- 亮色主题 ---------- */
+        /* ========== 亮色主题 ========== */
         [data-theme="light"] .notes-back {
-            background: rgba(0, 0, 0, 0.03);
-            border-color: rgba(0, 0, 0, 0.1);
-            color: #4a4a5e;
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.1);
+            color: #6b7280;
         }
-
         [data-theme="light"] .notes-back:hover {
-            background: rgba(0, 0, 0, 0.06);
-            color: #1a1a2e;
+            background: rgba(0,0,0,0.08);
+            color: #1f2937;
         }
-
-        [data-theme="light"] .notes-header h1 { color: #1a1a2e; }
-
-        [data-theme="light"] .notes-search input {
-            background: rgba(0, 0, 0, 0.03);
-            border-color: rgba(0, 0, 0, 0.1);
-            color: #1a1a2e;
+        [data-theme="light"] .notes-hero h1 { color: #111827; }
+        [data-theme="light"] .notes-hero .sub { color: #6b7280; }
+        [data-theme="light"] .notes-search-wrap input {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.12);
+            color: #111827;
         }
-
         [data-theme="light"] .notes-tab.active {
-            background: rgba(251, 191, 36, 0.12);
+            background: rgba(251,191,36,0.15);
+            border-color: rgba(251,191,36,0.4);
             color: #92400e;
         }
-
-        [data-theme="light"] .note-cat-finance { background: rgba(16, 185, 129, 0.1); color: #059669; }
-        [data-theme="light"] .note-cat-history { background: rgba(59, 130, 246, 0.1); color: #2563eb; }
-        [data-theme="light"] .note-cat-reading { background: rgba(168, 85, 247, 0.1); color: #7c3aed; }
-        [data-theme="light"] .note-cat-life { background: rgba(251, 191, 36, 0.1); color: #92400e; }
-        [data-theme="light"] .note-cat-other { background: rgba(0, 0, 0, 0.04); color: #6b7280; }
-
-        [data-theme="light"] .note-item {
-            background: rgba(0, 0, 0, 0.02);
-            border-color: rgba(0, 0, 0, 0.06);
+        [data-theme="light"] .tag-finance { background: rgba(16,185,129,0.1); color: #059669; }
+        [data-theme="light"] .tag-history { background: rgba(59,130,246,0.1); color: #2563eb; }
+        [data-theme="light"] .tag-reading { background: rgba(168,85,247,0.1); color: #7c3aed; }
+        [data-theme="light"] .tag-life   { background: rgba(251,191,36,0.12); color: #92400e; }
+        [data-theme="light"] .tag-other  { background: rgba(0,0,0,0.05); color: #6b7280; }
+        [data-theme="light"] .note-card {
+            background: #fff;
+            border-color: rgba(0,0,0,0.08);
         }
-
-        [data-theme="light"] .note-item-text { color: #1a1a2e; }
-        [data-theme="light"] .note-item-source { border-top-color: rgba(0, 0, 0, 0.06); }
-        [data-theme="light"] .note-item-source a { color: #4a4a5e; }
-
-        /* ---------- 响应式 ---------- */
-        @media (min-width: 600px) {
-            .notes-container { padding-left: var(--sp-6); padding-right: var(--sp-6); }
+        [data-theme="light"] .note-card:hover {
+            background: #f9fafb;
+            border-color: rgba(0,0,0,0.12);
         }
+        [data-theme="light"] .note-text { color: #1f2937; }
+        [data-theme="light"] .note-source { border-top-color: rgba(0,0,0,0.08); }
+        [data-theme="light"] .note-source a { color: #6b7280; }
+        [data-theme="light"] .note-del { color: #9ca3af; }
+        [data-theme="light"] .notes-empty-title { color: #374151; }
     </style>
 </head>
 <body>
-    <div class="notes-container">
-        <a href="../index.html" class="notes-back">&#x2190; 返回知识库</a>
+    <div class="notes-wrap">
+        <!-- 顶栏 -->
+        <div class="notes-topbar">
+            <a href="../index.html" class="notes-back">&#x2190; 返回</a>
+            <span class="notes-page-title">我的笔记</span>
+        </div>
 
-        <header class="notes-header">
-            <h1>&#x1F4DD; 我的笔记</h1>
-            <div class="subtitle">记录想法，留住灵感</div>
-        </header>
+        <!-- 头部 -->
+        <div class="notes-hero">
+            <div class="notes-hero-icon">&#x1F4DD;</div>
+            <h1>我的笔记</h1>
+            <div class="sub">记录想法，留住灵感</div>
+        </div>
 
         <!-- 搜索 -->
-        <div class="notes-search">
+        <div class="notes-search-wrap">
             <span class="notes-search-icon">&#x1F50D;</span>
             <input type="text" id="noteSearchInput" placeholder="搜索笔记内容、来源...">
         </div>
 
         <!-- 分类Tab -->
-        <div class="notes-tabs" id="noteTabs">
-            <!-- JS 动态渲染 -->
-        </div>
+        <div class="notes-tabs" id="noteTabs"></div>
 
-        <!-- 统计 -->
-        <div class="notes-stats">
-            <span class="notes-stats-text" id="noteStatsText"></span>
-            <button class="notes-clear-btn" id="noteClearBtn" style="display:none">&#x1F5D1; 清空</button>
+        <!-- 工具栏 -->
+        <div class="notes-toolbar">
+            <span class="notes-count" id="noteCount"></span>
+            <button class="notes-clear" id="noteClearBtn" style="display:none">&#x1F5D1; 清空全部</button>
         </div>
 
         <!-- 笔记列表 -->
@@ -370,169 +408,128 @@
     </div>
 
     <script>
-    (function() {
+    (function(){
         'use strict';
-
-        var STORAGE_KEY = 'kb-notes';
-        var CATEGORIES = [
-            { value: 'all', label: '全部' },
-            { value: 'finance', label: '财经想法' },
-            { value: 'history', label: '历史理解' },
-            { value: 'reading', label: '读书笔记' },
-            { value: 'life', label: '生活感悟' },
-            { value: 'other', label: '其他' }
+        var KEY='kb-notes';
+        var CATS=[
+            {v:'all',l:'全部'},{v:'finance',l:'财经想法'},
+            {v:'history',l:'历史理解'},{v:'reading',l:'读书笔记'},
+            {v:'life',l:'生活感悟'},{v:'other',l:'其他'}
         ];
+        var cat='all', q='';
 
-        var activeCategory = 'all';
-        var searchQuery = '';
+        // 主题同步
+        var t=localStorage.getItem('kb-theme');
+        if(t==='light') document.documentElement.setAttribute('data-theme','light');
 
-        // 主题
-        var saved = localStorage.getItem('kb-theme');
-        if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        function get(){ try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]} }
 
-        function getNotes() {
-            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
-            catch(e) { return []; }
-        }
-
-        function deleteNote(id) {
-            var notes = getNotes().filter(function(n) { return n.id !== id; });
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+        function del(id){
+            var ns=get().filter(function(n){return n.id!==id});
+            localStorage.setItem(KEY,JSON.stringify(ns));
             render();
         }
 
-        function clearAllNotes() {
-            if (!confirm('确定清空所有笔记？此操作不可恢复。')) return;
-            localStorage.setItem(STORAGE_KEY, '[]');
+        function clearAll(){
+            if(!confirm('确定清空所有笔记？此操作不可恢复。')) return;
+            localStorage.setItem(KEY,'[]');
             render();
         }
 
-        function filterNotes(notes) {
-            return notes.filter(function(n) {
-                var matchCat = activeCategory === 'all' || n.category === activeCategory;
-                var q = searchQuery.toLowerCase();
-                var matchSearch = !q ||
-                    (n.text || '').toLowerCase().indexOf(q) !== -1 ||
-                    (n.pageTitle || '').toLowerCase().indexOf(q) !== -1 ||
-                    (n.categoryLabel || '').toLowerCase().indexOf(q) !== -1;
-                return matchCat && matchSearch;
+        function filter(ns){
+            return ns.filter(function(n){
+                var mc=cat==='all'||n.category===cat;
+                var qq=q.toLowerCase();
+                var ms=!qq||(n.text||'').toLowerCase().indexOf(qq)>-1||
+                    (n.pageTitle||'').toLowerCase().indexOf(qq)>-1||
+                    (n.categoryLabel||'').toLowerCase().indexOf(qq)>-1;
+                return mc&&ms;
             });
         }
 
-        function formatTime(iso) {
-            try {
-                var d = new Date(iso);
-                var y = d.getFullYear();
-                var m = String(d.getMonth() + 1).padStart(2, '0');
-                var day = String(d.getDate()).padStart(2, '0');
-                var h = String(d.getHours()).padStart(2, '0');
-                var min = String(d.getMinutes()).padStart(2, '0');
-                return y + '-' + m + '-' + day + ' ' + h + ':' + min;
-            } catch(e) { return iso; }
+        function fmtTime(iso){
+            try{
+                var d=new Date(iso);
+                return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+
+                    String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+
+                    String(d.getMinutes()).padStart(2,'0');
+            }catch(e){return iso}
         }
 
-        function renderTabs(notes) {
-            var html = '';
-            CATEGORIES.forEach(function(cat) {
-                var count = cat.value === 'all' ? notes.length : notes.filter(function(n) { return n.category === cat.value; }).length;
-                var active = activeCategory === cat.value ? ' active' : '';
-                html += '<button class="notes-tab' + active + '" data-cat="' + cat.value + '">' +
-                    cat.label + '<span class="badge">' + count + '</span></button>';
-            });
-            document.getElementById('noteTabs').innerHTML = html;
+        function esc(s){
+            var d=document.createElement('div');
+            d.textContent=s;
+            return d.innerHTML.replace(/\n/g,'<br>');
+        }
 
-            // 事件
-            document.querySelectorAll('.notes-tab').forEach(function(tab) {
-                tab.addEventListener('click', function() {
-                    activeCategory = this.getAttribute('data-cat');
+        function tagCls(c){ return 'tag-'+(c||'other') }
+
+        function renderTabs(ns){
+            var h='';
+            CATS.forEach(function(c){
+                var cnt=c.v==='all'?ns.length:ns.filter(function(n){return n.category===c.v}).length;
+                var ac=c.v===cat?' active':'';
+                h+='<button class="notes-tab'+ac+'" data-c="'+c.v+'">'+c.l+
+                    '<span class="badge">'+cnt+'</span></button>';
+            });
+            document.getElementById('noteTabs').innerHTML=h;
+            [].forEach.call(document.querySelectorAll('.notes-tab'),function(b){
+                b.addEventListener('click',function(){
+                    cat=this.getAttribute('data-c');
                     render();
                 });
             });
         }
 
-        function renderList(filtered) {
-            var el = document.getElementById('noteList');
-            if (filtered.length === 0) {
-                var msg = searchQuery ? '没有找到匹配的笔记' : '还没有笔记';
-                var hint = searchQuery ? '试试其他关键词' : '在知识库页面点击右下角 📝 按钮，随时记录你的想法';
-                el.innerHTML =
-                    '<div class="notes-empty">' +
-                        '<div class="notes-empty-icon">&#x1F4DD;</div>' +
-                        '<div class="notes-empty-text">' + msg + '</div>' +
-                        '<div class="notes-empty-hint">' + hint + '</div>' +
-                    '</div>';
+        function renderList(fns){
+            var el=document.getElementById('noteList');
+            if(!fns.length){
+                var em=q?'没有找到匹配的笔记':'还没有笔记';
+                var eh=q?'试试其他关键词':'在知识库页面点击右下角 &#x1F4DD; 按钮，随时记录你的想法';
+                el.innerHTML='<div class="notes-empty"><div class="notes-empty-emoji">&#x1F4DD;</div>'+
+                    '<div class="notes-empty-title">'+em+'</div>'+
+                    '<div class="notes-empty-desc">'+eh+'</div></div>';
                 return;
             }
-
-            var html = '';
-            filtered.forEach(function(n, i) {
-                var catClass = 'note-cat-' + (n.category || 'other');
-                var time = formatTime(n.createdAt);
-                var source = n.pageTitle ? '<a href="' + (n.pagePath || '#') + '">' + n.pageTitle + '</a>' : '';
-                var sourceHtml = source ? '<div class="note-item-source">&#x1F4C4; 来源：' + source + '</div>' : '';
-
-                html += '<div class="note-item" style="animation-delay:' + (i * 0.05) + 's">' +
-                    '<div class="note-item-meta">' +
-                        '<span class="note-item-category ' + catClass + '">' + (n.categoryLabel || '其他') + '</span>' +
-                        '<span class="note-item-time">' + time + '</span>' +
-                    '</div>' +
-                    '<div class="note-item-text">' + escapeHtml(n.text) + '</div>' +
-                    sourceHtml +
-                    '<button class="note-item-delete" data-id="' + n.id + '" title="删除">&#x1F5D1;</button>' +
+            var h='';
+            fns.forEach(function(n,i){
+                var tc='note-tag '+tagCls(n.category);
+                var src=n.pageTitle?'<a href="'+(n.pagePath||'#')+'">'+esc(n.pageTitle)+'</a>':'';
+                var sh=src?'<div class="note-source">&#x1F4C4; 来源：'+src+'</div>':'';
+                h+='<div class="note-card" style="animation-delay:'+(i*0.06)+'s">'+
+                    '<div class="note-card-top">'+
+                        '<span class="'+tc+'">'+(n.categoryLabel||'其他')+'</span>'+
+                        '<span class="note-time">'+fmtTime(n.createdAt)+'</span>'+
+                    '</div>'+
+                    '<div class="note-text">'+esc(n.text)+'</div>'+
+                    sh+
+                    '<button class="note-del" data-id="'+n.id+'" title="删除">&#x1F5D1;</button>'+
                 '</div>';
             });
-            el.innerHTML = html;
-
-            // 删除事件
-            document.querySelectorAll('.note-item-delete').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    deleteNote(this.getAttribute('data-id'));
-                });
+            el.innerHTML=h;
+            [].forEach.call(document.querySelectorAll('.note-del'),function(b){
+                b.addEventListener('click',function(){ del(this.getAttribute('data-id')) });
             });
         }
 
-        function escapeHtml(text) {
-            var div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML.replace(/\n/g, '<br>');
+        function render(){
+            var ns=get(), fns=filter(ns);
+            renderTabs(ns);
+            renderList(fns);
+            document.getElementById('noteCount').textContent=
+                '共 '+ns.length+' 条'+(fns.length!==ns.length?'，显示 '+fns.length+' 条':'');
+            document.getElementById('noteClearBtn').style.display=ns.length?'':'none';
         }
 
-        function render() {
-            var notes = getNotes();
-            var filtered = filterNotes(notes);
-
-            renderTabs(notes);
-            renderList(filtered);
-
-            // 统计
-            document.getElementById('noteStatsText').textContent =
-                '共 ' + notes.length + ' 条笔记' + (filtered.length !== notes.length ? '，当前显示 ' + filtered.length + ' 条' : '');
-            document.getElementById('noteClearBtn').style.display = notes.length > 0 ? '' : 'none';
-        }
-
-        // 搜索
-        document.getElementById('noteSearchInput').addEventListener('input', function() {
-            searchQuery = this.value.trim();
+        document.getElementById('noteSearchInput').addEventListener('input',function(){
+            q=this.value.trim();
             render();
         });
-
-        // 清空
-        document.getElementById('noteClearBtn').addEventListener('click', clearAllNotes);
-
-        // Ctrl+K
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                document.getElementById('noteSearchInput').focus();
-            }
-            if (e.key === 'Escape') {
-                document.getElementById('noteSearchInput').value = '';
-                searchQuery = '';
-                render();
-            }
+        document.getElementById('noteClearBtn').addEventListener('click',clearAll);
+        document.addEventListener('keydown',function(e){
+            if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();document.getElementById('noteSearchInput').focus();}
+            if(e.key==='Escape'){document.getElementById('noteSearchInput').value='';q='';render();}
         });
-
-        // 初始化
         render();
     })();
     </script>
