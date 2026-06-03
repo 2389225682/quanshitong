@@ -191,11 +191,16 @@
         document.body.appendChild(bar);
 
         document.getElementById('mobileBack').addEventListener('click', function () {
-            // 统一回到知识库首页（/quanshitong/index.html）
-            var base = window.location.pathname.indexOf('/quanshitong/') !== -1
-                ? '/quanshitong/index.html'
-                : '../index.html';
-            window.location.href = base;
+            // 返回上一级页面（浏览器后退，与手机操作习惯一致）
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                // 无历史记录时回到知识库首页
+                var fallback = window.location.pathname.indexOf('/quanshitong/') !== -1
+                    ? '/quanshitong/index.html'
+                    : '../index.html';
+                window.location.href = fallback;
+            }
         });
 
         document.getElementById('mobileBackTop').addEventListener('click', function () {
