@@ -85,6 +85,26 @@ const KB_MODULES = [
         status: 'active'
     },
 
+    /* ========== 个人工具 ========== */
+    {
+        id: 'notes',
+        name: '我的笔记',
+        subtitle: '记录想法，留住灵感',
+        description: '在知识库任意页面点击右下角 📝 按钮即可记录想法。按分类整理，随时回顾。',
+        icon: '📝',
+        cover: '',
+        path: 'notes/index.html',
+        color: '#f59e0b',
+        colorRgb: '245,158,11',
+        category: 'tools',
+        stats: [
+            { value: '5类', label: '分类' },
+            { value: '本地', label: '存储' }
+        ],
+        tags: ['金句', '想法', '灵感'],
+        status: 'active'
+    },
+
     /* ========== 未来板块占位 ========== */
     {
         id: 'tech-insights',
@@ -126,6 +146,7 @@ const KB_CATEGORIES = [
     { id: 'history',  name: '历史探索', icon: '🏛️' },
     { id: 'reading',  name: '深度阅读', icon: '📖' },
     { id: 'finance',  name: '财经观察', icon: '📈' },
+    { id: 'tools',    name: '个人工具', icon: '🛠️' },
     { id: 'future',   name: '即将上线', icon: '🔮' }
 ];
 
