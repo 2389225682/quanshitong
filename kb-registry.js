@@ -105,6 +105,26 @@ const KB_MODULES = [
         status: 'active'
     },
 
+    /* ========== 个人成长 ========== */
+    {
+        id: 'growth',
+        name: '人生成长指南',
+        subtitle: '认识自己，理解他人，持续修正',
+        description: '从依恋类型到习惯养成，从身份认同到环境设计——实用的自我成长工具箱。',
+        icon: '🌱',
+        cover: 'assets/images/covers/growth.svg',
+        path: 'growth/index.html',
+        color: '#10b981',
+        colorRgb: '16,185,129',
+        category: 'growth',
+        stats: [
+            { value: '3篇', label: '已上线' },
+            { value: '持续', label: '扩充中' }
+        ],
+        tags: ['依恋理论', '习惯养成', '身份认同'],
+        status: 'active'
+    },
+
     /* ========== 未来板块占位 ========== */
     {
         id: 'tech-insights',
@@ -147,6 +167,7 @@ const KB_CATEGORIES = [
     { id: 'reading',  name: '深度阅读', icon: '📖' },
     { id: 'finance',  name: '财经观察', icon: '📈' },
     { id: 'tools',    name: '个人工具', icon: '🛠️' },
+    { id: 'growth',   name: '个人成长', icon: '🌱' },
     { id: 'future',   name: '即将上线', icon: '🔮' }
 ];
 
