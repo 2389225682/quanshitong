@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0a0b1a">
+    <title>人生成长指南 | 飞飞的知识库</title>
+    <link rel="icon" type="image/png" href="../icons/icon-192.png">
+    <link rel="stylesheet" href="../kb-core.css">
+    <style>
+        .growth-header {
+            text-align: center;
+            padding: var(--sp-8) 0 var(--sp-2);
+        }
+        .growth-icon { font-size: 48px; margin-bottom: var(--sp-3); }
+        .growth-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: var(--sp-1);
+        }
+        .growth-subtitle {
+            font-size: 13px;
+            color: var(--kb-text-sec);
+        }
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--kb-text-sec);
+            margin: var(--sp-6) 0 var(--sp-3);
+            padding-left: var(--sp-1);
+        }
+        .article-list { list-style: none; padding: 0; margin: 0; }
+        .article-card {
+            display: block;
+            padding: var(--sp-4);
+            margin-bottom: var(--sp-2);
+            background: var(--kb-bg-card);
+            border: 1px solid var(--kb-border);
+            border-radius: var(--kb-radius-sm);
+            text-decoration: none;
+            color: var(--kb-text);
+            transition: var(--kb-transition);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .article-card:hover {
+            background: var(--kb-bg-card-hover);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        .article-card:active {
+            transform: scale(0.98);
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: var(--sp-1);
+        }
+        .card-desc {
+            font-size: 13px;
+            color: var(--kb-text-sec);
+            line-height: 1.5;
+        }
+        .card-tags {
+            display: flex;
+            gap: var(--sp-2);
+            margin-top: var(--sp-2);
+            flex-wrap: wrap;
+        }
+        .card-tag {
+            font-size: 11px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .coming-card {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .coming-badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: var(--kb-bg-glass);
+            color: var(--kb-text-sec);
+            border: 1px solid var(--kb-border);
+        }
+    </style>
+</head>
+<body>
+<div class="article-progress" id="articleProgress"></div>
+<div class="article-app">
+    <a href="../index.html" class="article-back">← 返回知识库</a>
+
+    <div class="growth-header">
+        <div class="growth-icon">🌱</div>
+        <h1 class="growth-title">人生成长指南</h1>
+        <p class="growth-subtitle">认识自己，理解他人，持续修正</p>
+    </div>
+
+    <div class="section-label">改变自己</div>
+    <ul class="article-list">
+        <li>
+            <a href="habits.html" class="article-card">
+                <div class="card-title">惯性对抗系统</div>
+                <div class="card-desc">意志力是最不可靠的武器。五级系统教你绕过意志力，用环境设计、实施意图和身份重构来真正改变行为。</div>
+                <div class="card-tags">
+                    <span class="card-tag">环境设计</span>
+                    <span class="card-tag">习惯循环</span>
+                    <span class="card-tag">身份认同</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="identity.html" class="article-card">
+                <div class="card-title">身份认同清单</div>
+                <div class="card-desc">六个通用身份认同，每天对照实际行动"投票"。你不是在做任务，你在成为某种人。</div>
+                <div class="card-tags">
+                    <span class="card-tag">自我强化</span>
+                    <span class="card-tag">每日投票</span>
+                    <span class="card-tag">James Clear</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="article-card coming-card">
+                <div class="card-title">日常健康管理 <span class="coming-badge">待完善</span></div>
+                <div class="card-desc">颈椎、驼背、近视、运动——整合成一个可执行的每日流程。早晨5分钟、办公每60分钟、晚间10分钟。</div>
+                <div class="card-tags">
+                    <span class="card-tag">颈椎</span>
+                    <span class="card-tag">体态</span>
+                    <span class="card-tag">运动</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <div class="section-label">认知他人</div>
+    <ul class="article-list">
+        <li>
+            <a href="attachment.html" class="article-card">
+                <div class="card-title">依恋类型与原生家庭</div>
+                <div class="card-desc">安全型、焦虑型、回避型、紊乱型——四种依恋类型的童年根源、成年表现，以及如何识别和相处。</div>
+                <div class="card-tags">
+                    <span class="card-tag">依恋理论</span>
+                    <span class="card-tag">读人</span>
+                    <span class="card-tag">相处策略</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="article-card coming-card">
+                <div class="card-title">身体语言读人指南 <span class="coming-badge">待完善</span></div>
+                <div class="card-desc">面容、体态、眼神、声音、微表情——五个通道读懂一个人。身体是童年最诚实的档案馆。</div>
+                <div class="card-tags">
+                    <span class="card-tag">体态分析</span>
+                    <span class="card-tag">眼神模式</span>
+                    <span class="card-tag">Paul Ekman</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="article-card coming-card">
+                <div class="card-title">四种类型的相处实操 <span class="coming-badge">待完善</span></div>
+                <div class="card-desc">职场、亲密关系、朋友、家庭——具体场景下与不同依恋类型的人相处的操作指南和实例。</div>
+                <div class="card-tags">
+                    <span class="card-tag">职场</span>
+                    <span class="card-tag">亲密关系</span>
+                    <span class="card-tag">实操案例</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+</div>
+<script src="../kb-article.js?v=3"></script>
+</body>
+</html>
