@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="24" fill="#0a0b1a"/>
+  <g transform="translate(100,100)">
+    <!-- stem -->
+    <rect x="-3" y="-20" width="6" height="50" rx="3" fill="#10b981"/>
+    <!-- left leaf -->
+    <ellipse cx="-22" cy="-10" rx="18" ry="10" fill="#10b981" opacity="0.7" transform="rotate(-30)"/>
+    <!-- right leaf -->
+    <ellipse cx="22" cy="-15" rx="18" ry="10" fill="#10b981" opacity="0.7" transform="rotate(30)"/>
+    <!-- pot -->
+    <rect x="-18" y="25" width="36" height="20" rx="6" fill="#1abc9c"/>
+    <rect x="-22" y="40" width="44" height="6" rx="3" fill="#1abc9c" opacity="0.6"/>
+    <!-- soil dots -->
+    <circle cx="-8" cy="35" r="2" fill="#10b981" opacity="0.4"/>
+    <circle cx="6" cy="33" r="1.5" fill="#10b981" opacity="0.4"/>
+    <circle cx="14" cy="36" r="2" fill="#10b981" opacity="0.4"/>
+  </g>
+</svg>
